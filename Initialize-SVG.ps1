@@ -1,9 +1,9 @@
 function Initialize-SVG {
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [string]$FileName,
+        # [Parameter(Mandatory = $true)]
+        # [ValidateNotNullOrEmpty()]
+        # [string]$FileName,
         [ValidateNotNullOrEmpty()]
         [Int16]$Width = 400,
         [ValidateNotNullOrEmpty()]
