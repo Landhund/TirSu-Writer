@@ -35,3 +35,5 @@ function Initialize-SVG {
 
     return $NewSVG
 }
+
+Export-ModuleMember Initialize-SVG
