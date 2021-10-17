@@ -18,15 +18,18 @@ function Initialize-SVG {
     $Root.SetAttribute("xmlns", "http://www.w3.org/2000/svg")
     $Root.SetAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink")
     $Root.SetAttribute("baseProfile", "Full")
-    $Root.SetAttribute("viewBox", "" + -$Width / 2 + " " + -$Hight /2 + " " + $Width + " " + $Hight)
+    $Root.SetAttribute("viewBox", "" + - $Width / 2 + " " + - $Hight / 2 + " " + $Width + " " + $Hight)
 
-    $TitleElement = $NewSVG.CreateElement("title")
-    $TitleElement.AppendChild($NewSVG.CreateTextNode($Title)) | Out-Null
-    $Root.AppendChild($TitleElement) | Out-Null
-
-    $DescriptionElement = $NewSVG.CreateElement("desc")
-    $DescriptionElement.AppendChild($NewSVG.CreateTextNode($Description)) | Out-Null
-    $Root.AppendChild($DescriptionElement) | Out-Null
+    if ($Title) {
+        $TitleElement = $NewSVG.CreateElement("title")
+        $TitleElement.AppendChild($NewSVG.CreateTextNode($Title)) | Out-Null
+        $Root.AppendChild($TitleElement) | Out-Null
+    }
+    if ($Description) {
+        $DescriptionElement = $NewSVG.CreateElement("desc")
+        $DescriptionElement.AppendChild($NewSVG.CreateTextNode($Description)) | Out-Null
+        $Root.AppendChild($DescriptionElement) | Out-Null
+    }
     
     $NewSVG.AppendChild($Root) | Out-Null
 
