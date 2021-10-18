@@ -56,3 +56,6 @@ function Get-TirsuSymbol {
 
     # TODO: #6 Set up "assembly line" that combines the Symbol-Elements into a valid SVG-Group
 }
+
+Export-ModuleMember Get-TirsuSymbol
+Export-ModuleMember -Variable $SymbolTable
