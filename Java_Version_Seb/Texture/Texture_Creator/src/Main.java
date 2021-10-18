@@ -8,7 +8,6 @@ public class Main
 {
     public static void main(String[] args)  throws IOException
     {
-        // Circle_Generation.circle(2000, 2000, 750, 20, 10, true);
         Tirsu_Ringe.circle(2000, 2000, 750, 10, 9, true);
     }
 
