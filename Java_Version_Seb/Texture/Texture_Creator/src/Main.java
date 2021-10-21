@@ -91,8 +91,8 @@ public class Main
 
 
         // speichern
-        String desktopPath = System.getProperty("user.home") + "/Desktop/";
-        File file1 = new File("orginal.png");
+        // String desktopPath = System.getProperty("user.home") + "/Desktop/";
+        File file1 = new File("original.png");
         ImageIO.write(image, "png", file1);
 
         File file2 = new File("iteration1.png");

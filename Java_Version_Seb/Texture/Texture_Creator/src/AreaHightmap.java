@@ -1,5 +1,5 @@
-import java.text.DecimalFormat;
-import java.util.Collection;
+// import java.text.DecimalFormat;
+// import java.util.Collection;
 import java.util.Random;
 
 public class AreaHightmap

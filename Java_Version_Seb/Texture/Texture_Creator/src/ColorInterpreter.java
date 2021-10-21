@@ -1,11 +1,11 @@
-import org.w3c.dom.css.RGBColor;
+// import org.w3c.dom.css.RGBColor;
 
 import java.awt.*;
-import java.util.Map;
+// import java.util.Map;
 
 public class ColorInterpreter
 {
-    private int maxValue;
+    // private int maxValue;
 
     private float[] white = new float[] {(float) 0.33, (float) 0.33, (float) 0.33};
     private float valueWhite = 0.00f;

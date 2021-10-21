@@ -1,4 +1,4 @@
-import com.sun.source.tree.BreakTree;
+// import com.sun.source.tree.BreakTree;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -45,7 +45,7 @@ public class Tirsu_Ringe
 
 
         // speichern
-        String desktopPath = System.getProperty("user.home") + "/Desktop/";
+        // String desktopPath = System.getProperty("user.home") + "/Desktop/";
         File file1 = new File("circle_Original.png");
         ImageIO.write(image, "png", file1);
     }
