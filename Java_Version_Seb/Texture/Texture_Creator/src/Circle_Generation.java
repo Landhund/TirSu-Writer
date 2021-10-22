@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
+// import java.util.Arrays;
 
 public class Circle_Generation
 {
@@ -40,7 +40,7 @@ public class Circle_Generation
 
 
         // speichern
-        String desktopPath = System.getProperty("user.home") + "/Desktop/";
+        // String desktopPath = System.getProperty("user.home") + "/Desktop/";
         File file1 = new File("circle_Original.png");
         ImageIO.write(image, "png", file1);
     }
@@ -86,6 +86,7 @@ public class Circle_Generation
         return emptyMap;
     }
 
+    /*
     private static int[][] findGapAreas(int segments, int radius)
     {
         if (segments == 1 || segments < 0)
@@ -93,7 +94,6 @@ public class Circle_Generation
             return null;
         }
 
-        /*
         else if ((segments & 1) == 1)
         {
             int[][] result = new int[(segments/2) + 1][2];
@@ -128,10 +128,11 @@ public class Circle_Generation
             }
             return result;
         }
-        */
         return null;
     }
+    */
 
+    /*
     private static boolean isInSegment(int segments, int[][] gapHights, int y)
     {
         if (gapHights == null)
@@ -149,6 +150,7 @@ public class Circle_Generation
         }
         return true;
     }
+    */
 
     private static boolean isInSegment(int segments, int x, int y )
     {
