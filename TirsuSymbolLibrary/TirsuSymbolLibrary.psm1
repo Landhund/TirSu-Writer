@@ -246,3 +246,4 @@ function Get-TirsuSymbol {
 
 Export-ModuleMember Get-TirsuSymbol
 Export-ModuleMember -Variable SymbolTable
+Export-ModuleMember -Variable SymbolElements
