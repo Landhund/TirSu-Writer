@@ -1,3 +1,6 @@
+import SVG_Tools.Path_Generator;
+import TirSu_Tools.TirSu_Circle;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -8,9 +11,17 @@ public class Main
 {
     public static void main(String[] args)  throws IOException
     {
-        Tirsu_Ringe.circle(2000, 2000, 750, 10, 9, true);
+        // Tirsu_Ringe.circle(2000, 2000, 750, 10, 9, true);
+
+        Path_Generator test = new Path_Generator();
+        test.saveSVG();
     }
 
+
+
+
+
+    @Deprecated
     public static void createRandomHightmap() throws IOException
     {
         int width = 2000;

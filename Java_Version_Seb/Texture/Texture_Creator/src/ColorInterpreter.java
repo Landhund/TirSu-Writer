@@ -3,6 +3,7 @@
 import java.awt.*;
 // import java.util.Map;
 
+@Deprecated
 public class ColorInterpreter
 {
     // private int maxValue;
