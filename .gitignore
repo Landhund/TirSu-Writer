@@ -1,3 +1,5 @@
 /.Tests
-/.Resources
 /.idea
+*.dwl*
+*.bak
+*.rdb
