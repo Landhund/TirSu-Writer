@@ -68,7 +68,7 @@ $SymbolElements["MidLine"] = $MidLine
 
 #region Definition of SubLine Element
 $SubLine = $ElementCreator.CreateElement("path")
-$SubLine.SetAttribute("d", "M 0,0 v 13")
+$SubLine.SetAttribute("d", "M 0,0 v 10")
 $SubLine.SetAttribute("stroke", "black")
 $SubLine.SetAttribute("stroke-width", "1")
 $SubLine.SetAttribute("id", "SubLine")
@@ -134,10 +134,10 @@ $Arm1.SetAttribute("stroke", "black")
 $Arm1.SetAttribute("stroke-width", "1")
 $Arm1.SetAttribute("transform", "rotate(45)")
 $Arm2 = $ElementCreator.CreateElement("path")
-$Arm2.SetAttribute("d", "M 0,-2 v -10")
+$Arm2.SetAttribute("d", "M 0,0 v -10")
 $Arm2.SetAttribute("stroke", "black")
 $Arm2.SetAttribute("stroke-width", "1")
-$Arm2.SetAttribute("transform", "rotate(45)")
+$Arm2.SetAttribute("transform", "matrix(0.707106781186548, 0.707106781186548, -0.707106781186548, 0.707106781186548, 0, -2)")
 $DoubleSideArm.AppendChild($Arm1)
 $DoubleSideArm.AppendChild($Arm2)
 $DoubleSideArm.SetAttribute("id", "DoubleSideArm")
@@ -179,6 +179,7 @@ $Head.SetAttribute("ry", "3")
 $Head.SetAttribute("transform", "translate(0,3)")
 $Head.SetAttribute("stroke", "black")
 $Head.SetAttribute("stroke-width", "1")
+$Head.SetAttribute("fill", "none")
 $Head.SetAttribute("id", "Head")
 
 $SymbolElements["Head"] = $Head
@@ -191,6 +192,7 @@ $RotationMatrix = "0.707106781186548, 0.707106781186548, -0.707106781186548, 0.7
 $PointUp.SetAttribute("transform", "matrix($RotationMatrix)")
 $PointUp.SetAttribute("stroke", "black")
 $PointUp.SetAttribute("stroke-width", "1")
+$PointUp.SetAttribute("fill", "none")
 $PointUp.SetAttribute("id", "PointUp")
 
 $SymbolElements["PointUp"] = $PointUp
@@ -202,6 +204,7 @@ $PointDown.SetAttribute("points", "-10,0 0,0 0,-10")
 $PointDown.SetAttribute("transform", "rotate(-135)")
 $PointDown.SetAttribute("stroke", "black")
 $PointDown.SetAttribute("stroke-width", "1")
+$PointDown.SetAttribute("fill", "none")
 $PointDown.SetAttribute("id", "PointDown")
 
 $SymbolElements["PointDown"] = $PointDown
@@ -209,9 +212,10 @@ $SymbolElements["PointDown"] = $PointDown
 
 #region Bowl Definition
 $Bowl = $ElementCreator.CreateElement("path")
-$Bowl.SetAttribute("d", "M 6,3 A 5 6 180 1 1 6 6")
+$Bowl.SetAttribute("d", "M 6,7 A 5 6 180 1 0 -6 7")
 $Bowl.SetAttribute("stroke", "black")
 $Bowl.SetAttribute("stroke-width", "1")
+$Bowl.SetAttribute("fill", "none")
 $Bowl.SetAttribute("id", "Bowl")
 
 $SymbolElements["Bowl"] = $Bowl
@@ -219,9 +223,10 @@ $SymbolElements["Bowl"] = $Bowl
 
 #region Crescent Defintion
 $Crescent = $ElementCreator.CreateElement("path")
-$Crescent.SetAttribute("d", "M 1,-3 h 6 v 6 h -6")
+$Crescent.SetAttribute("d", "M 1,0 h 6 v 6 h -6")
 $Crescent.SetAttribute("stroke", "black")
 $Crescent.SetAttribute("stroke-width", "1")
+$Crescent.SetAttribute("fill", "none")
 $Crescent.SetAttribute("id", "Crescent")
 
 $SymbolElements["Crescent"] = $Crescent
