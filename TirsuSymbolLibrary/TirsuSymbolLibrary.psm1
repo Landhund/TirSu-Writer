@@ -179,6 +179,7 @@ $Head.SetAttribute("ry", "3")
 $Head.SetAttribute("transform", "translate(0,3)")
 $Head.SetAttribute("stroke", "black")
 $Head.SetAttribute("stroke-width", "1")
+$Head.SetAttribute("fill", "none")
 $Head.SetAttribute("id", "Head")
 
 $SymbolElements["Head"] = $Head
@@ -191,6 +192,7 @@ $RotationMatrix = "0.707106781186548, 0.707106781186548, -0.707106781186548, 0.7
 $PointUp.SetAttribute("transform", "matrix($RotationMatrix)")
 $PointUp.SetAttribute("stroke", "black")
 $PointUp.SetAttribute("stroke-width", "1")
+$PointUp.SetAttribute("fill", "none")
 $PointUp.SetAttribute("id", "PointUp")
 
 $SymbolElements["PointUp"] = $PointUp
@@ -202,6 +204,7 @@ $PointDown.SetAttribute("points", "-10,0 0,0 0,-10")
 $PointDown.SetAttribute("transform", "rotate(-135)")
 $PointDown.SetAttribute("stroke", "black")
 $PointDown.SetAttribute("stroke-width", "1")
+$PointDown.SetAttribute("fill", "none")
 $PointDown.SetAttribute("id", "PointDown")
 
 $SymbolElements["PointDown"] = $PointDown
@@ -212,6 +215,7 @@ $Bowl = $ElementCreator.CreateElement("path")
 $Bowl.SetAttribute("d", "M 6,3 A 5 6 180 1 1 6 6")
 $Bowl.SetAttribute("stroke", "black")
 $Bowl.SetAttribute("stroke-width", "1")
+$Bowl.SetAttribute("fill", "none")
 $Bowl.SetAttribute("id", "Bowl")
 
 $SymbolElements["Bowl"] = $Bowl
@@ -222,6 +226,7 @@ $Crescent = $ElementCreator.CreateElement("path")
 $Crescent.SetAttribute("d", "M 1,-3 h 6 v 6 h -6")
 $Crescent.SetAttribute("stroke", "black")
 $Crescent.SetAttribute("stroke-width", "1")
+$Crescent.SetAttribute("fill", "none")
 $Crescent.SetAttribute("id", "Crescent")
 
 $SymbolElements["Crescent"] = $Crescent
