@@ -68,7 +68,7 @@ $SymbolElements["MidLine"] = $MidLine
 
 #region Definition of SubLine Element
 $SubLine = $ElementCreator.CreateElement("path")
-$SubLine.SetAttribute("d", "M 0,0 v 13")
+$SubLine.SetAttribute("d", "M 0,0 v 10")
 $SubLine.SetAttribute("stroke", "black")
 $SubLine.SetAttribute("stroke-width", "1")
 $SubLine.SetAttribute("id", "SubLine")
