@@ -21,9 +21,11 @@ process {
     $SymbolElementsKeys = $SymbolElements.GetEnumerator().Name
     $SymbolsNumber = -10
     foreach ($Key in $SymbolElementsKeys) {
+        $NewGroup = $Tirsu.CreateElement("g")
+        $NewGroup.SetAttribute("transform", "translate(" + $SymbolsNumber * 15 + ")")
         $NewNode = $Tirsu.ImportNode($SymbolElements[$Key], $true)
-        $NewNode.SetAttribute("transform", "translate(" + $SymbolsNumber * 15 + ")")
-        $Tirsu.svg.AppendChild($NewNode) | Out-Null
+        $NewGroup.AppendChild($NewNode) | Out-Null
+        $Tirsu.svg.AppendChild($NewGroup) | Out-Null
         $SymbolsNumber++
     }
 
