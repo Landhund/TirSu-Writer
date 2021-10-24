@@ -241,12 +241,40 @@ function Get-TirsuSymbol {
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [string]
-        $InputString
+        $InputID
     )
 
     # TODO: #9 Set up parsing function to find letter combinations that have a Combined Symbol @Landhund
 
     # TODO: #6 Set up "assembly line" that combines the Symbol-Elements into a valid SVG-Group
+
+    $Positions = @{
+        Top       = 20
+        SubTop    = 18
+        Middle    = 13
+        SubMiddle = 11
+    }
+    $NamePositionSeparator = ":"
+    $Recipe = $SymbolTable[$InputID]
+    $NewSymbol = $ElementCreator.CreateElement("g")
+    $NewSymbol.SetAttribute("id", $InputID)
+    foreach ($Construct in $Recipe) {
+        if ($Construct -match "^([A-z])+:([A-z])+$") {
+            $Structure = $Construct.Split($NamePositionSeparator)
+            $ElementName = $Structure[0]
+            $ElementPosition = $Structure[1]
+
+            $NewGroup = $ElementCreator.CreateElement("g")
+            $VerticalPosition = $Positions[$ElementPosition]
+            $NewGroup.SetAttribute("transform", "translate(0, $VerticalPosition)")
+            $NewGroup.AppendChild($SymbolElements[$ElementName]) | Out-Null
+            $NewSymbol.AppendChild($NewGroup) | Out-Null
+        }
+        else {
+            $NewSymbol.AppendChild($SymbolElements[$Construct]) | Out-Null
+        }
+    }
+    return $NewSymbol
 }
 
 Export-ModuleMember Get-TirsuSymbol
