@@ -10,8 +10,9 @@ param (
 )
 
 begin {
-    Import-Module -Name "$PSScriptRoot\SVG-Setup"
-    Import-Module -Name "$PSScriptRoot\SavePathSelector"
+    Import-Module -Name "$PSScriptRoot\SVG-Setup" -Force
+    Import-Module -Name "$PSScriptRoot\SavePathSelector" -Force
+    Import-Module -Name "$PSScriptRoot\TirsuSymbolLibrary" -Force
 }
 
 process {
