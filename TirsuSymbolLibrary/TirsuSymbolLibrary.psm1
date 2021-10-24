@@ -41,7 +41,6 @@ $SymbolTable | Out-Null # Just here so my editor doesn't complain about an unuse
 #endregion
 
 #region Symbol Elements Definitions (abandon hope all ye who enter here)
-#TODO: #14 Test all Symbol-Element definitions @Landhund
 $SymbolElements = @{}
 $ElementCreator = New-Object System.Xml.XmlDocument
 
@@ -245,8 +244,6 @@ function Get-TirsuSymbol {
     )
 
     # TODO: #9 Set up parsing function to find letter combinations that have a Combined Symbol @Landhund
-
-    # TODO: #6 Set up "assembly line" that combines the Symbol-Elements into a valid SVG-Group
 
     $Positions = @{
         Top       = 20
