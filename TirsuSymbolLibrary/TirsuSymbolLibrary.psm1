@@ -134,10 +134,10 @@ $Arm1.SetAttribute("stroke", "black")
 $Arm1.SetAttribute("stroke-width", "1")
 $Arm1.SetAttribute("transform", "rotate(45)")
 $Arm2 = $ElementCreator.CreateElement("path")
-$Arm2.SetAttribute("d", "M 0,-2 v -10")
+$Arm2.SetAttribute("d", "M 0,0 v -10")
 $Arm2.SetAttribute("stroke", "black")
 $Arm2.SetAttribute("stroke-width", "1")
-$Arm2.SetAttribute("transform", "rotate(45)")
+$Arm2.SetAttribute("transform", "matrix(0.707106781186548, 0.707106781186548, -0.707106781186548, 0.707106781186548, 0, -2)")
 $DoubleSideArm.AppendChild($Arm1)
 $DoubleSideArm.AppendChild($Arm2)
 $DoubleSideArm.SetAttribute("id", "DoubleSideArm")
@@ -212,7 +212,7 @@ $SymbolElements["PointDown"] = $PointDown
 
 #region Bowl Definition
 $Bowl = $ElementCreator.CreateElement("path")
-$Bowl.SetAttribute("d", "M 6,3 A 5 6 180 1 1 6 6")
+$Bowl.SetAttribute("d", "M 6,7 A 5 6 180 1 0 -6 7")
 $Bowl.SetAttribute("stroke", "black")
 $Bowl.SetAttribute("stroke-width", "1")
 $Bowl.SetAttribute("fill", "none")
@@ -223,7 +223,7 @@ $SymbolElements["Bowl"] = $Bowl
 
 #region Crescent Defintion
 $Crescent = $ElementCreator.CreateElement("path")
-$Crescent.SetAttribute("d", "M 1,-3 h 6 v 6 h -6")
+$Crescent.SetAttribute("d", "M 1,0 h 6 v 6 h -6")
 $Crescent.SetAttribute("stroke", "black")
 $Crescent.SetAttribute("stroke-width", "1")
 $Crescent.SetAttribute("fill", "none")
