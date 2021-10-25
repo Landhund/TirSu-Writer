@@ -1,5 +1,5 @@
-import SVG_Tools.Path_Generator;
-import TirSu_Tools.TirSu_Circle;
+import SVG_Tools.Element_Generator;
+import SVG_Tools.SVG_Constructor;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -13,8 +13,10 @@ public class Main
     {
         // Tirsu_Ringe.circle(2000, 2000, 750, 10, 9, true);
 
-        Path_Generator test = new Path_Generator();
-        test.saveSVG();
+        // Element_Generator test = new Element_Generator();
+
+        SVG_Constructor tester = new SVG_Constructor("Test von Origin Kreisen (Segmented und normal)");
+        tester.saveSVG();
     }
 
 
