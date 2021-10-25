@@ -5,7 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "PowerShell: Launch Current File",
+            "name": "Main Script Dryfire",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\New-Tirsu.ps1",
+            "cwd": "${workspaceFolder}",
+            "args": ["-InputWord", "Dryfire"]
+        },
+        {
+            "name": "Run Main Script",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\New-Tirsu.ps1",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run Current File",
             "type": "PowerShell",
             "request": "launch",
             "script": "${file}",
