@@ -2,32 +2,32 @@
 # Symbol definition as such: (<Middle Line Type>, <SubElementName>:<Position>, ...)
 # Symbols get defined middle line first, then from top to bottom
 $SymbolTable = @{
-    A = ("FullLine", "DownArms:Top")
-    B = ("MidLine", "UpArms:Middle", "Bar:Middle")
-    C = ("MidLine", "Head:Middle", "Bar:Middle")
-    D = ("FullLine", "DownArms:Top", "Bar:Middle")
-    E = ("FullLine", "Bar:Top")
-    F = ("FullLine", "DoubleBar:Top")
-    G = ("MidLine", "Head:Middle", "DoubleBar:Middle")
-    H = ("FullLine", "DownArms:Top", "DoubleBar:Middle")
-    I = ("FullLine")
-    J = ("FullLine", "SideArm:Top")
-    K = ("FullLine", "DoubleSideArm:Top")
-    L = ("MidLine", "PointUp:Middle")
-    M = ("MidLine", "PointUp:Middle", "Bar:Middle")
-    N = ("MidLine", "PointUp:Middle", "DoubleBar:Middle")
-    O = ("MidLine", "Head:Middle")
-    P = ("FullLine", "DownArms:Top", "SideArm:SubTop")
-    Q = ("MidLine", "PointDown:Middle")
-    R = ("MidLine", "UpArms:Middle", "DoubleBar:Middle")
-    S = ("MidLine", "Head:Middle", "SideArm:Middle")
-    T = ("MidLine", "Head:Middle", "DoubleSideArm:Middle")
-    U = ("MidLine", "Bowl:Middle")
-    V = ("MidLine", "Bowl:Middle", "Bar:Middle")
-    W = ("MidLine", "Bowl:Middle", "DoubleBar:Middle")
-    X = ("MidLine", "Crescent:Middle")
-    Y = ("MidLine", "UpArms:Middle")
-    Z = ("MidLine", "Crescent:Middle", "Bar:Middle")
+    A  = ("FullLine", "DownArms:Top")
+    B  = ("MidLine", "UpArms:Middle", "Bar:Middle")
+    C  = ("MidLine", "Head:Middle", "Bar:Middle")
+    D  = ("FullLine", "DownArms:Top", "Bar:Middle")
+    E  = ("FullLine", "Bar:Top")
+    F  = ("FullLine", "DoubleBar:Top")
+    G  = ("MidLine", "Head:Middle", "DoubleBar:Middle")
+    H  = ("FullLine", "DownArms:Top", "DoubleBar:Middle")
+    I  = ("FullLine")
+    J  = ("FullLine", "SideArm:Top")
+    K  = ("FullLine", "DoubleSideArm:Top")
+    L  = ("MidLine", "PointUp:Middle")
+    M  = ("MidLine", "PointUp:Middle", "Bar:Middle")
+    N  = ("MidLine", "PointUp:Middle", "DoubleBar:Middle")
+    O  = ("MidLine", "Head:Middle")
+    P  = ("FullLine", "DownArms:Top", "SideArm:SubTop")
+    Q  = ("MidLine", "PointDown:Middle")
+    R  = ("MidLine", "UpArms:Middle", "DoubleBar:Middle")
+    S  = ("MidLine", "Head:Middle", "SideArm:Middle")
+    T  = ("MidLine", "Head:Middle", "DoubleSideArm:Middle")
+    U  = ("MidLine", "Bowl:Middle")
+    V  = ("MidLine", "Bowl:Middle", "Bar:Middle")
+    W  = ("MidLine", "Bowl:Middle", "DoubleBar:Middle")
+    X  = ("MidLine", "Crescent:Middle")
+    Y  = ("MidLine", "UpArms:Middle")
+    Z  = ("MidLine", "Crescent:Middle", "Bar:Middle")
     EA = ("FullLine", "Bar:Top", "DownArms:Top")
     OA = ("MidLine", "Head:Middle", "DownArms:Middle")
     OI = ("SubLine", "UpArms:SubTop", "Head:SubMiddle") # TODO: #11 Test if the double Symbol definitions actually work @Landhund
@@ -35,12 +35,13 @@ $SymbolTable = @{
     CH = ("SubLine", "DownArms:Top", "Head:SubMiddle", "Bar:SubMiddle")
     SH = ("SubLine", "DownArms:Top", "Head:SubMiddle", "SideArm:SubMiddle")
     TH = ("SubLine", "DownArms:Top", "Head:SubMiddle", "DoubleSideArm:SubMiddle")
-    ZH = ("MidLine", "Crescent:Middle","DoubleBar:Middle")
+    ZH = ("MidLine", "Crescent:Middle", "DoubleBar:Middle")
 }
+$SymbolTable | Out-Null # Just here so my editor doesn't complain about an unused variable
 #endregion
 
 #region Symbol Elements Definitions (abandon hope all ye who enter here)
-#TODO: #14 Test all Symbol-Element definitions @Landhund
+# TODO: #21 Correct the left-right orientation of asymmetrical Symbols, some are mirrored
 $SymbolElements = @{}
 $ElementCreator = New-Object System.Xml.XmlDocument
 
@@ -67,7 +68,7 @@ $SymbolElements["MidLine"] = $MidLine
 
 #region Definition of SubLine Element
 $SubLine = $ElementCreator.CreateElement("path")
-$SubLine.SetAttribute("d", "M 0,0 v 13")
+$SubLine.SetAttribute("d", "M 0,0 v 10")
 $SubLine.SetAttribute("stroke", "black")
 $SubLine.SetAttribute("stroke-width", "1")
 $SubLine.SetAttribute("id", "SubLine")
@@ -83,6 +84,7 @@ $Arm1.SetAttribute("d", "M 0,0 v -10")
 $Arm1.SetAttribute("stroke", "black")
 $Arm1.SetAttribute("stroke-width", "1")
 $Arm1.SetAttribute("transform", "rotate(45)")
+$Arm2 = $ElementCreator.CreateElement("path")
 $Arm2.SetAttribute("d", "M 0,0 v -10")
 $Arm2.SetAttribute("stroke", "black")
 $Arm2.SetAttribute("stroke-width", "1")
@@ -101,6 +103,7 @@ $Arm1.SetAttribute("d", "M 0,0 v 10")
 $Arm1.SetAttribute("stroke", "black")
 $Arm1.SetAttribute("stroke-width", "1")
 $Arm1.SetAttribute("transform", "rotate(45)")
+$Arm2 = $ElementCreator.CreateElement("path")
 $Arm2.SetAttribute("d", "M 0,0 v 10")
 $Arm2.SetAttribute("stroke", "black")
 $Arm2.SetAttribute("stroke-width", "1")
@@ -130,10 +133,11 @@ $Arm1.SetAttribute("d", "M 0,0 v -10")
 $Arm1.SetAttribute("stroke", "black")
 $Arm1.SetAttribute("stroke-width", "1")
 $Arm1.SetAttribute("transform", "rotate(45)")
-$Arm2.SetAttribute("d", "M 0,-2 v -10")
+$Arm2 = $ElementCreator.CreateElement("path")
+$Arm2.SetAttribute("d", "M 0,0 v -10")
 $Arm2.SetAttribute("stroke", "black")
 $Arm2.SetAttribute("stroke-width", "1")
-$Arm2.SetAttribute("transform", "rotate(45)")
+$Arm2.SetAttribute("transform", "matrix(0.707106781186548, 0.707106781186548, -0.707106781186548, 0.707106781186548, 0, -2)")
 $DoubleSideArm.AppendChild($Arm1)
 $DoubleSideArm.AppendChild($Arm2)
 $DoubleSideArm.SetAttribute("id", "DoubleSideArm")
@@ -157,6 +161,7 @@ $Bar1 = $ElementCreator.CreateElement("path")
 $Bar1.SetAttribute("d", "M -5,0 h 10")
 $Bar1.SetAttribute("stroke", "black")
 $Bar1.SetAttribute("stroke-width", "1")
+$Bar2 = $ElementCreator.CreateElement("path")
 $Bar2.SetAttribute("d", "M -5,-2 h 10")
 $Bar2.SetAttribute("stroke", "black")
 $Bar2.SetAttribute("stroke-width", "1")
@@ -174,6 +179,7 @@ $Head.SetAttribute("ry", "3")
 $Head.SetAttribute("transform", "translate(0,3)")
 $Head.SetAttribute("stroke", "black")
 $Head.SetAttribute("stroke-width", "1")
+$Head.SetAttribute("fill", "none")
 $Head.SetAttribute("id", "Head")
 
 $SymbolElements["Head"] = $Head
@@ -186,6 +192,7 @@ $RotationMatrix = "0.707106781186548, 0.707106781186548, -0.707106781186548, 0.7
 $PointUp.SetAttribute("transform", "matrix($RotationMatrix)")
 $PointUp.SetAttribute("stroke", "black")
 $PointUp.SetAttribute("stroke-width", "1")
+$PointUp.SetAttribute("fill", "none")
 $PointUp.SetAttribute("id", "PointUp")
 
 $SymbolElements["PointUp"] = $PointUp
@@ -197,6 +204,7 @@ $PointDown.SetAttribute("points", "-10,0 0,0 0,-10")
 $PointDown.SetAttribute("transform", "rotate(-135)")
 $PointDown.SetAttribute("stroke", "black")
 $PointDown.SetAttribute("stroke-width", "1")
+$PointDown.SetAttribute("fill", "none")
 $PointDown.SetAttribute("id", "PointDown")
 
 $SymbolElements["PointDown"] = $PointDown
@@ -204,9 +212,10 @@ $SymbolElements["PointDown"] = $PointDown
 
 #region Bowl Definition
 $Bowl = $ElementCreator.CreateElement("path")
-$Bowl.SetAttribute("d", "M 6,3 A 5 6 180 1 1 6 6")
+$Bowl.SetAttribute("d", "M 6,7 A 5 6 180 1 0 -6 7")
 $Bowl.SetAttribute("stroke", "black")
 $Bowl.SetAttribute("stroke-width", "1")
+$Bowl.SetAttribute("fill", "none")
 $Bowl.SetAttribute("id", "Bowl")
 
 $SymbolElements["Bowl"] = $Bowl
@@ -214,9 +223,10 @@ $SymbolElements["Bowl"] = $Bowl
 
 #region Crescent Defintion
 $Crescent = $ElementCreator.CreateElement("path")
-$Crescent.SetAttribute("d", "M 1,-3 h 6 v 6 h -6")
+$Crescent.SetAttribute("d", "M 1,0 h 6 v 6 h -6")
 $Crescent.SetAttribute("stroke", "black")
 $Crescent.SetAttribute("stroke-width", "1")
+$Crescent.SetAttribute("fill", "none")
 $Crescent.SetAttribute("id", "Crescent")
 
 $SymbolElements["Crescent"] = $Crescent
@@ -231,13 +241,40 @@ function Get-TirsuSymbol {
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [string]
-        $InputString
+        $InputID
     )
 
     # TODO: #9 Set up parsing function to find letter combinations that have a Combined Symbol @Landhund
 
-    # TODO: #6 Set up "assembly line" that combines the Symbol-Elements into a valid SVG-Group
+    $Positions = @{
+        Top       = 20
+        SubTop    = 18
+        Middle    = 13
+        SubMiddle = 11
+    }
+    $NamePositionSeparator = ":"
+    $Recipe = $SymbolTable[$InputID]
+    $NewSymbol = $ElementCreator.CreateElement("g")
+    $NewSymbol.SetAttribute("id", $InputID)
+    foreach ($Construct in $Recipe) {
+        if ($Construct -match "^([A-z])+:([A-z])+$") {
+            $Structure = $Construct.Split($NamePositionSeparator)
+            $ElementName = $Structure[0]
+            $ElementPosition = $Structure[1]
+
+            $NewGroup = $ElementCreator.CreateElement("g")
+            $VerticalPosition = $Positions[$ElementPosition]
+            $NewGroup.SetAttribute("transform", "translate(0, $VerticalPosition)")
+            $NewGroup.AppendChild($SymbolElements[$ElementName]) | Out-Null
+            $NewSymbol.AppendChild($NewGroup) | Out-Null
+        }
+        else {
+            $NewSymbol.AppendChild($SymbolElements[$Construct]) | Out-Null
+        }
+    }
+    return $NewSymbol
 }
 
 Export-ModuleMember Get-TirsuSymbol
-Export-ModuleMember -Variable $SymbolTable
+Export-ModuleMember -Variable SymbolTable
+Export-ModuleMember -Variable SymbolElements

@@ -1,0 +1,38 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Main Script Dryfire",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\New-Tirsu.ps1",
+            "cwd": "${workspaceFolder}",
+            "args": ["-InputWord", "Dryfire"]
+        },
+        {
+            "name": "Run Main Script",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\New-Tirsu.ps1",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Run Current File",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${file}",
+            "cwd": "${file}"
+        },
+        {
+            "name": "Create Alphabet",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\New-Tirsu.ps1",
+            "cwd": "${workspaceFolder}",
+            "args": ["-InputWord", "abcdefghijklmnopqrstuvwxyz"]
+        }
+    ]
+}
