@@ -25,6 +25,14 @@
             "request": "launch",
             "script": "${file}",
             "cwd": "${file}"
+        },
+        {
+            "name": "Create Alphabet",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}\\New-Tirsu.ps1",
+            "cwd": "${workspaceFolder}",
+            "args": ["-InputWord", "abcdefghijklmnopqrstuvwxyz"]
         }
     ]
 }

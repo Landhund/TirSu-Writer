@@ -18,31 +18,20 @@ begin {
 process {
     $Tirsu = Initialize-SVG -Title "Tir'su for '$InputWord'"
 
-    # $SymbolElementsKeys = $SymbolElements.GetEnumerator().Name
-    # $SymbolsNumber = -10
-    # foreach ($Key in $SymbolElementsKeys) {
-    #     $NewGroup = $Tirsu.CreateElement("g")
-    #     $NewGroup.SetAttribute("transform", "translate(" + $SymbolsNumber * 15 + ")")
-    #     $NewNode = $Tirsu.ImportNode($SymbolElements[$Key], $true)
-    #     $NewGroup.AppendChild($NewNode) | Out-Null
-    #     $Tirsu.svg.AppendChild($NewGroup) | Out-Null
-    #     $SymbolsNumber++
-    # }
-
-    # $SymbolsNumber = -10
-    # foreach ($Char in $InputWord.GetEnumerator()) {
-    #     $LibraryNode = Get-TirsuSymbol($Char)
-    #     $NewElement = $Tirsu.ImportNode($LibraryNode, $true)
-    #     $NewElement.SetAttribute("transform", "translate(" + $SymbolsNumber * 15 + ")")
-    #     $Tirsu.svg.AppendChild($NewElement)
-    #     $SymbolsNumber++
-    # }
-
-    $LibraryNode = Get-TirsuSymbol("B")
-    $NewElement = $Tirsu.ImportNode($LibraryNode, $true)
-    # $NewElement.SetAttribute("transform", "translate(" + $SymbolsNumber * 15 + ")")
-    $Tirsu.svg.AppendChild($NewElement)
-    $Tirsu.Save(".\.Tests\SymbolElements.svg")
+    $WordLength = $InputWord.Length
+    $StartPoint = - ($WordLength / 2 * 15)
+    $ValidSymbolKeys = $SymbolTable.GetEnumerator().Name
+    $Index = 0
+    foreach ($Char in $InputWord.GetEnumerator()) {
+        if ($ValidSymbolKeys -contains $Char) {
+            $LibraryNode = Get-TirsuSymbol($Char)
+            $NewElement = $Tirsu.ImportNode($LibraryNode, $true)
+            $NewElement.SetAttribute("transform", "translate(" + ($StartPoint + (15 * $Index)) + ")")
+            $Tirsu.svg.AppendChild($NewElement) | Out-Null
+            $Index++
+        }
+    }
+    $Tirsu.Save(".\.Tests\SymbolElementsTest.svg")
 }
 
 end {
