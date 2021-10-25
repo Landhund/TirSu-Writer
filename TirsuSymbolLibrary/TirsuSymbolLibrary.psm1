@@ -41,6 +41,7 @@ $SymbolTable | Out-Null # Just here so my editor doesn't complain about an unuse
 #endregion
 
 #region Symbol Elements Definitions (abandon hope all ye who enter here)
+# TODO: #21 Correct the left-right orientation of asymmetrical Symbols, some are mirrored
 $SymbolElements = @{}
 $ElementCreator = New-Object System.Xml.XmlDocument
 
