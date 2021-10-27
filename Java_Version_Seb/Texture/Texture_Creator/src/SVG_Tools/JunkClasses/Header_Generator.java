@@ -1,4 +1,4 @@
-package SVG_Tools;
+package SVG_Tools.JunkClasses;
 
 public class Header_Generator
 {

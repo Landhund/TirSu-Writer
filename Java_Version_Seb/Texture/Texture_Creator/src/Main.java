@@ -1,4 +1,4 @@
-import SVG_Tools.Element_Generator;
+
 import SVG_Tools.SVG_Constructor;
 
 import javax.imageio.ImageIO;
@@ -17,6 +17,8 @@ public class Main
 
         SVG_Constructor tester = new SVG_Constructor("Test von Origin Kreisen (Segmented und normal)");
         tester.saveSVG();
+
+
     }
 
 

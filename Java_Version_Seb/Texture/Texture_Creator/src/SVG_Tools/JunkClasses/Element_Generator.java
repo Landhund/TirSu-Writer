@@ -1,9 +1,5 @@
-package SVG_Tools;
+package SVG_Tools.JunkClasses;
 
-
-import SVG_Tools.SVG_Elements.Circle_Element;
-import SVG_Tools.SVG_Elements.General_Element;
-import com.sun.source.tree.BreakTree;
 
 import java.util.ArrayList;
 import java.util.List;

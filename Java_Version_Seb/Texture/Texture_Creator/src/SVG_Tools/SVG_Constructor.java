@@ -1,8 +1,8 @@
 package SVG_Tools;
 
-import SVG_Tools.SVG_Elements.Circle_Creator_V2;
-import SVG_Tools.SVG_Elements.Circle_Element;
-import SVG_Tools.SVG_Elements.General_Element;
+import SVG_Tools.JunkClasses.Element_Generator;
+import SVG_Tools.JunkClasses.Group_Generator;
+import SVG_Tools.JunkClasses.Header_Generator;
 
 import java.io.File;
 import java.io.FileWriter;
