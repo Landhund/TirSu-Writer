@@ -19,8 +19,6 @@ public class SVG_Main
         header_generator.createCenteredOnOriginViewbox(20, 20);
 
         Circle_Element testCircle = new Circle_Element()
-                .withCenterX(0)
-                .withCenterY(0)
                 .withRadius(8)
                 .withSegents(5);
         testCircle.appendAttribute(Global_Att.FILL, "none");
