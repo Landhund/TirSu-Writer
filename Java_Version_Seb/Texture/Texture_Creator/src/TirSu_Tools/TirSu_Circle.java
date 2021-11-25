@@ -9,7 +9,7 @@ public class TirSu_Circle
 
     public TirSu_Circle(String word)
     {
-
+        
     }
 
     public void TestSVG()
