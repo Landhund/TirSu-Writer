@@ -4,6 +4,7 @@ package SVG_Tools.JunkClasses;
 import java.util.ArrayList;
 import java.util.List;
 
+@Deprecated
 public class Element_Generator
 {
     private String structure;

@@ -1,6 +1,7 @@
 package SVG_Tools.JunkClasses;
 
 
+@Deprecated
 public class Group_Generator
 {
     private String resultingGroup = "";

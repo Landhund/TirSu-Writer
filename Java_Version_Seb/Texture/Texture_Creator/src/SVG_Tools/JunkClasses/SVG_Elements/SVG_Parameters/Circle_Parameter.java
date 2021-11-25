@@ -1,5 +1,6 @@
 package SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters;
 
+@Deprecated
 public enum Circle_Parameter implements IF_SVG_Parameter
 {
     CX("cx", "0"), CY("cy", "0"), R("r", "0"), SE("se", "0");

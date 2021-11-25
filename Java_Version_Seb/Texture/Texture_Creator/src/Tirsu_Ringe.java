@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+@Deprecated
 public class Tirsu_Ringe
 {
     public static void createRing(int size, boolean startTop) throws IOException

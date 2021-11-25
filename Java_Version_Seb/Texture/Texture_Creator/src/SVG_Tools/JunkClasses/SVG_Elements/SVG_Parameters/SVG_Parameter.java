@@ -1,5 +1,6 @@
 package SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters;
 
+@Deprecated
 public class SVG_Parameter implements IF_SVG_Parameter
 {
     private String name;

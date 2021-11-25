@@ -2,6 +2,8 @@ package SVG_Tools.JunkClasses.SVG_Elements;
 
 import SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters.SVG_Parameter;
 
+
+@Deprecated
 public class SVG_Element implements IF_SVG_Element
 {
 

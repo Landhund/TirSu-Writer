@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 // import java.util.Arrays;
 
+@Deprecated
 public class Circle_Generation
 {
 

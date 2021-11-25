@@ -2,6 +2,7 @@
 // import java.util.Collection;
 import java.util.Random;
 
+@Deprecated
 public class AreaHightmap
 {
     private double[][] hightmap;

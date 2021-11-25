@@ -3,7 +3,7 @@ package SVG_Tools.JunkClasses;
 import SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters.Circle_Parameter;
 
 
-
+@Deprecated
 public class Circle_Creator
 {
     private static int id = 0;

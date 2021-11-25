@@ -1,5 +1,6 @@
 package SVG_Tools.JunkClasses;
 
+@Deprecated
 public class Header_Generator
 {
 
