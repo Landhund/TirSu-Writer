@@ -4,6 +4,7 @@ package SVG_Tools;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Circle_Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
+import SVG_Tools.New_SVG_Workspace.Element_Workspace.Line_Element;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
 
 import java.io.File;
@@ -24,10 +25,17 @@ public class SVG_Main
         testCircle.appendAttribute(Global_Att.FILL, "none");
         testCircle.appendAttribute(Global_Att.STROKE, "black");
 
+        Line_Element testLine = new Line_Element()
+                .withStartPoint(0,-10)
+                .withEndPoint(0, 10);
+        testLine.appendAttribute(Global_Att.FILL, "none");
+        testLine.appendAttribute(Global_Att.STROKE, "black");
+
+        System.out.println(testLine.toString());
         System.out.println(testCircle.toString());
 
         // Build
-        saveSVG(header_generator, testCircle);
+        saveSVG(header_generator, testCircle, testLine);
     }
 
     public static void saveSVG(Header_Generator header, Element... element)
@@ -50,7 +58,7 @@ public class SVG_Main
             fileWriter.write(header.getHeader());
             for (Element ele : element)
             {
-                fileWriter.write("  " + ele.toString());
+                fileWriter.write("  " + ele.toString() + "\n");
             }
             fileWriter.write("\n</svg>");
             fileWriter.close();
