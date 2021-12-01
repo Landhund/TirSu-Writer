@@ -1,19 +1,8 @@
 package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
-public enum Global_Att implements Attribute
-{
-
-    ID("id", "0"),
-    TABINDEX("tabindex", "0"),
-    FILL("fill", "none"),
-    FILL_OPACITY("fill-opacity", "1"),
-    STROKE("stroke", "black"),
-    STROKE_DASHARRAY("stroke-dasharray", ""),
-    STROKE_DASHOFFSET("stroke-dashoffset", "0"),
-    STROKE_LINECAP("stroke-linecap", "butt"),
-    STROKE_LINEJOIN("stroke-linejoin", "miter"),
-    TRANSFORM("transform", ""),
-    PATHLENGTH("pathLength", "0");
+public enum Line_Att  implements Attribute{
+   
+    X1("x1", "0"), X2("x2", "0"), Y1("y1", "0"), Y2("y2", "0");
 
     /**
      *
@@ -21,11 +10,11 @@ public enum Global_Att implements Attribute
      * @param defaultValue parameter that should be set as default if no additional information are given
      */
 
-    Global_Att(String identifier, String defaultValue)
-            {
+    Line_Att(String identifier, String defaultValue)
+    {
         this.identifier = identifier;
         this.defaultValue = defaultValue;
-            }
+    }
 
     String identifier;
     String defaultValue;
@@ -54,11 +43,12 @@ public enum Global_Att implements Attribute
     @Override
     public boolean isEquals(Attribute attribute)
     {
-        if (attribute instanceof Global_Att)
+        if (attribute instanceof Line_Att)
         {
-            Global_Att attributeIn = (Global_Att) attribute;
+            Line_Att attributeIn = (Line_Att) attribute;
             return attributeIn == this;
         }
         else return false;
     }
+
 }

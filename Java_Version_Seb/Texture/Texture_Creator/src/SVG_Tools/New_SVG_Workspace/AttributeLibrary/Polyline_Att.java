@@ -1,19 +1,8 @@
 package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
-public enum Global_Att implements Attribute
+public enum Polyline_Att implements Attribute
 {
-
-    ID("id", "0"),
-    TABINDEX("tabindex", "0"),
-    FILL("fill", "none"),
-    FILL_OPACITY("fill-opacity", "1"),
-    STROKE("stroke", "black"),
-    STROKE_DASHARRAY("stroke-dasharray", ""),
-    STROKE_DASHOFFSET("stroke-dashoffset", "0"),
-    STROKE_LINECAP("stroke-linecap", "butt"),
-    STROKE_LINEJOIN("stroke-linejoin", "miter"),
-    TRANSFORM("transform", ""),
-    PATHLENGTH("pathLength", "0");
+    POINTS("polyline","0,0");
 
     /**
      *
@@ -21,11 +10,11 @@ public enum Global_Att implements Attribute
      * @param defaultValue parameter that should be set as default if no additional information are given
      */
 
-    Global_Att(String identifier, String defaultValue)
-            {
+    Polyline_Att(String identifier, String defaultValue)
+    {
         this.identifier = identifier;
         this.defaultValue = defaultValue;
-            }
+    }
 
     String identifier;
     String defaultValue;
@@ -54,9 +43,9 @@ public enum Global_Att implements Attribute
     @Override
     public boolean isEquals(Attribute attribute)
     {
-        if (attribute instanceof Global_Att)
+        if (attribute instanceof Polyline_Att)
         {
-            Global_Att attributeIn = (Global_Att) attribute;
+            Polyline_Att attributeIn = (Polyline_Att) attribute;
             return attributeIn == this;
         }
         else return false;
