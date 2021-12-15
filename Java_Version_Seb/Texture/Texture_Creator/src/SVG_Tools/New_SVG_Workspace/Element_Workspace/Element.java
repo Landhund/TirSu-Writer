@@ -18,4 +18,6 @@ public interface Element
     boolean containsMinAttributes();
 
     void appendAttribute(Global_Att global_att, String value);
+
+    void removeGlobalAttribute(Global_Att att);
 }

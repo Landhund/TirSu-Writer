@@ -1,6 +1,6 @@
 package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
-import com.sun.source.tree.BreakTree;
+
 
 import java.util.Objects;
 
@@ -52,6 +52,8 @@ public class AttributeValue
         return this;
     }
 
+    
+
     /**
      * Syntax to return an attribut in the correct format
      * @return
@@ -67,11 +69,16 @@ public class AttributeValue
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AttributeValue that = (AttributeValue) o;
-        return Objects.equals(attribute, that.attribute);
+        return (this.attribute.equals(that.getAttribute())) ? true : false;
     }
 
     public String getValue()
     {
         return value;
+    }
+
+    public Attribute getAttribute()
+    {
+        return attribute;
     }
 }

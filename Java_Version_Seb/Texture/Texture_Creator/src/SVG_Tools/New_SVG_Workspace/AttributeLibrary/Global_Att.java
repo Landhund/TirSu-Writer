@@ -1,5 +1,9 @@
 package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
+import java.util.HashSet;
+
+import org.w3c.dom.Attr;
+
 public enum Global_Att implements Attribute
 {
 
@@ -29,7 +33,7 @@ public enum Global_Att implements Attribute
 
     String identifier;
     String defaultValue;
-
+    private static HashSet<Attribute> values = new HashSet<Attribute>();;
 
     /** Methode to return the Identifier from the Parameter
      *
@@ -54,11 +58,26 @@ public enum Global_Att implements Attribute
     @Override
     public boolean isEquals(Attribute attribute)
     {
-        if (attribute instanceof Global_Att)
+        if (getEnums().contains(attribute))
         {
             Global_Att attributeIn = (Global_Att) attribute;
             return attributeIn == this;
         }
         else return false;
+    }
+
+    private static HashSet<Attribute> getEnums() 
+    {
+        for (Attribute c : Global_Att.values()) 
+        {
+            values.add(c);
+        }
+      
+        return values;
+    }
+
+    public static boolean isInEnum(Attribute att)
+    {
+        return (getEnums().contains(att)) ? true : false;
     }
 }

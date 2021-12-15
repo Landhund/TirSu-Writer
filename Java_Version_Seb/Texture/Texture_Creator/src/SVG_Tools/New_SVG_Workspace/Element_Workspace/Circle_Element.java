@@ -12,7 +12,7 @@ import static SVG_Tools.New_SVG_Workspace.AttributeLibrary.Circle_Att.*;
 public class Circle_Element implements Element
 {
 
-    List<AttributeValue> attributeValues = new ArrayList<>();
+    private List<AttributeValue> attributeValues = new ArrayList<>();
 
     public Circle_Element()
     {
@@ -100,7 +100,6 @@ public class Circle_Element implements Element
     public List<AttributeValue> getAttributeValues() {
         return attributeValues;
     }
-
 
     /**
      * Check if all 3 important Parameters are contained in the Circle Element
@@ -203,5 +202,11 @@ public class Circle_Element implements Element
         double angleOfSegment = 360.0/segmentAmount;
         double angleOfSegmentStroke = (angleOfSegment/5)*3;
         return angleOfSegmentStroke-90;
+    }
+
+    @Override
+    public void removeGlobalAttribute(Global_Att att) 
+    {
+        this.attributeValues.remove(new AttributeValue(att));
     }
 }

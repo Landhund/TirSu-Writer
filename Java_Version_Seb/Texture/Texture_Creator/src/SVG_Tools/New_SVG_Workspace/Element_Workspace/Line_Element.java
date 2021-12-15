@@ -211,5 +211,12 @@ public class Line_Element implements Element
         }
         else return null;
     }
+
+
+    @Override
+    public void removeGlobalAttribute(Global_Att att) 
+    {
+        this.attributeValues.remove(new AttributeValue(att));
+    }
  
 }

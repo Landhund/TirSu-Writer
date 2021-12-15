@@ -4,6 +4,7 @@ package SVG_Tools;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Circle_Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
+import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Line_Element;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
 
@@ -34,8 +35,12 @@ public class SVG_Main
         System.out.println(testLine.toString());
         System.out.println(testCircle.toString());
 
+        Group_Element group = new Group_Element(true, testCircle, testLine);
+
+        System.out.println("\n" + group.toString());
+
         // Build
-        saveSVG(header_generator, testCircle, testLine);
+        saveSVG(header_generator, group);
     }
 
     public static void saveSVG(Header_Generator header, Element... element)
