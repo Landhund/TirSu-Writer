@@ -53,6 +53,15 @@ public class Group_Element implements Element
 
     // --------------- Methodes --------------- \\
 
+
+    public void addElementsToGroup(Element... elements)
+    {
+        for (Element element : elements)
+        {
+            this.groupedElements.add(element);
+        }
+    }
+
     private boolean filter_Global_Att_ToGroup()
     {
         List<AttributeValue> groupableAttributes = new ArrayList<>();

@@ -4,17 +4,36 @@ package SVG_Tools;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.*;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
+import TirSu_Tools.Symbol_Library.Letter_Element;
+import TirSu_Tools.Symbol_Library.TirSu_Alphabet;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class SVG_Main
 {
     public static void main(String[] args)
     {
+        Header_Generator header_generator = new Header_Generator();
+        header_generator.createSVGHeader(1000, 1000);
+        header_generator.createCenteredOnOriginViewbox(80, 80);
+
+        // testSVG();
+
+        Group_Element group = TirSu_Alphabet.A.getLetter();
+
+        /* Build */
+        saveSVG("LetterA", header_generator, true, group);
+    }
+
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    private static void testSVG() {
         Header_Generator header_generator = new Header_Generator();
         header_generator.createSVGHeader(1000, 1000);
         header_generator.createCenteredOnOriginViewbox(20, 20);
@@ -25,19 +44,20 @@ public class SVG_Main
         testCircle.appendAttribute(Global_Att.FILL, "none");
         testCircle.appendAttribute(Global_Att.STROKE, "black");
 
-        Rectangle_Element testRec =  new Rectangle_Element()
-                .withXandY(-5,-5)
-                .withWidthAndHeight(10,10);
+        Rectangle_Element testRec = new Rectangle_Element()
+                .withXandY(-5, -5)
+                .withWidthAndHeight(10, 10);
         testRec.appendAttribute(Global_Att.FILL, "none");
         testRec.appendAttribute(Global_Att.STROKE, "black");
 
         Group_Element group = new Group_Element(true, testCircle, testRec);
 
-    
 
         // Build
-        saveSVG(header_generator, true, group);
+        saveSVG("Test_SVG",header_generator, true, group);
     }
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     public static void saveSVG(Header_Generator header, Element... element)
     {
@@ -68,13 +88,13 @@ public class SVG_Main
         }
     }
 
-    public static void saveSVG(Header_Generator header, boolean override, Element... element)
+    public static void saveSVG(String savename, Header_Generator header, boolean override, Element... element)
     {
 
         if (override == true)
         {
             try {
-                Files.deleteIfExists(Path.of("Test_SVG" + ".svg"));
+                Files.deleteIfExists(Path.of(savename + ".svg"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -83,7 +103,7 @@ public class SVG_Main
 
 
         try {
-            File file1 = new File("Test_SVG" + ".svg");
+            File file1 = new File(savename + ".svg");
             if (file1.createNewFile()) {
                 System.out.println("File created: " + file1.getName());
             } else {
@@ -95,7 +115,7 @@ public class SVG_Main
         }
 
         try {
-            FileWriter fileWriter = new FileWriter("Test_SVG" + ".svg");
+            FileWriter fileWriter = new FileWriter(savename + ".svg");
             fileWriter.write(header.getHeader());
             for (Element ele : element)
             {
