@@ -26,6 +26,7 @@ public class SVG_Main
         testCircle.appendAttribute(Global_Att.STROKE, "black");
 
         Rectangle_Element testRec =  new Rectangle_Element()
+                .withXandY(-5,-5)
                 .withWidthAndHeight(10,10);
         testRec.appendAttribute(Global_Att.FILL, "none");
         testRec.appendAttribute(Global_Att.STROKE, "black");
