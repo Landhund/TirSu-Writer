@@ -24,14 +24,14 @@ public class Line_Element implements Element
      * @param x1_pos
      * @param y1_pos 
      */
-    public Line_Element withStartPoint(int x_pos, int y_pos)
+    public Line_Element withStartPoint(int x1_pos, int y1_pos)
     {
         AttributeValue testerX = new AttributeValue(Line_Att.X1);
         AttributeValue testerY = new AttributeValue(Line_Att.Y1);
         if (attributeValues.contains(testerX) && attributeValues.contains(testerY))
         {
-            attributeValues.get(attributeValues.indexOf(testerX)).withValue(x_pos);
-            attributeValues.get(attributeValues.indexOf(testerY)).withValue(y_pos);
+            attributeValues.get(attributeValues.indexOf(testerX)).withValue(x1_pos);
+            attributeValues.get(attributeValues.indexOf(testerY)).withValue(y1_pos);
         }
         return this;
     }
@@ -41,14 +41,14 @@ public class Line_Element implements Element
      * @param x2_pos
      * @param y2_pos 
      */
-    public Line_Element withEndPoint(int x_pos, int y_pos)
+    public Line_Element withEndPoint(int x2_pos, int y2_pos)
     {
         AttributeValue testerX = new AttributeValue(Line_Att.X2);
         AttributeValue testerY = new AttributeValue(Line_Att.Y2);
         if (attributeValues.contains(testerX) && attributeValues.contains(testerY))
         {
-            attributeValues.get(attributeValues.indexOf(testerX)).withValue(x_pos);
-            attributeValues.get(attributeValues.indexOf(testerY)).withValue(y_pos);
+            attributeValues.get(attributeValues.indexOf(testerX)).withValue(x2_pos);
+            attributeValues.get(attributeValues.indexOf(testerY)).withValue(y2_pos);
         }
         return this;
     }
@@ -59,12 +59,12 @@ public class Line_Element implements Element
      * Add a value to a relevant Element
      * @param x1_pos
      */
-    public Line_Element withX1(int x_pos)
+    public Line_Element withX1(int x1_pos)
     {
         AttributeValue tester = new AttributeValue(Line_Att.X1);
         if (attributeValues.contains(tester))
         {
-            attributeValues.get(attributeValues.indexOf(tester)).withValue(x_pos);
+            attributeValues.get(attributeValues.indexOf(tester)).withValue(x1_pos);
         }
         return this;
     }
@@ -73,12 +73,12 @@ public class Line_Element implements Element
      * Add a value to a relevant Element
      * @param y1_pos
      */
-    public Line_Element withY1(int y_pos)
+    public Line_Element withY1(int y1_pos)
     {
         AttributeValue tester = new AttributeValue(Line_Att.Y1);
         if (attributeValues.contains(tester))
         {
-            attributeValues.get(attributeValues.indexOf(tester)).withValue(y_pos);
+            attributeValues.get(attributeValues.indexOf(tester)).withValue(y1_pos);
         }
         return this;
     }
@@ -87,26 +87,26 @@ public class Line_Element implements Element
      * Add a value to a relevant Element
      * @param x2_pos
      */
-    public Line_Element withX2(int x_pos)
+    public Line_Element withX2(int x2_pos)
     {
         AttributeValue tester = new AttributeValue(Line_Att.X2);
         if (attributeValues.contains(tester))
         {
-            attributeValues.get(attributeValues.indexOf(tester)).withValue(x_pos);
+            attributeValues.get(attributeValues.indexOf(tester)).withValue(x2_pos);
         }
         return this;
     }
 
     /**
      * Add a value to a relevant Element
-     * @param y1_pos
+     * @param y2_pos
      */
-    public Line_Element withY2(int y_pos)
+    public Line_Element withY2(int y2_pos)
     {
         AttributeValue tester = new AttributeValue(Line_Att.Y2);
         if (attributeValues.contains(tester))
         {
-            attributeValues.get(attributeValues.indexOf(tester)).withValue(y_pos);
+            attributeValues.get(attributeValues.indexOf(tester)).withValue(y2_pos);
         }
         return this;
     }

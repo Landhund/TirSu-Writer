@@ -5,12 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch SVG_Main",
+            "request": "launch",
+            "mainClass": "SVG_Tools.SVG_Main",
+            "projectName": "TirSu-Writer_8be6b22a"
+        },
+        {
             "name": "Main Script Dryfire",
             "type": "PowerShell",
             "request": "launch",
             "script": "${workspaceFolder}\\New-Tirsu.ps1",
             "cwd": "${workspaceFolder}",
-            "args": ["-InputWord", "Dryfire"]
+            "args": [
+                "-InputWord",
+                "Dryfire"
+            ]
         },
         {
             "name": "Run Main Script",
@@ -32,7 +42,10 @@
             "request": "launch",
             "script": "${workspaceFolder}\\New-Tirsu.ps1",
             "cwd": "${workspaceFolder}",
-            "args": ["-InputWord", "abcdefghijklmnopqrstuvwxyz"]
+            "args": [
+                "-InputWord",
+                "abcdefghijklmnopqrstuvwxyz"
+            ]
         }
     ]
 }

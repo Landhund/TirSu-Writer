@@ -11,6 +11,8 @@ import SVG_Tools.New_SVG_Workspace.Header_Generator;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class SVG_Main
 {
@@ -26,28 +28,19 @@ public class SVG_Main
         testCircle.appendAttribute(Global_Att.FILL, "none");
         testCircle.appendAttribute(Global_Att.STROKE, "black");
 
-        Line_Element testLine = new Line_Element()
-                .withStartPoint(0,-10)
-                .withEndPoint(0, 10);
-        testLine.appendAttribute(Global_Att.FILL, "none");
-        testLine.appendAttribute(Global_Att.STROKE, "black");
+        Group_Element group = new Group_Element(true, testCircle);
 
-        System.out.println(testLine.toString());
-        System.out.println(testCircle.toString());
-
-        Group_Element group = new Group_Element(true, testCircle, testLine);
-
-        System.out.println("\n" + group.toString());
+    
 
         // Build
-        saveSVG(header_generator, group);
+        saveSVG(header_generator, true, group);
     }
 
     public static void saveSVG(Header_Generator header, Element... element)
     {
 
         try {
-            File file1 = new File("NewExperimental" + ".svg");
+            File file1 = new File("SVG_Test" + ".svg");
             if (file1.createNewFile()) {
                 System.out.println("File created: " + file1.getName());
             } else {
@@ -59,13 +52,53 @@ public class SVG_Main
         }
 
         try {
-            FileWriter fileWriter = new FileWriter("NewExperimental" + ".svg");
+            FileWriter fileWriter = new FileWriter("NewExperimental_5" + ".svg");
             fileWriter.write(header.getHeader());
             for (Element ele : element)
             {
                 fileWriter.write("  " + ele.toString() + "\n");
             }
             fileWriter.write("\n</svg>");
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void saveSVG(Header_Generator header, boolean override, Element... element)
+    {
+
+        if (override == true)
+        {
+            try {
+                Files.deleteIfExists(Path.of("Test_SVG" + ".svg"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Override File!");
+        }
+
+
+        try {
+            File file1 = new File("Test_SVG" + ".svg");
+            if (file1.createNewFile()) {
+                System.out.println("File created: " + file1.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        try {
+            FileWriter fileWriter = new FileWriter("Test_SVG" + ".svg");
+            fileWriter.write(header.getHeader());
+            for (Element ele : element)
+            {
+                fileWriter.write("  " + ele.toString() + "\n");
+            }
+            fileWriter.write("</svg>");
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
