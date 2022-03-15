@@ -227,7 +227,7 @@ public class Rectangle_Element implements Element
         String x = "";
         String y = "";
         String width = "";
-        String hight = "";
+        String height = "";
         String rx = "";
         String ry = "";
 
@@ -250,7 +250,7 @@ public class Rectangle_Element implements Element
                 }
                 else if (attributeValue.equals(new AttributeValue(Rectangle_Att.HEIGHT)))
                 {
-                    hight = attributeValue.getValue();
+                    height = attributeValue.getValue();
                 }
                 else if (attributeValue.equals(new AttributeValue(Rectangle_Att.RX)))
                 {
@@ -263,7 +263,7 @@ public class Rectangle_Element implements Element
                 rectangle_Element += " " + attributeValue.toString();
             }
             rectangle_Element += "/>";
-            System.out.println(x + " " + y + " " + width + " " + hight + " " + rx + " " + ry );
+            System.out.println(x + " " + y + " " + width + " " + height + " " + rx + " " + ry );
             return rectangle_Element;
         }
         else return null;

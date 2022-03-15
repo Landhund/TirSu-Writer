@@ -69,7 +69,7 @@ public class Circle_Element implements Element
      * @param segmentAmounnt
      * @return
      */
-    public Circle_Element withSegents(int segmentAmounnt)
+    public Circle_Element withSegments(int segmentAmounnt)
     {
         if (attributeValues.contains(Circle_Att.SE))
         {

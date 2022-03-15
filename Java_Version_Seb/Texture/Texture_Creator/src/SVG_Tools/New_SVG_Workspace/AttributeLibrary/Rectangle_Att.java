@@ -4,7 +4,7 @@ public enum Rectangle_Att implements Attribute {
     X("x", "0"),
     Y("y", "0"),
     WIDTH("width", "100%"),
-    HEIGHT("hight", "100%"),
+    HEIGHT("height", "100%"),
     RX("rx", "auto"),
     RY("ry", "auto");
 

@@ -2,10 +2,7 @@ package SVG_Tools;
 
 
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
-import SVG_Tools.New_SVG_Workspace.Element_Workspace.Circle_Element;
-import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
-import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
-import SVG_Tools.New_SVG_Workspace.Element_Workspace.Line_Element;
+import SVG_Tools.New_SVG_Workspace.Element_Workspace.*;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
 
 import java.io.File;
@@ -24,11 +21,16 @@ public class SVG_Main
 
         Circle_Element testCircle = new Circle_Element()
                 .withRadius(8)
-                .withSegents(5);
+                .withSegments(5);
         testCircle.appendAttribute(Global_Att.FILL, "none");
         testCircle.appendAttribute(Global_Att.STROKE, "black");
 
-        Group_Element group = new Group_Element(true, testCircle);
+        Rectangle_Element testRec =  new Rectangle_Element()
+                .withWidthAndHeight(10,10);
+        testRec.appendAttribute(Global_Att.FILL, "none");
+        testRec.appendAttribute(Global_Att.STROKE, "black");
+
+        Group_Element group = new Group_Element(true, testCircle, testRec);
 
     
 
