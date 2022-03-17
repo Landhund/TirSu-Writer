@@ -2,7 +2,8 @@ package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
 public enum Polyline_Att implements Attribute
 {
-    POINTS("polyline","0,0");
+    POINTS("points","0,0"),
+    PATHLENGTH("pathLength", "none");
 
     /**
      *

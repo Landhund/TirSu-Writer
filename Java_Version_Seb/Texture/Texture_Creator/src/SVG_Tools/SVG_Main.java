@@ -1,6 +1,7 @@
 package SVG_Tools;
 
 
+import SVG_Tools.New_SVG_Workspace.AttributeLibrary.AttributeValue;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.*;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
@@ -24,10 +25,61 @@ public class SVG_Main
 
         // testSVG();
 
-        Group_Element group = TirSu_Alphabet.A.getLetter();
+        Group_Element a = TirSu_Alphabet.A.getLetter(); a.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element b = TirSu_Alphabet.B.getLetter(); b.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element c = TirSu_Alphabet.C.getLetter(); c.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element d = TirSu_Alphabet.D.getLetter(); d.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element e = TirSu_Alphabet.E.getLetter(); e.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element f = TirSu_Alphabet.F.getLetter(); f.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element g = TirSu_Alphabet.G.getLetter(); g.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element h = TirSu_Alphabet.H.getLetter(); h.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element i = TirSu_Alphabet.I.getLetter(); i.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element j = TirSu_Alphabet.J.getLetter(); j.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element k = TirSu_Alphabet.K.getLetter(); k.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element l = TirSu_Alphabet.L.getLetter(); l.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element m = TirSu_Alphabet.M.getLetter(); m.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element n = TirSu_Alphabet.N.getLetter(); n.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element o = TirSu_Alphabet.O.getLetter(); o.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element p = TirSu_Alphabet.P.getLetter(); p.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element q = TirSu_Alphabet.Q.getLetter(); q.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element r = TirSu_Alphabet.R.getLetter(); r.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element s = TirSu_Alphabet.S.getLetter(); s.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element t = TirSu_Alphabet.T.getLetter(); t.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element u = TirSu_Alphabet.U.getLetter(); u.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element v = TirSu_Alphabet.V.getLetter(); v.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element w = TirSu_Alphabet.W.getLetter(); w.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element x = TirSu_Alphabet.X.getLetter(); x.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element y = TirSu_Alphabet.Y.getLetter(); y.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element z = TirSu_Alphabet.Z.getLetter(); z.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+
 
         /* Build */
-        saveSVG("LetterA", header_generator, true, group);
+        saveSVG("LetterA,V2", header_generator, true, a);
+        saveSVG("LetterB,V2", header_generator, true, b);
+        saveSVG("LetterC,V2", header_generator, true, c);
+        saveSVG("LetterD,V2", header_generator, true, d);
+        saveSVG("LetterE,V2", header_generator, true, e);
+        saveSVG("LetterF,V2", header_generator, true, f);
+        saveSVG("LetterG,V2", header_generator, true, g);
+        saveSVG("LetterH,V2", header_generator, true, h);
+        saveSVG("LetterI,V2", header_generator, true, i);
+        saveSVG("LetterJ,V2", header_generator, true, j);
+        saveSVG("LetterK,V2", header_generator, true, k);
+        saveSVG("LetterL,V2", header_generator, true, l);
+        saveSVG("LetterM,V2", header_generator, true, m);
+        saveSVG("LetterN,V2", header_generator, true, n);
+        saveSVG("LetterO,V2", header_generator, true, o);
+        saveSVG("LetterP,V2", header_generator, true, p);
+        saveSVG("LetterQ,V2", header_generator, true, q);
+        saveSVG("LetterR,V2", header_generator, true, r);
+        saveSVG("LetterS,V2", header_generator, true, s);
+        saveSVG("LetterT,V2", header_generator, true, t);
+        saveSVG("LetterU,V2", header_generator, true, u);
+        saveSVG("LetterV,V2", header_generator, true, v);
+        saveSVG("LetterW,V2", header_generator, true, w);
+        saveSVG("LetterX,V2", header_generator, true, x);
+        saveSVG("LetterY,V2", header_generator, true, y);
+        saveSVG("LetterZ,V2", header_generator, true, z);
     }
 
 

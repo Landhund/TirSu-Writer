@@ -1,12 +1,11 @@
 package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
-public enum Rectangle_Att implements Attribute {
-    X("x", "0"),
-    Y("y", "0"),
-    WIDTH("width", "100%"),
-    HEIGHT("height", "100%"),
-    RX("rx", "auto"),
-    RY("ry", "auto"),
+public enum Ellipse_Att implements Attribute
+{
+    CX("cx", "0"),
+    CY("cy", "0"),
+    RX("rx", "0"),
+    RY("ry","0"),
     PATHLENGTH("pathLength", "none");
 
     /**
@@ -15,7 +14,7 @@ public enum Rectangle_Att implements Attribute {
      * @param defaultValue parameter that should be set as default if no additional information are given
      */
 
-    Rectangle_Att(String identifier, String defaultValue)
+    Ellipse_Att(String identifier, String defaultValue)
     {
         this.identifier = identifier;
         this.defaultValue = defaultValue;
@@ -48,9 +47,9 @@ public enum Rectangle_Att implements Attribute {
     @Override
     public boolean isEquals(Attribute attribute)
     {
-        if (attribute instanceof Rectangle_Att)
+        if (attribute instanceof Ellipse_Att)
         {
-            Rectangle_Att attributeIn = (Rectangle_Att) attribute;
+            Ellipse_Att attributeIn = (Ellipse_Att) attribute;
             return attributeIn == this;
         }
         else return false;

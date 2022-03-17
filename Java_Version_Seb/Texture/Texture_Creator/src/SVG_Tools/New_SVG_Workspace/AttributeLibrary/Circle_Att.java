@@ -2,7 +2,11 @@ package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
 public enum Circle_Att implements Attribute
 {
-    CX("cx", "0"), CY("cy", "0"), R("r", "0"), SE("se", "0");
+    CX("cx", "0"),
+    CY("cy", "0"),
+    R("r", "0"),
+    PATHLENGTH("pathLength", "none"),
+    SE("se", "0");
 
     /**
      *

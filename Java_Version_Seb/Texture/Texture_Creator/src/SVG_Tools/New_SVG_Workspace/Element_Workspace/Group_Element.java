@@ -146,8 +146,17 @@ public class Group_Element implements Element
     }
 
     @Override
-    public void appendAttribute(Global_Att global_att, String value) {
-        // TODO Auto-generated method stub
+    public void appendAttribute(Global_Att global_att, String value)
+    {
+        AttributeValue tester = new AttributeValue(global_att).withValue(value);
+        if (attributeValues.contains(tester))
+        {
+            attributeValues.get(attributeValues.indexOf(tester)).withValue(value);
+        }
+        else
+        {
+            attributeValues.add(tester);
+        }
     }
 
     @Override

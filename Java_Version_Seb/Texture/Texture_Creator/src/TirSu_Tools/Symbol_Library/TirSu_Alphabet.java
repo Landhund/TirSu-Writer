@@ -14,7 +14,32 @@ import java.util.List;
 public enum TirSu_Alphabet 
 {
 
-    A("a", Letter_Element.HEAD_ROOF, Letter_Element.CENTER_LINE_LONG);
+    A("a", Letter_Element.HEAD_ROOF, Letter_Element.CENTER_LINE_LONG, Letter_Element.NECK_HIGH_LONG),
+    B("b", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH, Letter_Element.NECK_HIGH_Short),
+    C("c", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH, Letter_Element.NECK_HIGH_Short),
+    D("d", Letter_Element.HEAD_ROOF, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH,Letter_Element.NECK_HIGH_LONG),
+    E("e", Letter_Element.HEAD_T, Letter_Element.CENTER_LINE_LONG, Letter_Element.NECK_HIGH_LONG),
+    F("f", Letter_Element.HEAD_DOUBLE_T, Letter_Element.CENTER_LINE_LONG, Letter_Element.NECK_HIGH_LONG),
+    G("g", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH, Letter_Element.T_ARM_MID,Letter_Element.NECK_HIGH_Short),
+    H("h", Letter_Element.HEAD_ROOF, Letter_Element.T_ARM_HIGH, Letter_Element.T_ARM_MID, Letter_Element.CENTER_LINE_LONG,Letter_Element.NECK_HIGH_LONG),
+    I("i", Letter_Element.NECK_HIGH_LONG, Letter_Element.CENTER_LINE_LONG,Letter_Element.NECK_HIGH_LONG,Letter_Element.NECK_HIGH_LONG),
+    J("j", Letter_Element.HEAD_ARM_RIGHT, Letter_Element.CENTER_LINE_LONG, Letter_Element.NECK_HIGH_LONG),
+    K("k", Letter_Element.HEAD_DOUBLE_ARM_RIGHT, Letter_Element.CENTER_LINE_LONG, Letter_Element.NECK_HIGH_Short),
+    L("l", Letter_Element.HEAD_TRIANGLE, Letter_Element.CENTER_LINE_LONG, Letter_Element.NECK_HIGH_Short),
+    M("m", Letter_Element.HEAD_TRIANGLE, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH, Letter_Element.NECK_HIGH_Short),
+    N("n", Letter_Element.HEAD_TRIANGLE, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH, Letter_Element.T_ARM_MID, Letter_Element.NECK_HIGH_Short),
+    O("o", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.CENTER_LINE_LONG,Letter_Element.NECK_HIGH_Short),
+    P("p", Letter_Element.HEAD_DOUBLE_ARM_RIGHT, Letter_Element.HEAD_ROOF, Letter_Element.NECK_HIGH_LONG, Letter_Element.CENTER_LINE_LONG),
+    Q("q", Letter_Element.HEAD_TRIANGLE_INVERSE, Letter_Element.NECK_HIGH_Short, Letter_Element.CENTER_LINE_LONG),
+    R("r", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG,Letter_Element.ARM_RIGHT_HIGH,Letter_Element.ARM_RIGHT_MID),
+    S("s", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.ARM_RIGHT_HIGH, Letter_Element.CENTER_LINE_LONG),
+    T("t", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.ARM_RIGHT_HIGH, Letter_Element.ARM_RIGHT_MID, Letter_Element.CENTER_LINE_LONG),
+    U("u", Letter_Element.HEAD_U_HIGH,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG),
+    V("v", Letter_Element.HEAD_U_HIGH,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG,Letter_Element.T_ARM_HIGH),
+    W("w",Letter_Element.HEAD_U_HIGH,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG,Letter_Element.T_ARM_HIGH,Letter_Element.T_ARM_MID),
+    X("x", Letter_Element.HEAD_RIGHT_OPEN_SQUARE_HIGH,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG),
+    Y("y", Letter_Element.HEAD_ROOF_INVERTED,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG),
+    Z("z", Letter_Element.HEAD_RIGHT_OPEN_SQUARE_HIGH,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG,Letter_Element.T_ARM_HIGH);
 
     private TirSu_Alphabet(String letter, Letter_Element... elements)
     {

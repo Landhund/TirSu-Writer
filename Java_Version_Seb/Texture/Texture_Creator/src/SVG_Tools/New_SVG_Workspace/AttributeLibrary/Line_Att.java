@@ -2,7 +2,11 @@ package SVG_Tools.New_SVG_Workspace.AttributeLibrary;
 
 public enum Line_Att  implements Attribute{
    
-    X1("x1", "0"), X2("x2", "0"), Y1("y1", "0"), Y2("y2", "0");
+    X1("x1", "0"),
+    X2("x2", "0"),
+    Y1("y1", "0"),
+    Y2("y2", "0"),
+    PATHLENGTH("pathLength", "none");
 
     /**
      *
