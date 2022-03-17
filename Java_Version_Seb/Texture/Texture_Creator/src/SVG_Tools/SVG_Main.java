@@ -7,6 +7,7 @@ import SVG_Tools.New_SVG_Workspace.Element_Workspace.*;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
 import TirSu_Tools.Symbol_Library.Letter_Element;
 import TirSu_Tools.Symbol_Library.TirSu_Alphabet;
+import TirSu_Tools.TirSu_Circle;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -18,6 +19,39 @@ import java.util.List;
 public class SVG_Main
 {
     public static void main(String[] args)
+    {
+        TirSu_Circle test = new TirSu_Circle("sebastian");
+        test.saveTIRSU(true);
+    }
+
+
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    private static void testSVG() {
+        Header_Generator header_generator = new Header_Generator();
+        header_generator.createSVGHeader(1000, 1000);
+        header_generator.createCenteredOnOriginViewbox(20, 20);
+
+        Circle_Element testCircle = new Circle_Element()
+                .withRadius(8)
+                .withSegments(5);
+        testCircle.appendAttribute(Global_Att.FILL, "none");
+        testCircle.appendAttribute(Global_Att.STROKE, "black");
+
+        Rectangle_Element testRec = new Rectangle_Element()
+                .withXandY(-5, -5)
+                .withWidthAndHeight(10, 10);
+        testRec.appendAttribute(Global_Att.FILL, "none");
+        testRec.appendAttribute(Global_Att.STROKE, "black");
+
+        Group_Element group = new Group_Element(true, testCircle, testRec);
+
+
+        // Build
+        saveSVG("Test_SVG",header_generator, true, group);
+    }
+
+    private static void allLetters()
     {
         Header_Generator header_generator = new Header_Generator();
         header_generator.createSVGHeader(1000, 1000);
@@ -80,33 +114,6 @@ public class SVG_Main
         saveSVG("LetterX,V2", header_generator, true, x);
         saveSVG("LetterY,V2", header_generator, true, y);
         saveSVG("LetterZ,V2", header_generator, true, z);
-    }
-
-
-    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    private static void testSVG() {
-        Header_Generator header_generator = new Header_Generator();
-        header_generator.createSVGHeader(1000, 1000);
-        header_generator.createCenteredOnOriginViewbox(20, 20);
-
-        Circle_Element testCircle = new Circle_Element()
-                .withRadius(8)
-                .withSegments(5);
-        testCircle.appendAttribute(Global_Att.FILL, "none");
-        testCircle.appendAttribute(Global_Att.STROKE, "black");
-
-        Rectangle_Element testRec = new Rectangle_Element()
-                .withXandY(-5, -5)
-                .withWidthAndHeight(10, 10);
-        testRec.appendAttribute(Global_Att.FILL, "none");
-        testRec.appendAttribute(Global_Att.STROKE, "black");
-
-        Group_Element group = new Group_Element(true, testCircle, testRec);
-
-
-        // Build
-        saveSVG("Test_SVG",header_generator, true, group);
     }
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

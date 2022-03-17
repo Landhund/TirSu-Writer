@@ -52,11 +52,13 @@ public enum TirSu_Alphabet
          
     }
 
-    // -------------------------------- Variables
+    // -------------------------------- Variables -------------------------------- \\
 
     private String letter;
     private List<Letter_Element> elements = new ArrayList<>();
 
+
+    // -------------------------------- Methodes -------------------------------- \\
     public List<Letter_Element> getElements() {
         return elements;
     }
