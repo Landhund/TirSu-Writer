@@ -142,6 +142,15 @@ public class Ellipse_Element implements Element
         return this;
     }
 
+    public Ellipse_Element asU(int x, int y)
+    {
+        AttributeValue dashArray = new AttributeValue(Global_Att.STROKE_DASHARRAY).withValue("28,36167");
+        attributeValues.add(dashArray);
+        AttributeValue transform = new AttributeValue(Global_Att.TRANSFORM).withValue("rotate(180," + x + "," + y + ")");
+        attributeValues.add(transform);
+        return this;
+    }
+
     public void appendAttribute(Global_Att global_att, String value)
     {
         AttributeValue tester = new AttributeValue(global_att).withValue(value);
