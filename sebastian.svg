@@ -1,0 +1,94 @@
+<svg width="1000" height="1000" viewBox="-132 -132 265 265" version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="Full">
+  <g fill="none" stroke="black" id="null">
+    <g transform="rotate(180.0, 0, 0)">
+    <g id="Letter_s" fill="none" stroke="black" transform="translate(0,65)">
+    <ellipse cx="0" cy="30" rx="8" ry="5"/>
+    <line x1="0" y1="20" x2="0" y2="25"/>
+    <line x1="0" y1="20" x2="-10" y2="10"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(220.0, 0, 0)">
+    <g id="Letter_e" fill="none" stroke="black" transform="translate(0,65)">
+    <line x1="-10" y1="35" x2="10" y2="35"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+    <line x1="0" y1="20" x2="0" y2="35"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(260.0, 0, 0)">
+    <g id="Letter_b" fill="none" stroke="black" transform="translate(0,65)">
+    <polyline points="-10,35 0,25 10,35"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+    <line x1="-7" y1="20" x2="7" y2="20"/>
+    <line x1="0" y1="20" x2="0" y2="25"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(300.0, 0, 0)">
+    <g id="Letter_a" fill="none" stroke="black" transform="translate(0,65)">
+    <polyline points="-10,25 0,35 10,25"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+    <line x1="0" y1="20" x2="0" y2="35"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(340.0, 0, 0)">
+    <g id="Letter_s" fill="none" stroke="black" transform="translate(0,65)">
+    <ellipse cx="0" cy="30" rx="8" ry="5"/>
+    <line x1="0" y1="20" x2="0" y2="25"/>
+    <line x1="0" y1="20" x2="-10" y2="10"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(380.0, 0, 0)">
+    <g id="Letter_t" fill="none" stroke="black" transform="translate(0,65)">
+    <ellipse cx="0" cy="30" rx="8" ry="5"/>
+    <line x1="0" y1="20" x2="0" y2="25"/>
+    <line x1="0" y1="20" x2="-10" y2="10"/>
+    <line x1="0" y1="15" x2="-10" y2="5"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(420.0, 0, 0)">
+    <g id="Letter_i" fill="none" stroke="black" transform="translate(0,65)">
+    <line x1="0" y1="20" x2="0" y2="35"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+    <line x1="0" y1="20" x2="0" y2="35"/>
+    <line x1="0" y1="20" x2="0" y2="35"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(460.0, 0, 0)">
+    <g id="Letter_a" fill="none" stroke="black" transform="translate(0,65)">
+    <polyline points="-10,25 0,35 10,25"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+    <line x1="0" y1="20" x2="0" y2="35"/>
+  </g>
+
+  </g>
+
+    <g transform="rotate(500.0, 0, 0)">
+    <g id="Letter_n" fill="none" stroke="black" transform="translate(0,65)">
+    <polyline points="-10,25 0,35 10,25 -10,25 0,35"/>
+    <line x1="0" y1="0" x2="0" y2="20"/>
+    <line x1="-7" y1="20" x2="7" y2="20"/>
+    <line x1="-7" y1="15" x2="7" y2="15"/>
+    <line x1="0" y1="20" x2="0" y2="25"/>
+  </g>
+
+  </g>
+
+  </g>
+
+  <circle cx="0" cy="0" r="65" stroke-dasharray="36.302848441482055, 9.075712110370514" fill="none" stroke="black" transform="rotate(16)"/></svg>
