@@ -20,8 +20,9 @@ public class SVG_Main
 {
     public static void main(String[] args)
     {
-        TirSu_Circle test = new TirSu_Circle("sebastian");
-        test.saveTIRSU(true);
+       TirSu_Circle test = new TirSu_Circle("Matthias");
+       test.saveTIRSU(true);
+
     }
 
 
@@ -114,6 +115,16 @@ public class SVG_Main
         saveSVG("LetterX,V2", header_generator, true, x);
         saveSVG("LetterY,V2", header_generator, true, y);
         saveSVG("LetterZ,V2", header_generator, true, z);
+    }
+
+    private static void testLenth()
+    {
+        String name = "aa";
+        for (int i = 2; i < 21; i++) {
+            TirSu_Circle test = new TirSu_Circle(name);
+            test.saveTIRSU(true);
+            name+="a";
+        }
     }
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

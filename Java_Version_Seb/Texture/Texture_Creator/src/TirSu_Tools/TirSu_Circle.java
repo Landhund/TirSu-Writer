@@ -7,6 +7,7 @@ import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Circle_Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
+import SVG_Tools.New_SVG_Workspace.Element_Workspace.Line_Element;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
 import TirSu_Tools.Symbol_Library.TirSu_Alphabet;
 
@@ -27,6 +28,7 @@ public class TirSu_Circle
 
     private Header_Generator header_generator;
     private Circle_Element circleTirSu;
+    private Line_Element marker;
 
     private Group_Element wordGroup = new Group_Element().withAttributes(new AttributeValue(Global_Att.FILL), new AttributeValue(Global_Att.STROKE), new AttributeValue(Global_Att.ID).withValue(word));
 
@@ -43,6 +45,9 @@ public class TirSu_Circle
         header_generator = new Header_Generator();
         header_generator.createSVGHeader(1000, 1000);
         header_generator.createCenteredOnOriginViewbox(boxSize, boxSize);
+
+        marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
+        marker.appendAttribute(Global_Att.STROKE, "black");
 
         letters = new Element[word.length()]; getLetterElements();
 
@@ -64,10 +69,11 @@ public class TirSu_Circle
 
     private void createTirSuCircle()
     {
+        double rot = 270 + ((360.0/word.length())/5)*3;
         circleTirSu = new Circle_Element().withRadius(radius).withSegments(word.length());
         circleTirSu.appendAttribute(Global_Att.FILL, "none");
         circleTirSu.appendAttribute(Global_Att.STROKE, "black");
-        circleTirSu.appendAttribute(Global_Att.TRANSFORM, "rotate(" + ((360/word.length())/5*2) + ")");
+        circleTirSu.appendAttribute(Global_Att.TRANSFORM, "rotate(" + rot + ")");
     }
 
     public void rotateLettersAndGroup()
@@ -119,7 +125,8 @@ public class TirSu_Circle
             FileWriter fileWriter = new FileWriter(word + ".svg");
             fileWriter.write(header_generator.getHeader());
             fileWriter.write("  " + wordGroup.toString() + "\n");
-            fileWriter.write("  " + circleTirSu.toString());
+            fileWriter.write("  " + circleTirSu.toString() + "\n");
+            fileWriter.write("  " + marker.toString());
           //  for (Element ele : letters)
           //  {
           //      fileWriter.write("  " + ele.toString() + "\n");
