@@ -10,10 +10,18 @@ public class Group_Element implements Element
 {
     List<AttributeValue> attributeValues = new ArrayList<>();
     List<Element> groupedElements = new ArrayList<>();
+    String textIndent = "";
+    int indentAmount;
 
     public Group_Element()
     {
         
+    }
+
+    public Group_Element(int indentAmount)
+    {
+        this.indentAmount = indentAmount;
+        setTextIndent(indentAmount);
     }
 
     public Group_Element(boolean groupBySimilarity, Element... elements)
@@ -53,6 +61,12 @@ public class Group_Element implements Element
 
     // --------------- Methodes --------------- \\
 
+
+    public void setTextIndent(int indentAmount) {
+        for (int i = 0; i < indentAmount; i++) {
+            textIndent+="  ";
+        }
+    }
 
     public void addElementsToGroup(Element... elements)
     {
@@ -114,7 +128,7 @@ public class Group_Element implements Element
     public String toString()
     {
         
-        String group_Element =  "<g";
+        String group_Element =  textIndent + "<g";
         for (AttributeValue attributeValue : attributeValues)
         {
             group_Element += " " + attributeValue.toString();
@@ -123,10 +137,18 @@ public class Group_Element implements Element
 
         for (Element element : groupedElements) 
         {
-            group_Element += "    " + element.toString() + "\n" ;
+            if (element instanceof Group_Element)
+            {
+                Group_Element nextGroup = (Group_Element) element;
+                nextGroup.setTextIndent(this.indentAmount + 1);
+                group_Element += textIndent + "\t" + element.toString() + "\n" ;
+            }
+            else{
+                group_Element += textIndent + "\t\t" + element.toString() + "\n" ;
+            }
         }
 
-        group_Element += "  </g>\n";
+        group_Element += textIndent + "\t" + "</g>";
         return group_Element;
     }
     

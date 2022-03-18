@@ -20,7 +20,7 @@ public class SVG_Main
 {
     public static void main(String[] args)
     {
-       TirSu_Circle test = new TirSu_Circle("Toilettentieftauchtrainer");
+       TirSu_Circle test = new TirSu_Circle("tuwuest");
        test.saveTIRSU(true);
 
     }

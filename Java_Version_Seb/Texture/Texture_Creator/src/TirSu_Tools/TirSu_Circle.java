@@ -30,7 +30,7 @@ public class TirSu_Circle
     private Circle_Element circleTirSu;
     private Line_Element marker;
 
-    private Group_Element wordGroup = new Group_Element().withAttributes(new AttributeValue(Global_Att.FILL), new AttributeValue(Global_Att.STROKE), new AttributeValue(Global_Att.ID).withValue(word));
+    private Group_Element wordGroup = new Group_Element(0).withAttributes(new AttributeValue(Global_Att.FILL), new AttributeValue(Global_Att.STROKE));
 
     private Element[] letters;
 
@@ -63,7 +63,7 @@ public class TirSu_Circle
         {
             letters[i] = TirSu_Alphabet.valueOf(String.valueOf(word.charAt(i)).toUpperCase()).getLetter();
             letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
-            letters[i] = new Group_Element().withElements(letters[i]);
+            letters[i] = new Group_Element(1).withElements(letters[i]);
         }
     }
 
@@ -88,11 +88,10 @@ public class TirSu_Circle
                 Group_Element letter = (Group_Element) letters[i];
                 letter.appendAttribute(Global_Att.TRANSFORM, "rotate(" + tempAngle + ", 0, 0)");
                 tempAngle = (tempAngle + segmentAngle);
-
-
                 wordGroup.addElementsToGroup(letter);
             }
         }
+        wordGroup.appendAttribute(Global_Att.ID, word);
     }
 
     public void saveTIRSU(boolean override)
@@ -124,9 +123,9 @@ public class TirSu_Circle
         try {
             FileWriter fileWriter = new FileWriter(word + ".svg");
             fileWriter.write(header_generator.getHeader());
-            fileWriter.write("  " + wordGroup.toString() + "\n");
-            fileWriter.write("  " + circleTirSu.toString() + "\n");
-            fileWriter.write("  " + marker.toString());
+            fileWriter.write("\t" + wordGroup.toString() + "\n");
+            fileWriter.write("\t" + circleTirSu.toString() + "\n");
+            fileWriter.write("\t" + marker.toString() + "\n");
           //  for (Element ele : letters)
           //  {
           //      fileWriter.write("  " + ele.toString() + "\n");
