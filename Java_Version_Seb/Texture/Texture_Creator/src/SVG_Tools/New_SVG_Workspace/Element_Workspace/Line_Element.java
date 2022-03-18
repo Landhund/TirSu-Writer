@@ -206,7 +206,6 @@ public class Line_Element implements Element
                 line_Element += " " + attributeValue.toString();
             }
             line_Element += "/>";
-            System.out.println(x1 + " " + y1 + " " + x2 + " " + y2 );
             return line_Element;
         }
         else return null;
