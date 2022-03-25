@@ -23,7 +23,7 @@ public class SVG_Main
        // TirSu_Circle test = new TirSu_Circle("tuwuest");
        // test.saveTIRSU(true);
 
-        testSVG();
+        allLetters();
     }
 
 

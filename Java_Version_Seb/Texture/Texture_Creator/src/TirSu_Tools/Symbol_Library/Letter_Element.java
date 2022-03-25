@@ -48,6 +48,10 @@ public enum Letter_Element          // TODO: #25 Write the Elements of witch the
 
     HEAD_ROOF(new Polyline_Element().withStartPoint(-10,25).withNextPoint(0,35).withNextPoint(10,25)),
     HEAD_ROOF_INVERTED(new Polyline_Element().withStartPoint(-10,35).withNextPoint(0,25).withNextPoint(10,35)),
+    HEAD_ROOF_ARM_RIGHT(new Polyline_Element().withStartPoint(-10,25).withNextPoint(0,35).withNextPoint(10,25),
+            new Line_Element().withStartPoint(0,30).withEndPoint(-10, 20)),
+    HEAD_ROOF_ARM_Left(new Polyline_Element().withStartPoint(-10,25).withNextPoint(0,35).withNextPoint(10,25),
+            new Line_Element().withStartPoint(0,30).withEndPoint(10, 20)),
 
     HEAD_TRIANGLE(new Polyline_Element().withStartPoint(-10,25).withNextPoint(0,35).withNextPoint(10,25).withNextPoint(-10,25).withNextPoint(0,35)),
     HEAD_TRIANGLE_INVERSE(new Polyline_Element().withStartPoint(-10,35).withNextPoint(0,25).withNextPoint(10,35).withNextPoint(-10,35).withNextPoint(0,25)),
