@@ -1,11 +1,9 @@
 package SVG_Tools;
 
 
-import SVG_Tools.New_SVG_Workspace.AttributeLibrary.AttributeValue;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.*;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
-import TirSu_Tools.Symbol_Library.Letter_Element;
 import TirSu_Tools.Symbol_Library.TirSu_Alphabet;
 import TirSu_Tools.TirSu_Circle;
 
@@ -14,7 +12,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
+import java.util.EnumSet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class SVG_Main
 {
@@ -23,7 +22,7 @@ public class SVG_Main
        // TirSu_Circle test = new TirSu_Circle("tuwuest");
        // test.saveTIRSU(true);
 
-        allLetters();
+        testALL();
     }
 
 
@@ -122,6 +121,58 @@ public class SVG_Main
         saveSVG("LetterX,V2", header_generator, true, x);
         saveSVG("LetterY,V2", header_generator, true, y);
         saveSVG("LetterZ,V2", header_generator, true, z);
+    }
+
+    private static void testSpecial()
+    {
+        Header_Generator header_generator = new Header_Generator();
+        header_generator.createSVGHeader(1000, 1000);
+        header_generator.createCenteredOnOriginViewbox(80, 80);
+
+
+        // testSVG();
+
+        Group_Element oa = TirSu_Alphabet.OA.getLetter(); oa.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element ea = TirSu_Alphabet.EA.getLetter(); ea.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element oi = TirSu_Alphabet.OI.getLetter(); oi.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element ou = TirSu_Alphabet.OU.getLetter(); ou.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element ch = TirSu_Alphabet.CH.getLetter(); ch.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element th = TirSu_Alphabet.TH.getLetter(); th.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element sh = TirSu_Alphabet.SH.getLetter(); sh.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+        Group_Element zh = TirSu_Alphabet.ZH.getLetter(); zh.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+
+        saveSVG("CombinationOA", header_generator, true, oa);
+        saveSVG("CombinationEA", header_generator, true, ea);
+        saveSVG("CombinationOI", header_generator, true, oi);
+        saveSVG("CombinationOU", header_generator, true, ou);
+        saveSVG("CombinationCH", header_generator, true, ch);
+        saveSVG("CombinationTH", header_generator, true, th);
+        saveSVG("CombinationSH", header_generator, true, sh);
+        saveSVG("CombinationZH", header_generator, true, zh);
+    }
+
+
+    private static void testALL()
+    {
+        Header_Generator header_generator = new Header_Generator();
+        header_generator.createSVGHeader(1000, 1000);
+        header_generator.createViewBox(0,-80, (24*34), 80);
+
+        AtomicInteger offset = new AtomicInteger(-12);
+
+        Group_Element group_element = new Group_Element();
+
+
+        EnumSet.allOf(TirSu_Alphabet.class).forEach((letters) -> {
+            Group_Element element = letters.getLetter();
+            element.appendAttribute(Global_Att.TRANSFORM, "translate(" + offset.get() + ",0)");
+            group_element.addElementsToGroup(element);
+            offset.addAndGet(-24);
+        });
+
+        group_element.appendAttribute(Global_Att.TRANSFORM, "rotate(180, 0, 0)");
+
+        saveSVG("Alphabet", header_generator, true, group_element);
     }
 
     private static void testLenth()

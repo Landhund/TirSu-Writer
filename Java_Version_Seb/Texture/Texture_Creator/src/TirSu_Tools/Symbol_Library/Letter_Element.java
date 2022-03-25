@@ -63,7 +63,8 @@ public enum Letter_Element          // TODO: #25 Write the Elements of witch the
     HEAD_RIGHT_OPEN_SQUARE_HIGH(new Polyline_Element().withStartPoint(-8,25).withNextPoint(8,25).withNextPoint(8,35).withNextPoint(-8,35)),
     HEAD_LEFT_OPEN_SQUARE_HIGH(new Polyline_Element().withStartPoint(8,25).withNextPoint(-8,25).withNextPoint(-8,35).withNextPoint(8,35)),
 
-    HEAD_U_HIGH(new Ellipse_Element().withCenter(0, 35).withXandYRadius(8,10).asU(0,35));
+    HEAD_U_HIGH(new Ellipse_Element().withCenter(0, 35).withXandYRadius(8,10).asU(0,35)),
+    HEAD_U_Mid(new Ellipse_Element().withCenter(0, 25).withXandYRadius(8,10).asU(0,25));
 
 
     private Letter_Element(Element... elements)
