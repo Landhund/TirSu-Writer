@@ -27,7 +27,7 @@ public class TirSu_Circle
     private Circle_Element circleTirSu;
     private Line_Element marker;
 
-    private Group_Element wordGroup = new Group_Element(0).withAttributes(new AttributeValue(Global_Att.FILL), new AttributeValue(Global_Att.STROKE));
+    private Group_Element wordGroup = new Group_Element(1).withAttributes(new AttributeValue(Global_Att.FILL), new AttributeValue(Global_Att.STROKE));
 
     private Element[] letters;
 
@@ -120,13 +120,9 @@ public class TirSu_Circle
         try {
             FileWriter fileWriter = new FileWriter(word + ".svg");
             fileWriter.write(header_generator.getHeader());
-            fileWriter.write("\t" + wordGroup.toString() + "\n");
+            fileWriter.write(wordGroup.toString() + "\n");
             fileWriter.write("\t" + circleTirSu.toString() + "\n");
             fileWriter.write("\t" + marker.toString() + "\n");
-          //  for (Element ele : letters)
-          //  {
-          //      fileWriter.write("  " + ele.toString() + "\n");
-          //  }
             fileWriter.write("</svg>");
             fileWriter.close();
         } catch (IOException e) {
