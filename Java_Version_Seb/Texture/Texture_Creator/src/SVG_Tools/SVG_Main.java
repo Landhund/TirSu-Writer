@@ -20,8 +20,10 @@ public class SVG_Main
 {
     public static void main(String[] args)
     {
-       TirSu_Circle test = new TirSu_Circle("tuwuest");
-       test.saveTIRSU(true);
+       // TirSu_Circle test = new TirSu_Circle("tuwuest");
+       // test.saveTIRSU(true);
+
+        testSVG();
     }
 
 
@@ -44,7 +46,12 @@ public class SVG_Main
         testRec.appendAttribute(Global_Att.FILL, "none");
         testRec.appendAttribute(Global_Att.STROKE, "black");
 
-        Group_Element group = new Group_Element(true, testCircle, testRec);
+        Group_Element group2 = new Group_Element();
+
+        Group_Element group = new Group_Element(true, testCircle, testRec, group2);
+        group.setTextIndent(1);
+
+
 
 
         // Build
@@ -188,7 +195,12 @@ public class SVG_Main
             fileWriter.write(header.getHeader());
             for (Element ele : element)
             {
-                fileWriter.write("  " + ele.toString() + "\n");
+                if (ele instanceof Group_Element)
+                {
+                    Group_Element grele = (Group_Element) ele;
+                    grele.setTextIndent(0);
+                }
+                fileWriter.write(ele.toString() + "\n");
             }
             fileWriter.write("</svg>");
             fileWriter.close();

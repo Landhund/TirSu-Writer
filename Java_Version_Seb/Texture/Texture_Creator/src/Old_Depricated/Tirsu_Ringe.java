@@ -1,4 +1,7 @@
-// import com.sun.source.tree.BreakTree;
+package Old_Depricated;// import com.sun.source.tree.BreakTree;
+
+import Old_Depricated.AreaHightmap;
+import Old_Depricated.Circle_Generation;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

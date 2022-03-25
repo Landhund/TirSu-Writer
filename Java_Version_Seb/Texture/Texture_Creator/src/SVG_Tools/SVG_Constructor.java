@@ -1,63 +1,48 @@
 package SVG_Tools;
 
-import SVG_Tools.JunkClasses.Element_Generator;
-import SVG_Tools.JunkClasses.Group_Generator;
-import SVG_Tools.JunkClasses.Header_Generator;
+import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
+import SVG_Tools.New_SVG_Workspace.Header_Generator;
+
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
 public class SVG_Constructor
 {
-    private static int id = 0;
+    private static int id;
+    private String name;
     private Header_Generator header;
-    private String description;
-    private Element_Generator element;
-    private Group_Generator group;
+    private List<Element> elements = new ArrayList<>();
 
-    public  SVG_Constructor(String description)
+    public  SVG_Constructor(String name)
     {
-        // Header of SVG
-        header = new Header_Generator();
-        {
-            // Create and String together each Header element
-            header.createSVGHeader(2000, 2000);
-            header.createCenteredOnOriginViewbox(500, 500);
-        }
+       this.name = name;
+       this.id++;
 
-
-        // Create Elements of SVG
-        element = new Element_Generator();
-        {
-            element.segmentedCircle(200, 5, 5, "none");
-            element.circle(20, 2, "none");
-            element.roundedRectangle(30, 30, 5, 5);
-
-        }
-
-        // // Create Group
-        // // Circle_Creator circlGen = new Circle_Creator();
-        // Circle_Creator_V2 circle_creator_v2 = new Circle_Creator_V2(200, 5);
-        // // String circle1 = circlGen.generateCircle(Circle_Element.CX, Circle_Element.CY, Circle_Element.SE, null);
-        // String circle2 = circle_creator_v2.generateCircle(null) + "/>";
-        //
-        //  group = new Group_Generator(element.getElements());
-        // {
-        //     General_Element first = General_Element.FILL;
-        //     first.setValue("none");
-        //     group.createGroupe(first);
-        // }
-
-        this.description = description;
     }
 
 
-    public void saveSVG()
+    public void saveSVG(boolean override)
     {
 
+        if (override == true)
+        {
+            try {
+                Files.deleteIfExists(Path.of(name + id + ".svg"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Override File!");
+        }
+
         try {
-            File file1 = new File("svg_test" + id + ".svg");
+            File file1 = new File(name + id + ".svg");
             if (file1.createNewFile()) {
                 System.out.println("File created: " + file1.getName());
             } else {
@@ -69,16 +54,26 @@ public class SVG_Constructor
         }
 
         try {
-            FileWriter fileWriter = new FileWriter("svg_test" + id + ".svg");
-            fileWriter.write(header.getHeader());
-            fileWriter.write(element.getElements());
-            fileWriter.write("</svg>");
+            FileWriter fileWriter = new FileWriter(name + id + ".svg");
+
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         id++;
+    }
+
+
+    private FileWriter writeSVG(FileWriter fileWriter) throws IOException
+    {
+        fileWriter.write(header.getHeader());
+        for (Element element : elements)
+        {
+            fileWriter.write(element.toString());
+        }
+        fileWriter.write("</svg>");
+        return fileWriter;
     }
 
 

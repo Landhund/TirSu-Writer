@@ -110,7 +110,6 @@ public class Polyline_Element implements Element
                 polyline_element += " " + attributeValue.toString();
             }
             polyline_element += "/>";
-            System.out.println(points);
             return polyline_element;
         }
         else return null;

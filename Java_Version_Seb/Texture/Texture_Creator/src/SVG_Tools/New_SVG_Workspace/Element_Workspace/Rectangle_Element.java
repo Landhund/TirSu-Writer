@@ -263,7 +263,6 @@ public class Rectangle_Element implements Element
                 rectangle_Element += " " + attributeValue.toString();
             }
             rectangle_Element += "/>";
-            System.out.println(x + " " + y + " " + width + " " + height + " " + rx + " " + ry );
             return rectangle_Element;
         }
         else return null;

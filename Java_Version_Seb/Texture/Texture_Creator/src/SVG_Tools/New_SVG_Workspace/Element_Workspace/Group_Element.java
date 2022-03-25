@@ -62,10 +62,22 @@ public class Group_Element implements Element
     // --------------- Methodes --------------- \\
 
 
-    public void setTextIndent(int indentAmount) {
+    public void setTextIndent(int indentAmount)
+    {
         for (int i = 0; i < indentAmount; i++) {
-            textIndent+="  ";
+            textIndent+="\t";
         }
+
+        for (Element element : this.groupedElements)
+        {
+            if (element instanceof Group_Element)
+            {
+                Group_Element group_element = (Group_Element) element;
+                group_element.setTextIndent(this.indentAmount + 1);
+            }
+
+        }
+
     }
 
     public void addElementsToGroup(Element... elements)
@@ -127,7 +139,6 @@ public class Group_Element implements Element
     @Override
     public String toString()
     {
-        
         String group_Element =  textIndent + "<g";
         for (AttributeValue attributeValue : attributeValues)
         {
@@ -141,14 +152,14 @@ public class Group_Element implements Element
             {
                 Group_Element nextGroup = (Group_Element) element;
                 nextGroup.setTextIndent(this.indentAmount + 1);
-                group_Element += textIndent + "\t" + element.toString() + "\n" ;
+                group_Element += textIndent + element.toString() + "\n" ;
             }
             else{
-                group_Element += textIndent + "\t\t" + element.toString() + "\n" ;
+                group_Element += textIndent + "\t" + element.toString() + "\n" ;
             }
         }
 
-        group_Element += textIndent + "\t" + "</g>";
+        group_Element += textIndent + "</g>";
         return group_Element;
     }
     

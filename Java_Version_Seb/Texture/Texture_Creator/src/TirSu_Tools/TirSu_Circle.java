@@ -1,7 +1,6 @@
 package TirSu_Tools;
 
 
-import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Attribute;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.AttributeValue;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Circle_Element;
@@ -16,8 +15,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TirSu_Circle
 {

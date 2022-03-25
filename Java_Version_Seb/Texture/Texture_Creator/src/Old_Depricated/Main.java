@@ -1,4 +1,7 @@
+package Old_Depricated;
 
+import Old_Depricated.AreaHightmap;
+import Old_Depricated.ColorInterpreter;
 import SVG_Tools.SVG_Constructor;
 
 import javax.imageio.ImageIO;
@@ -11,12 +14,12 @@ public class Main
 {
     public static void main(String[] args)  throws IOException
     {
-        // Tirsu_Ringe.circle(2000, 2000, 750, 10, 9, true);
+        // ;
 
         // Element_Generator test = new Element_Generator();
 
         SVG_Constructor tester = new SVG_Constructor("Test von Origin Kreisen (Segmented und normal)");
-        tester.saveSVG();
+        // tester.saveSVG();
 
 
     }
