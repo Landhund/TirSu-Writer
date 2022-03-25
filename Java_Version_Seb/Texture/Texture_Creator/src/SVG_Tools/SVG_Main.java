@@ -128,7 +128,7 @@ public class SVG_Main
     {
         String name = "aa";
         for (int i = 2; i < 21; i++) {
-            TirSu_Circle test = new TirSu_Circle(name);
+            TirSu_Circle test = new TirSu_Circle(name, true);
             test.saveTIRSU(true);
             name+="a";
         }

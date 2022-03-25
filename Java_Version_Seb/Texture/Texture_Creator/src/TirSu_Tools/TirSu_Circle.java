@@ -33,7 +33,7 @@ public class TirSu_Circle
 
 
 
-    public TirSu_Circle(String word)
+    public TirSu_Circle(String word, boolean githyanki)
     {
         this.word = word;
         radius = (word.length()*5) + 20;
@@ -43,16 +43,26 @@ public class TirSu_Circle
         header_generator.createSVGHeader(1000, 1000);
         header_generator.createCenteredOnOriginViewbox(boxSize, boxSize);
 
-        marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
-        marker.appendAttribute(Global_Att.STROKE, "black");
-
         letters = new Element[word.length()]; getLetterElements();
 
         createTirSuCircle();
         getLetterElements();
-        rotateLettersAndGroup();
+
+        if (githyanki)
+        {
+            rotateLettersGITHYANKI();
+            marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
+        else
+        {
+            rotateLettersGITHZERAI();
+            marker = new Line_Element().withStartPoint(0,(4*radius/5)).withEndPoint(0,radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
 
     }
+
 
     private void getLetterElements()
     {
@@ -64,6 +74,7 @@ public class TirSu_Circle
         }
     }
 
+
     private void createTirSuCircle()
     {
         double rot = 270 + ((360.0/word.length())/5)*3;
@@ -73,7 +84,10 @@ public class TirSu_Circle
         circleTirSu.appendAttribute(Global_Att.TRANSFORM, "rotate(" + rot + ")");
     }
 
-    public void rotateLettersAndGroup()
+
+    // --------------- githyanki --------------- \\ Clockwise from top
+
+    private void rotateLettersGITHYANKI()
     {
         double segmentAngle = 360/((double) word.length());
         double tempAngle = (180);
@@ -90,6 +104,31 @@ public class TirSu_Circle
         }
         wordGroup.appendAttribute(Global_Att.ID, word);
     }
+
+
+
+    // --------------- githzerai --------------- \\ Counter Clockwise from Bottom
+
+    private void rotateLettersGITHZERAI()
+    {
+        double segmentAngle = 360/((double) word.length());
+        double tempAngle = (0);
+
+        for (int i = 0; i < letters.length; i++)
+        {
+            if (letters[i] instanceof Group_Element)
+            {
+                Group_Element letter = (Group_Element) letters[i];
+                letter.appendAttribute(Global_Att.TRANSFORM, "rotate(" + -tempAngle + ", 0, 0)");
+                tempAngle = (tempAngle + segmentAngle);
+                wordGroup.addElementsToGroup(letter);
+            }
+        }
+        wordGroup.appendAttribute(Global_Att.ID, word);
+    }
+
+
+
 
     public void saveTIRSU(boolean override)
     {
