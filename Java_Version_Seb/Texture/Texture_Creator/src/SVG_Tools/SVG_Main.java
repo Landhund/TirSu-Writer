@@ -46,16 +46,17 @@ public class SVG_Main
         testRec.appendAttribute(Global_Att.FILL, "none");
         testRec.appendAttribute(Global_Att.STROKE, "black");
 
-        Group_Element group2 = new Group_Element();
+        Group_Element group1 = new Group_Element(true).withElements(testCircle);
 
-        Group_Element group = new Group_Element(true, testCircle, testRec, group2);
-        group.setTextIndent(1);
+        Group_Element group2 = new Group_Element(true).withElements(testCircle, group1);
+
+        Group_Element group3 = new Group_Element(true).withElements(testCircle, group2);
 
 
 
 
         // Build
-        saveSVG("Test_SVG",header_generator, true, group);
+        saveSVG("Test_SVG",header_generator, true, group1, group2, group3);
     }
 
     private static void allLetters()
@@ -198,7 +199,10 @@ public class SVG_Main
                 if (ele instanceof Group_Element)
                 {
                     Group_Element grele = (Group_Element) ele;
-                    grele.setTextIndent(0);
+                    if (grele.getIndentAmount() == 0)
+                    {
+                        grele.setTextIndent(1);
+                    }
                 }
                 fileWriter.write(ele.toString() + "\n");
             }
