@@ -154,34 +154,34 @@
 			<line x1="0" y1="0" x2="0" y2="20"/>
 			<line x1="-7" y1="20" x2="7" y2="20"/>
 		</g>
-		<g id="Letter_ea" fill="none" stroke="black" transform="translate(-636,0)">
+		<g id="Letter_ch" fill="none" stroke="black" transform="translate(-636,0)">
+			<polyline points="-10,25 0,35 10,25"/>
+			<ellipse cx="0" cy="20" rx="8" ry="5"/>
+			<line x1="0" y1="0" x2="0" y2="15"/>
+			<line x1="-7" y1="10" x2="7" y2="10"/>
+		</g>
+		<g id="Letter_ea" fill="none" stroke="black" transform="translate(-660,0)">
 			<line x1="-10" y1="35" x2="10" y2="35"/>
 			<polyline points="-10,25 0,35 10,25"/>
 			<line x1="0" y1="20" x2="0" y2="35"/>
 			<line x1="0" y1="0" x2="0" y2="20"/>
 		</g>
-		<g id="Letter_oa" fill="none" stroke="black" transform="translate(-660,0)">
+		<g id="Letter_oa" fill="none" stroke="black" transform="translate(-684,0)">
 			<ellipse cx="0" cy="30" rx="8" ry="5"/>
 			<line x1="0" y1="20" x2="0" y2="25"/>
 			<line x1="0" y1="20" x2="-10" y2="10"/>
 			<line x1="0" y1="20" x2="10" y2="10"/>
 			<line x1="0" y1="0" x2="0" y2="20"/>
 		</g>
-		<g id="Letter_oi" fill="none" stroke="black" transform="translate(-684,0)">
+		<g id="Letter_oi" fill="none" stroke="black" transform="translate(-708,0)">
 			<polyline points="-10,35 0,25 10,35"/>
 			<ellipse cx="0" cy="20" rx="8" ry="5"/>
 			<line x1="0" y1="0" x2="0" y2="15"/>
 		</g>
-		<g id="Letter_ou" fill="none" stroke="black" transform="translate(-708,0)">
+		<g id="Letter_ou" fill="none" stroke="black" transform="translate(-732,0)">
 			<ellipse cx="0" cy="25" rx="8" ry="10" stroke-dasharray="28,36167" transform="rotate(180,0,25)"/>
 			<ellipse cx="0" cy="30" rx="8" ry="5"/>
 			<line x1="0" y1="0" x2="0" y2="15"/>
-		</g>
-		<g id="Letter_ch" fill="none" stroke="black" transform="translate(-732,0)">
-			<polyline points="-10,25 0,35 10,25"/>
-			<ellipse cx="0" cy="20" rx="8" ry="5"/>
-			<line x1="0" y1="0" x2="0" y2="15"/>
-			<line x1="-7" y1="10" x2="7" y2="10"/>
 		</g>
 		<g id="Letter_sh" fill="none" stroke="black" transform="translate(-756,0)">
 			<polyline points="-10,25 0,35 10,25"/>

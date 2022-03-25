@@ -41,11 +41,11 @@ public enum TirSu_Alphabet
     Y("y", Letter_Element.HEAD_ROOF_INVERTED,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG),
     Z("z", Letter_Element.HEAD_RIGHT_OPEN_SQUARE_HIGH,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG,Letter_Element.T_ARM_HIGH),
 
+    CH("ch", Letter_Element.HEAD_ROOF, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.CENTER_LINE_MID, Letter_Element.T_ARM_LOW),
     EA("ea", Letter_Element.HEAD_T, Letter_Element.HEAD_ROOF, Letter_Element.NECK_HIGH_LONG, Letter_Element.CENTER_LINE_LONG),
     OA("oa", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.ARM_RIGHT_HIGH, Letter_Element.ARM_LEFT_HIGH, Letter_Element.CENTER_LINE_LONG),
     OI("oi", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.HEAD_ELLIPSE_MID , Letter_Element.CENTER_LINE_MID),
     OU("ou", Letter_Element.HEAD_U_Mid, Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.CENTER_LINE_MID),
-    CH("ch", Letter_Element.HEAD_ROOF, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.CENTER_LINE_MID, Letter_Element.T_ARM_LOW),
     SH("sh", Letter_Element.HEAD_ROOF, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.ARM_RIGHT_MID, Letter_Element.CENTER_LINE_MID),
     TH("th", Letter_Element.HEAD_ROOF, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.ARM_RIGHT_LOW, Letter_Element.ARM_RIGHT_MID, Letter_Element.CENTER_LINE_MID),
     ZH("zh", Letter_Element.HEAD_RIGHT_OPEN_SQUARE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.T_ARM_HIGH, Letter_Element.T_ARM_MID, Letter_Element.CENTER_LINE_LONG);
