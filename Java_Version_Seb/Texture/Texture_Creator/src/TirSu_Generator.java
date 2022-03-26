@@ -4,7 +4,7 @@ public class TirSu_Generator
 {
     public static void main(String[] args)
     {
-        TirSu_Circle test = new TirSu_Circle("Cappuccino", false);
+        TirSu_Circle test = new TirSu_Circle("Tester", true);
         test.saveTIRSU(true);
     }
 }
