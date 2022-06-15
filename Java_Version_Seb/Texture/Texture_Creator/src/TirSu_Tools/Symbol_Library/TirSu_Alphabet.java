@@ -31,7 +31,7 @@ public enum TirSu_Alphabet
     O("o", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.CENTER_LINE_LONG,Letter_Element.NECK_HIGH_Short),
     P("p", Letter_Element.HEAD_ROOF_ARM_RIGHT, Letter_Element.NECK_HIGH_LONG, Letter_Element.CENTER_LINE_LONG),
     Q("q", Letter_Element.HEAD_TRIANGLE_INVERSE, Letter_Element.NECK_HIGH_Short, Letter_Element.CENTER_LINE_LONG),
-    R("r", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG,Letter_Element.ARM_RIGHT_HIGH,Letter_Element.ARM_RIGHT_MID),
+    R("r", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG,Letter_Element.T_ARM_HIGH,Letter_Element.T_ARM_MID),
     S("s", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.ARM_RIGHT_HIGH, Letter_Element.CENTER_LINE_LONG),
     T("t", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.ARM_RIGHT_HIGH, Letter_Element.ARM_RIGHT_MID, Letter_Element.CENTER_LINE_LONG),
     U("u", Letter_Element.HEAD_U_HIGH,Letter_Element.NECK_HIGH_Short,Letter_Element.CENTER_LINE_LONG),

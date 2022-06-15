@@ -19,7 +19,7 @@ import java.nio.file.Path;
 public class TirSu_Circle
 {
     private String word;
-
+    private int word_length;
     private int radius;
     private int boxSize;
 
@@ -36,6 +36,8 @@ public class TirSu_Circle
     public TirSu_Circle(String word, boolean githyanki)
     {
         this.word = word;
+        this.word_length = word.length();
+
         radius = (word.length()*5) + 20;
         boxSize = radius*2 + 45*3;
 
@@ -45,8 +47,9 @@ public class TirSu_Circle
 
         letters = new Element[word.length()]; getLetterElements();
 
-        createTirSuCircle();
         getLetterElements();
+        createTirSuCircle(githyanki);
+
 
         if (githyanki)
         {
@@ -66,21 +69,63 @@ public class TirSu_Circle
 
     private void getLetterElements()
     {
+        String combination = "";
+        int combination_counter = 0;
+
         for (int i = 0; i < word.length(); i++)
         {
-            letters[i] = TirSu_Alphabet.valueOf(String.valueOf(word.charAt(i)).toUpperCase()).getLetter();
+            // letters[i] = TirSu_Alphabet.valueOf(String.valueOf(word.charAt(i)).toUpperCase()).getLetter();
+
+            combination = findLetterCombinations(i);
+            letters[i] = TirSu_Alphabet.valueOf(combination).getLetter();
             letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
             letters[i] = new Group_Element(1).withElements(letters[i]);
+            if (combination.length() > 1)
+            {
+                i++;
+            }
+            combination = "";
+            combination_counter++;
         }
+        word_length = combination_counter;
+    }
+
+    private String findLetterCombinations(int pos_letter)
+    {
+        String combination = "";
+        String first = String.valueOf(word.charAt(pos_letter)).toUpperCase();
+        String second = "";
+
+        if (word.length() > pos_letter + 1)
+        {
+            second = String.valueOf(word.charAt(pos_letter+1)).toUpperCase();
+        }
+
+        try
+        {
+            combination = first + second;
+            TirSu_Alphabet.valueOf(combination).getLetter();
+            return combination;
+        }
+        catch (Exception e)
+        {
+            return first;
+        }
+
     }
 
 
-    private void createTirSuCircle()
+    private void createTirSuCircle(boolean githyanki)
     {
-        double rot = 270 + ((360.0/word.length())/5)*3;
-        circleTirSu = new Circle_Element().withRadius(radius).withSegments(word.length());
+        double rot = 270 + ((360.0/word_length)/5)*3;
+        circleTirSu = new Circle_Element().withRadius(radius).withSegments(word_length);
         circleTirSu.appendAttribute(Global_Att.FILL, "none");
         circleTirSu.appendAttribute(Global_Att.STROKE, "black");
+
+        if (!githyanki)
+        {
+            rot += 180;
+        }
         circleTirSu.appendAttribute(Global_Att.TRANSFORM, "rotate(" + rot + ")");
     }
 
@@ -130,7 +175,7 @@ public class TirSu_Circle
     // --------------- githyanki --------------- \\ Clockwise from top
     private void rotateLettersGITHYANKI()
     {
-        double segmentAngle = 360/((double) word.length());
+        double segmentAngle = 360/((double) word_length);
         double tempAngle = (180);
 
         for (int i = 0; i < letters.length; i++)
@@ -151,7 +196,7 @@ public class TirSu_Circle
     // --------------- githzerai --------------- \\ Counter Clockwise from Bottom
     private void rotateLettersGITHZERAI()
     {
-        double segmentAngle = 360/((double) word.length());
+        double segmentAngle = 360/((double) word_length);
         double tempAngle = (0);
 
         for (int i = 0; i < letters.length; i++)
