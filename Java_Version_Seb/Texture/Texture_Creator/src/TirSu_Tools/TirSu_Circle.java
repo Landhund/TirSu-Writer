@@ -130,7 +130,22 @@ public class TirSu_Circle
     }
 
 
+    @Deprecated
+    private String toSting()
+    {
+        String word  = "";
+        word += wordGroup.toString() + "\n";
+        word += "\t" + circleTirSu.toString() + "\n";
+        word += "\t" + marker.toString() + "\n";
+        return word;
+    }
 
+    public Group_Element getWordGroup()
+    {
+        Group_Element wordGroup = new Group_Element();
+        wordGroup.addElementsToGroup(this.wordGroup, this.circleTirSu, this.marker);
+        return wordGroup;
+    }
 
     public void saveTIRSU(boolean override)
     {
@@ -171,6 +186,9 @@ public class TirSu_Circle
         }
     }
 
+    public int getBoxSize() {
+        return boxSize;
+    }
 
     // --------------- githyanki --------------- \\ Clockwise from top
     private void rotateLettersGITHYANKI()
