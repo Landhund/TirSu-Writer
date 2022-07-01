@@ -8,7 +8,7 @@ public class TirSu_Generator
         // TirSu_Circle test = new TirSu_Circle("Kiaranyth", true);
         // test.saveTIRSU(true);
 
-        TirSu_Sentences tester = new TirSu_Sentences("Hello World und was sonst so abgeht", true);
+        TirSu_Sentences tester = new TirSu_Sentences("Hello World und was sonst so abgeht", "satz1",true);
         tester.saveTIRSU(true);
     }
 }

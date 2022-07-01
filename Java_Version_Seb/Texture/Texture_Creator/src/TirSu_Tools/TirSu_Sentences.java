@@ -12,6 +12,7 @@ import java.nio.file.Path;
 
 public class TirSu_Sentences
 {
+    private String fileName;
     private String sentence;
     private int wordCount;
     private String[] words;
@@ -30,6 +31,18 @@ public class TirSu_Sentences
     // -------------------- Konstruktor -------------------- \\
     public TirSu_Sentences(String sentence, boolean githyanki)
     {
+        this.fileName = sentence;
+        this.sentence = sentence;
+        this.githyanki = githyanki;
+        spliceSentence();
+        createWordSymbols();
+        buildSentence();
+        headerGenerator();
+    }
+
+    public TirSu_Sentences(String sentence, String fileName, boolean githyanki)
+    {
+        this.fileName = fileName;
         this.sentence = sentence;
         this.githyanki = githyanki;
         spliceSentence();
@@ -58,6 +71,7 @@ public class TirSu_Sentences
     private void buildSentence()
     {
         this.sentenceGroup = new Group_Element(1);
+        this.sentenceGroup.appendAttribute(Global_Att.ID, sentence);
         int offset = 0;
         for (TirSu_Circle word : wordsCircles)
         {
@@ -65,7 +79,6 @@ public class TirSu_Sentences
 
             Group_Element wordGroup = word.getWordGroup();
             wordGroup.appendAttribute(Global_Att.TRANSFORM, "translate(" + offset + " 0)");
-            wordGroup.appendAttribute(Global_Att.ID, sentence);
             this.sentenceGroup.addElementsToGroup(wordGroup);
 
             offset += word.getBoxSize()/2;
@@ -102,7 +115,7 @@ public class TirSu_Sentences
         if (override == true)
         {
             try {
-                Files.deleteIfExists(Path.of(sentence + ".svg"));
+                Files.deleteIfExists(Path.of(fileName + ".svg"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -111,7 +124,7 @@ public class TirSu_Sentences
 
 
         try {
-            File file1 = new File(sentence + ".svg");
+            File file1 = new File(fileName + ".svg");
             if (file1.createNewFile()) {
                 System.out.println("File created: " + file1.getName());
             } else {
@@ -123,7 +136,7 @@ public class TirSu_Sentences
         }
 
         try {
-            FileWriter fileWriter = new FileWriter(sentence + ".svg");
+            FileWriter fileWriter = new FileWriter(fileName + ".svg");
             fileWriter.write(header_generator.getHeader());
             fileWriter.write(sentenceGroup.toString() + "\n");
             fileWriter.write("</svg>");

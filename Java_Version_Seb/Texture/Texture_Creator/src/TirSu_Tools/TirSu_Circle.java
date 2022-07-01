@@ -190,6 +190,11 @@ public class TirSu_Circle
         return boxSize;
     }
 
+    public String getWord()
+    {
+        return this.word;
+    }
+
     // --------------- githyanki --------------- \\ Clockwise from top
     private void rotateLettersGITHYANKI()
     {
