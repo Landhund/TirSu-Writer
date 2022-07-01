@@ -5,10 +5,10 @@ public class TirSu_Generator
 {
     public static void main(String[] args)
     {
-        // TirSu_Circle test = new TirSu_Circle("Kiaranyth", true);
-        // test.saveTIRSU(true);
+        TirSu_Circle test = new TirSu_Circle("Hello", true);
+        test.saveTIRSU(true);
 
-        TirSu_Sentences tester = new TirSu_Sentences("Hello World und was sonst so abgeht", "satz1",true);
+        TirSu_Sentences tester = new TirSu_Sentences("Hello test", "hellotest",true);
         tester.saveTIRSU(true);
     }
 }
