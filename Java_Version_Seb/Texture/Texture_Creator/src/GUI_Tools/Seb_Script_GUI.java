@@ -22,7 +22,7 @@ public class Seb_Script_GUI {
             public void actionPerformed(ActionEvent e) {
                 sentences.setText("");
                 filename.setText("");
-                languages.setSelectedIndex(1);
+                languages.setSelectedIndex(0);
             }
         });
         exitButton.addActionListener(new ActionListener() {
@@ -36,6 +36,10 @@ public class Seb_Script_GUI {
             public void actionPerformed(ActionEvent e) {
                 String text = sentences.getText();
                 String fileName = filename.getText();
+                if (fileName.equalsIgnoreCase(""))
+                {
+                    fileName = text;
+                }
                 switch (languages.getSelectedItem().toString())
                 {
                     case "Githyanki":
@@ -53,6 +57,8 @@ public class Seb_Script_GUI {
                         break;
                     }
                 }
+                JOptionPane.showMessageDialog(null, "Created \"" + text + "\" using the " + languages.getSelectedItem().toString() + " script!\n" +
+                        "The file was saved as \"" + fileName + "\".svg in the working directory!");
             }
         });
     }

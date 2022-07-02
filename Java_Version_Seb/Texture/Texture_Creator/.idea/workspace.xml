@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73300e08-e106-425b-9c6a-43c070194bcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Master.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TirSu_Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Sentences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Sentences.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +124,7 @@
       <workItem from="1619163969198" duration="9728000" />
       <workItem from="1634392353592" duration="21379000" />
       <workItem from="1634580385195" duration="1266000" />
-      <workItem from="1656715315959" duration="11806000" />
+      <workItem from="1656715315959" duration="12194000" />
     </task>
     <task id="LOCAL-00001" summary="What did i do?">
       <created>1656715497082</created>
@@ -161,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656719574767</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="FIRST GUI:&#10;+ Funcional GUI&#10;+ Filename support&#10;TODO:&#10;- Missing path selector">
+      <created>1656767613675</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656767613675</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +195,8 @@
     <MESSAGE value="Apparently all is good again.&#10;+ Added Formatting &#10;+ Added Custom File naming" />
     <MESSAGE value="GUI:&#10;+ Created First GUI Version&#10;+ GUI not functional" />
     <MESSAGE value="Night Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Night Commit" />
+    <MESSAGE value="FIRST GUI:&#10;+ Funcional GUI&#10;+ Filename support&#10;TODO:&#10;- Missing path selector" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIRST GUI:&#10;+ Funcional GUI&#10;+ Filename support&#10;TODO:&#10;- Missing path selector" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
