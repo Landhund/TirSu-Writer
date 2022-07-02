@@ -1,14 +1,11 @@
 import TirSu_Tools.TirSu_Circle;
+import TirSu_Tools.TirSu_Master;
 import TirSu_Tools.TirSu_Sentences;
 
 public class TirSu_Generator
 {
     public static void main(String[] args)
     {
-        TirSu_Circle test = new TirSu_Circle("Hello", true);
-        test.saveTIRSU(true);
-
-        TirSu_Sentences tester = new TirSu_Sentences("Hello test", "hellotest",true);
-        tester.saveTIRSU(true);
+        TirSu_Master master = new TirSu_Master("Hello World ", "tester", true);
     }
 }

@@ -1,5 +1,6 @@
 package GUI_Tools;
 
+import TirSu_Tools.TirSu_Master;
 import TirSu_Tools.TirSu_Sentences;
 
 import javax.swing.*;
@@ -13,6 +14,7 @@ public class Seb_Script_GUI {
     private JButton createButton;
     private JComboBox languages;
     private JButton exitButton;
+    private JPanel mainPanel;
 
     public Seb_Script_GUI() {
         clearButton.addActionListener(new ActionListener() {
@@ -38,14 +40,12 @@ public class Seb_Script_GUI {
                 {
                     case "Githyanki":
                     {
-                        TirSu_Sentences symbol = new TirSu_Sentences(text, fileName, true);
-                        symbol.saveTIRSU(true);
+                        TirSu_Master master = new TirSu_Master(text, fileName, true);
                         break;
                     }
                     case "Githzerai":
                     {
-                        TirSu_Sentences symbol = new TirSu_Sentences(text, fileName, false);
-                        symbol.saveTIRSU(true);
+                        TirSu_Master master = new TirSu_Master(text, fileName, false);
                         break;
                     }
                     default:
@@ -56,4 +56,13 @@ public class Seb_Script_GUI {
             }
         });
     }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Seb_Script_GUI");
+        frame.setContentPane(new Seb_Script_GUI().mainPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
 }

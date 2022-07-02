@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73300e08-e106-425b-9c6a-43c070194bcd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Master.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TirSu_Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Sentences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Sentences.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +58,23 @@
       <recent name="C:\Users\gritsch\Documents\GitHub\TirSu-Writer\Java_Version_Seb\Texture\Texture_Creator\src\GUI_Tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TirSu_Generator">
+  <component name="RunManager" selected="Application.Seb_Script_GUI">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Texture_Creator" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Seb_Script_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI_Tools.Seb_Script_GUI" />
+      <module name="Texture_Creator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI_Tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -79,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Seb_Script_GUI" />
         <item itemvalue="Application.TirSu_Generator" />
         <item itemvalue="Application.Main" />
       </list>
@@ -110,7 +131,7 @@
       <workItem from="1619163969198" duration="9728000" />
       <workItem from="1634392353592" duration="21379000" />
       <workItem from="1634580385195" duration="1266000" />
-      <workItem from="1656715315959" duration="4187000" />
+      <workItem from="1656715315959" duration="11806000" />
     </task>
     <task id="LOCAL-00001" summary="What did i do?">
       <created>1656715497082</created>
@@ -133,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656719201310</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Night Commit">
+      <created>1656719574767</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656719574767</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +194,27 @@
     <MESSAGE value="What did i do?" />
     <MESSAGE value="Apparently all is good again.&#10;+ Added Formatting &#10;+ Added Custom File naming" />
     <MESSAGE value="GUI:&#10;+ Created First GUI Version&#10;+ GUI not functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI:&#10;+ Created First GUI Version&#10;+ GUI not functional" />
+    <MESSAGE value="Night Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Night Commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/TirSu_Tools/TirSu_Circle.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

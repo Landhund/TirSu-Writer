@@ -96,6 +96,10 @@ public class TirSu_Sentences
     private void headerGenerator()
     {
         int modifier = headerCalculator();
+        if (modifier == 0)
+        {
+            modifier = 1;
+        }
 
         this.header_generator = new Header_Generator();
         this.header_generator.createSVGHeader(1000, 1000/modifier);

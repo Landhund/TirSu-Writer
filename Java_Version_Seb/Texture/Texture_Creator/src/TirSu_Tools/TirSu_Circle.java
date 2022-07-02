@@ -15,9 +15,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Objects;
 
 public class TirSu_Circle
 {
+    private String filename;
     private String word;
     private int word_length;
     private int radius;
@@ -35,6 +37,41 @@ public class TirSu_Circle
 
     public TirSu_Circle(String word, boolean githyanki)
     {
+        this.filename = word;
+        this.word = word;
+        this.word_length = word.length();
+
+        radius = (word.length()*5) + 20;
+        boxSize = radius*2 + 45*3;
+
+        header_generator = new Header_Generator();
+        header_generator.createSVGHeader(1000, 1000);
+        header_generator.createCenteredOnOriginViewbox(boxSize, boxSize);
+
+        letters = new Element[word.length()]; getLetterElements();
+
+        getLetterElements();
+        createTirSuCircle(githyanki);
+
+
+        if (githyanki)
+        {
+            rotateLettersGITHYANKI();
+            marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
+        else
+        {
+            rotateLettersGITHZERAI();
+            marker = new Line_Element().withStartPoint(0,(4*radius/5)).withEndPoint(0,radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
+
+    }
+
+    public TirSu_Circle(String word, String filename, boolean githyanki)
+    {
+        this.filename = filename;
         this.word = word;
         this.word_length = word.length();
 
@@ -153,7 +190,7 @@ public class TirSu_Circle
         if (override == true)
         {
             try {
-                Files.deleteIfExists(Path.of(word + ".svg"));
+                Files.deleteIfExists(Path.of(filename + ".svg"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -162,7 +199,7 @@ public class TirSu_Circle
 
 
         try {
-            File file1 = new File(word + ".svg");
+            File file1 = new File(filename + ".svg");
             if (file1.createNewFile()) {
                 System.out.println("File created: " + file1.getName());
             } else {
@@ -174,7 +211,7 @@ public class TirSu_Circle
         }
 
         try {
-            FileWriter fileWriter = new FileWriter(word + ".svg");
+            FileWriter fileWriter = new FileWriter(filename + ".svg");
             fileWriter.write(header_generator.getHeader());
             fileWriter.write(wordGroup.toString() + "\n");
             fileWriter.write("\t" + circleTirSu.toString() + "\n");
