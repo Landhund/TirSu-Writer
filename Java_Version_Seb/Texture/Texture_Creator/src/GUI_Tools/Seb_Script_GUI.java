@@ -36,29 +36,44 @@ public class Seb_Script_GUI {
             public void actionPerformed(ActionEvent e) {
                 String text = sentences.getText();
                 String fileName = filename.getText();
+                boolean correctLanguage = true;
                 if (fileName.equalsIgnoreCase(""))
                 {
                     fileName = text;
                 }
-                switch (languages.getSelectedItem().toString())
+
+                if (!text.equalsIgnoreCase(""))
                 {
-                    case "Githyanki":
+                    switch (languages.getSelectedItem().toString())
                     {
-                        TirSu_Master master = new TirSu_Master(text, fileName, true);
-                        break;
+                        case "Githyanki":
+                        {
+                            TirSu_Master master = new TirSu_Master(text, fileName, true);
+                            break;
+                        }
+                        case "Githzerai":
+                        {
+                            TirSu_Master master = new TirSu_Master(text, fileName, false);
+                            break;
+                        }
+                        default:
+                        {
+                            JOptionPane.showMessageDialog(null, "Please select a valid language!");
+                            correctLanguage = false;
+                            break;
+                        }
                     }
-                    case "Githzerai":
+                    if (correctLanguage)
                     {
-                        TirSu_Master master = new TirSu_Master(text, fileName, false);
-                        break;
-                    }
-                    default:
-                    {
-                        break;
+                        JOptionPane.showMessageDialog(null, "Created \"" + text + "\" using the " + languages.getSelectedItem().toString() + " script!\n" +
+                                "The file was saved as \"" + fileName + "\".svg in the working directory!");
                     }
                 }
-                JOptionPane.showMessageDialog(null, "Created \"" + text + "\" using the " + languages.getSelectedItem().toString() + " script!\n" +
-                        "The file was saved as \"" + fileName + "\".svg in the working directory!");
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Please enter a frase to transcribe!");
+                }
+
             }
         });
     }
