@@ -1,7 +1,6 @@
-package GUI_Tools;
+package JavaProgram;
 
 import TirSu_Tools.TirSu_Master;
-import TirSu_Tools.TirSu_Sentences;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

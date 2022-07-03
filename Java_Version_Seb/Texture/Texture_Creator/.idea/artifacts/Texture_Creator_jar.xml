@@ -2,7 +2,7 @@
   <artifact type="jar" name="Texture_Creator:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/Texture_Creator_jar</output-path>
     <root id="archive" name="Texture_Creator.jar">
-      <element id="module-output" name="Texture_Creator" />
+      <element id="module-output" name="Seb_Transcriber" />
     </root>
   </artifact>
 </component>

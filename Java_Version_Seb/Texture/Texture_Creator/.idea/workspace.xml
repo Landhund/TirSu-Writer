@@ -7,10 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73300e08-e106-425b-9c6a-43c070194bcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Texture_Creator_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Texture_Creator_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Texture_Creator_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Texture_Creator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Seb_Transcriber.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +31,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../../.." value="SVG_Code" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -62,17 +70,17 @@
   <component name="RunManager" selected="Application.Seb_Script_GUI">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Texture_Creator" />
+      <module name="Seb_Transcriber" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Seb_Script_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUI_Tools.Seb_Script_GUI" />
-      <module name="Texture_Creator" />
+      <option name="MAIN_CLASS_NAME" value="JavaProgram.Seb_Script_GUI" />
+      <module name="Seb_Transcriber" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="GUI_Tools.*" />
+          <option name="PATTERN" value="JavaProgram.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,18 +90,20 @@
     </configuration>
     <configuration name="TirSu_Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TirSu_Generator" />
-      <module name="Texture_Creator" />
+      <module name="Seb_Transcriber" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -193,7 +203,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="Java_Version_V2" />
                       </list>
                     </value>
                   </entry>
@@ -204,6 +214,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="What did i do?" />
