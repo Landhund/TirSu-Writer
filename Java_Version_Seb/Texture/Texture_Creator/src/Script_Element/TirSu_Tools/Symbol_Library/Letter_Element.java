@@ -1,4 +1,4 @@
-package TirSu_Tools.Symbol_Library;
+package Script_Element.TirSu_Tools.Symbol_Library;
 
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Ellipse_Element;

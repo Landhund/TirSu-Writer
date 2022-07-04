@@ -1,6 +1,6 @@
 package JavaProgram;
 
-import TirSu_Tools.TirSu_Master;
+import Script_Element.TirSu_Tools.TirSu_Master;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

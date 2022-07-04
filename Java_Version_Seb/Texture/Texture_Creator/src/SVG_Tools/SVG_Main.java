@@ -4,8 +4,8 @@ package SVG_Tools;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.*;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
-import TirSu_Tools.Symbol_Library.TirSu_Alphabet;
-import TirSu_Tools.TirSu_Circle;
+import Script_Element.TirSu_Tools.Symbol_Library.TirSu_Alphabet;
+import Script_Element.TirSu_Tools.TirSu_Circle;
 
 import java.io.File;
 import java.io.FileWriter;

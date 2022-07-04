@@ -1,6 +1,4 @@
-import TirSu_Tools.TirSu_Circle;
-import TirSu_Tools.TirSu_Master;
-import TirSu_Tools.TirSu_Sentences;
+import Script_Element.TirSu_Tools.TirSu_Master;
 
 public class TirSu_Generator
 {

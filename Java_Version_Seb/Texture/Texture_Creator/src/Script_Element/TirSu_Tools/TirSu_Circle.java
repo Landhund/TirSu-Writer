@@ -1,4 +1,4 @@
-package TirSu_Tools;
+package Script_Element.TirSu_Tools;
 
 
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.AttributeValue;
@@ -8,14 +8,13 @@ import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Line_Element;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
-import TirSu_Tools.Symbol_Library.TirSu_Alphabet;
+import Script_Element.TirSu_Tools.Symbol_Library.TirSu_Alphabet;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Objects;
 
 public class TirSu_Circle
 {
@@ -103,6 +102,9 @@ public class TirSu_Circle
 
     }
 
+
+
+    // -------------------- String Input -------------------- \\
 
     private void getLetterElements()
     {

@@ -7,13 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73300e08-e106-425b-9c6a-43c070194bcd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Texture_Creator_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Texture_Creator_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Script_Element/Script_Master.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Texture_Creator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Seb_Transcriber.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Tools/Seb_Script_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SVG_Tools/SVG_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SVG_Tools/SVG_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TirSu_Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/Letter_Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/Symbol_Library/Letter_Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/TirSu_Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Master.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/TirSu_Master.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TirSu_Tools/TirSu_Sentences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/TirSu_Sentences.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656768012149</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="FIRST GUI:&#10;+ added a message after &quot;create&quot; and some slight functionality.&#10;~ fixed empty filenames to shot the text as filename&#10;TODO:&#10;- Missing path selector">
+      <created>1656852864655</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656852864655</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,12 +243,7 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/TirSu_Tools/TirSu_Circle.java</url>
+          <url>file://$PROJECT_DIR$/src/Script_Element/TirSu_Tools/TirSu_Circle.java</url>
           <line>73</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>

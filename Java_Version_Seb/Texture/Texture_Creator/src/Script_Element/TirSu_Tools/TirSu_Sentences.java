@@ -1,4 +1,4 @@
-package TirSu_Tools;
+package Script_Element.TirSu_Tools;
 
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;

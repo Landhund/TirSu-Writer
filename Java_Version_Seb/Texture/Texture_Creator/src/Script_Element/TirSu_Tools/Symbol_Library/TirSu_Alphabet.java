@@ -1,4 +1,4 @@
-package TirSu_Tools.Symbol_Library;
+package Script_Element.TirSu_Tools.Symbol_Library;
 
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.AttributeValue;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
@@ -6,7 +6,6 @@ import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
 
 import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -71,12 +70,30 @@ public enum TirSu_Alphabet
     private List<Letter_Element> elements = new ArrayList<>();
 
 
-    // -------------------------------- Methodes -------------------------------- \\
-    private String getLetterString()
-    {
-        return this.letter;
+    // -------------------------------- Setup-Script -------------------------------- \\
+    public static List<String> getScriptureAlphabet() {
+        return scriptureAlphabet;
     }
 
+    private static void createLetterList()
+    {
+        if (TirSu_Alphabet.scriptureAlphabet.size() < 1)
+        {
+            List<String> enumNames = Stream.of(TirSu_Alphabet.values())
+                    .map(TirSu_Alphabet::getLetterString)
+                    .collect(Collectors.toList());
+
+            TirSu_Alphabet.scriptureAlphabet = enumNames;
+        }
+    }
+
+    private String getLetterString()
+{
+    return this.letter;
+}
+
+
+    // -------------------------------- Element Methods -------------------------------- \\
     public Group_Element getLetter()
     {
 
@@ -92,33 +109,5 @@ public enum TirSu_Alphabet
         return letter;
     }
 
-    private static boolean isBadLetters(String letter)
-    {
-        if (TirSu_Alphabet.scriptureAlphabet.size() < 1)
-        {
-            List<String> enumNames = Stream.of(TirSu_Alphabet.values())
-                    .map(TirSu_Alphabet::getLetterString)
-                    .collect(Collectors.toList());
-
-            TirSu_Alphabet.scriptureAlphabet = enumNames;
-        }
-
-        if (scriptureAlphabet.contains(letter.toLowerCase()))
-        {
-            return false;
-        }
-        return true;
-    }
-
-
-    public static TirSu_Alphabet getValueOf(String letter)
-    {
-        if (!isBadLetters(letter))
-        {
-            return TirSu_Alphabet.valueOf(letter);
-        }
-
-        return null;
-    }
     
 }
