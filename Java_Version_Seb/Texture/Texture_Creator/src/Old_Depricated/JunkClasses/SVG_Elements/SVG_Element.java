@@ -1,6 +1,6 @@
-package SVG_Tools.JunkClasses.SVG_Elements;
+package Old_Depricated.JunkClasses.SVG_Elements;
 
-import SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters.SVG_Parameter;
+import Old_Depricated.JunkClasses.SVG_Elements.SVG_Parameters.SVG_Parameter;
 
 
 @Deprecated

@@ -1,4 +1,4 @@
-package SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters;
+package Old_Depricated.JunkClasses.SVG_Elements.SVG_Parameters;
 
 @Deprecated
 public interface IF_SVG_Parameter

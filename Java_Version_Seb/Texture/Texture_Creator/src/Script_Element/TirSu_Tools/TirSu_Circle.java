@@ -15,6 +15,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TirSu_Circle
 {
@@ -23,6 +25,7 @@ public class TirSu_Circle
     private int word_length;
     private int radius;
     private int boxSize;
+    private List<String> tirSu_alphabet;
 
     private Header_Generator header_generator;
     private Circle_Element circleTirSu;
@@ -31,6 +34,7 @@ public class TirSu_Circle
     private Group_Element wordGroup = new Group_Element(1).withAttributes(new AttributeValue(Global_Att.FILL), new AttributeValue(Global_Att.STROKE));
 
     private Element[] letters;
+    private List<Element> letters_new;
 
 
 
@@ -68,6 +72,42 @@ public class TirSu_Circle
 
     }
 
+    public TirSu_Circle(String word, List<String> tirSu_alphabet , boolean githyanki)
+    {
+        this.filename = word;
+        this.word = word;
+        this.word_length = word.length();
+        this.tirSu_alphabet = tirSu_alphabet;
+
+        radius = (word.length()*5) + 20;
+        boxSize = radius*2 + 45*3;
+
+        header_generator = new Header_Generator();
+        header_generator.createSVGHeader(1000, 1000);
+        header_generator.createCenteredOnOriginViewbox(boxSize, boxSize);
+
+        letters = new Element[word.length()];
+        letters_new = new ArrayList<>();
+
+        getLetterElementsNew();
+        createTirSuCircle(githyanki);
+
+
+        if (githyanki)
+        {
+            rotateLettersGITHYANKI();
+            marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
+        else
+        {
+            rotateLettersGITHZERAI();
+            marker = new Line_Element().withStartPoint(0,(4*radius/5)).withEndPoint(0,radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
+
+    }
+
     public TirSu_Circle(String word, String filename, boolean githyanki)
     {
         this.filename = filename;
@@ -84,6 +124,44 @@ public class TirSu_Circle
         letters = new Element[word.length()]; getLetterElements();
 
         getLetterElements();
+        createTirSuCircle(githyanki);
+
+
+        if (githyanki)
+        {
+            rotateLettersGITHYANKI();
+            marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
+        else
+        {
+            rotateLettersGITHZERAI();
+            marker = new Line_Element().withStartPoint(0,(4*radius/5)).withEndPoint(0,radius);
+            marker.appendAttribute(Global_Att.STROKE, "black");
+        }
+
+    }
+
+    public TirSu_Circle(String word, String filename, List<String> tirSu_alphabet, boolean githyanki)
+    {
+        this.word = word;
+        this.filename = filename;
+        this.tirSu_alphabet = tirSu_alphabet;
+
+        // FIXME Create a Methode that creates the adjusted header depending on Input:
+        // - size calculator
+        // - header creator
+
+        radius = (word.length()*5) + 20;
+        boxSize = radius*2 + 45*3;
+
+        header_generator = new Header_Generator();
+        header_generator.createSVGHeader(1000, 1000);
+        header_generator.createCenteredOnOriginViewbox(boxSize, boxSize);
+
+        letters = new Element[word.length()];
+
+        getLetterElementsNew();
         createTirSuCircle(githyanki);
 
 
@@ -154,6 +232,56 @@ public class TirSu_Circle
     }
 
 
+
+
+    private void getLetterElementsNew()
+    {
+        word_length = 0;
+
+        for (int i = 0; i < word.length(); i++)
+        {
+            String combination = "";
+            String first = String.valueOf(word.charAt(i)).toUpperCase();
+            String second = "";
+
+            if (word.length() > i + 1)
+            {
+                second = String.valueOf(word.charAt(i+1)).toUpperCase();
+            }
+
+            combination = (first + second).toLowerCase();
+
+            if (this.tirSu_alphabet.contains((combination).toLowerCase()))
+            {
+                letters[i] = TirSu_Alphabet.valueOf((combination).toUpperCase()).getLetter();
+                letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
+                letters[i] = new Group_Element(1).withElements(letters[i]);
+
+                i++;
+            }
+            else if (this.tirSu_alphabet.contains((first).toLowerCase()))
+            {
+                letters[i] = TirSu_Alphabet.valueOf((first).toUpperCase()).getLetter();
+                letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
+                letters[i] = new Group_Element(1).withElements(letters[i]);
+            }
+            else
+            {
+                throw new IllegalArgumentException("\"" + combination + "\" is not contained in the defined Alphabet!");
+            }
+
+            word_length++;
+        }
+
+        // this.word_length = letters_new.size();
+
+    }
+
+
+    // -------------------- Element Input -------------------- \\
+
+    //-------------------------------------------------------- \\
+
     private void createTirSuCircle(boolean githyanki)
     {
         double rot = 270 + ((360.0/word_length)/5)*3;
@@ -169,15 +297,7 @@ public class TirSu_Circle
     }
 
 
-    @Deprecated
-    private String toSting()
-    {
-        String word  = "";
-        word += wordGroup.toString() + "\n";
-        word += "\t" + circleTirSu.toString() + "\n";
-        word += "\t" + marker.toString() + "\n";
-        return word;
-    }
+
 
     public Group_Element getWordGroup()
     {
@@ -186,6 +306,7 @@ public class TirSu_Circle
         return wordGroup;
     }
 
+    // -------------------- Save ----------------------- \\
     public void saveTIRSU(boolean override)
     {
 
@@ -225,6 +346,9 @@ public class TirSu_Circle
         }
     }
 
+
+    // -------------------- Getter and Setter ----------------------- \\
+
     public int getBoxSize() {
         return boxSize;
     }
@@ -233,6 +357,7 @@ public class TirSu_Circle
     {
         return this.word;
     }
+
 
     // --------------- githyanki --------------- \\ Clockwise from top
     private void rotateLettersGITHYANKI()
@@ -274,4 +399,18 @@ public class TirSu_Circle
         wordGroup.appendAttribute(Global_Att.ID, word);
     }
 
+
+
+
+    // -------------------- DEPRICATED -------------------- \\
+
+    @Deprecated
+    private String toSting()
+    {
+        String word  = "";
+        word += wordGroup.toString() + "\n";
+        word += "\t" + circleTirSu.toString() + "\n";
+        word += "\t" + marker.toString() + "\n";
+        return word;
+    }
 }

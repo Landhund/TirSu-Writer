@@ -1,5 +1,6 @@
 package JavaProgram;
 
+import Script_Element.Script_Master;
 import Script_Element.TirSu_Tools.TirSu_Master;
 
 import javax.swing.*;
@@ -47,12 +48,14 @@ public class Seb_Script_GUI {
                     {
                         case "Githyanki":
                         {
-                            TirSu_Master master = new TirSu_Master(text, fileName, true);
+                            // TirSu_Master master = new TirSu_Master(text, fileName, true);
+                            Script_Master script_master = new Script_Master(text, fileName, languages.getSelectedItem().toString());
                             break;
                         }
                         case "Githzerai":
                         {
-                            TirSu_Master master = new TirSu_Master(text, fileName, false);
+                            // TirSu_Master master = new TirSu_Master(text, fileName, false);
+                            Script_Master script_master = new Script_Master(text, fileName, languages.getSelectedItem().toString());
                             break;
                         }
                         default:

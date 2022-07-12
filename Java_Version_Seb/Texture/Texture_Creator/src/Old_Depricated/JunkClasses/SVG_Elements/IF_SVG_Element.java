@@ -1,4 +1,4 @@
-package SVG_Tools.JunkClasses.SVG_Elements;
+package Old_Depricated.JunkClasses.SVG_Elements;
 
 @Deprecated
 public interface IF_SVG_Element

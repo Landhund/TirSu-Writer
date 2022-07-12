@@ -1,16 +1,19 @@
-package SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters;
+package Old_Depricated.JunkClasses.SVG_Elements.SVG_Parameters;
 
 @Deprecated
-public class SVG_Parameter implements IF_SVG_Parameter
+public enum Circle_Parameter implements IF_SVG_Parameter
 {
-    private String name;
-    private String value;
+    CX("cx", "0"), CY("cy", "0"), R("r", "0"), SE("se", "0");
 
-    private SVG_Parameter(String name, String value)
+    private Circle_Parameter(String name, String value)
     {
         this.name = name;
         this.value = value;
     }
+
+    private String name;
+    private String value;
+
 
     // ---------- Element Methodes ---------- \\
 

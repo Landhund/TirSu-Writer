@@ -1,5 +1,8 @@
+package Old_Depricated;
+
 import Script_Element.TirSu_Tools.TirSu_Master;
 
+@Deprecated
 public class TirSu_Generator
 {
     public static void main(String[] args)

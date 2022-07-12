@@ -72,6 +72,7 @@ public enum TirSu_Alphabet
 
     // -------------------------------- Setup-Script -------------------------------- \\
     public static List<String> getScriptureAlphabet() {
+        createLetterList();
         return scriptureAlphabet;
     }
 

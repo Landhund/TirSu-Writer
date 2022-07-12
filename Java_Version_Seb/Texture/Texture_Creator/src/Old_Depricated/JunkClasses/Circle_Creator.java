@@ -1,6 +1,6 @@
-package SVG_Tools.JunkClasses;
+package Old_Depricated.JunkClasses;
 
-import SVG_Tools.JunkClasses.SVG_Elements.SVG_Parameters.Circle_Parameter;
+import Old_Depricated.JunkClasses.SVG_Elements.SVG_Parameters.Circle_Parameter;
 
 
 @Deprecated

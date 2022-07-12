@@ -9,22 +9,24 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class TirSu_Sentences
 {
-    private String fileName;
-    private String sentence;
+    private final String fileName;
+    private final String sentence;
     private int wordCount;
     private String[] words;
     private int x_distance;
     private int y_distance;
+    private List<String> tirSu_alphabet;
+
 
     private Header_Generator header_generator;
-
     private TirSu_Circle[] wordsCircles;
     private Group_Element sentenceGroup;
 
-    private boolean githyanki;
+    private final boolean githyanki;
 
 
 
@@ -40,6 +42,18 @@ public class TirSu_Sentences
         headerGenerator();
     }
 
+    public TirSu_Sentences(String sentence, List<String> tirSu_alphabet, boolean githyanki)
+    {
+        this.fileName = sentence;
+        this.sentence = sentence;
+        this.githyanki = githyanki;
+        this.tirSu_alphabet = tirSu_alphabet;
+        spliceSentence();
+        createWordSymbolsUsingAlphabet();
+        buildSentence();
+        headerGenerator();
+    }
+
     public TirSu_Sentences(String sentence, String fileName, boolean githyanki)
     {
         this.fileName = fileName;
@@ -47,6 +61,18 @@ public class TirSu_Sentences
         this.githyanki = githyanki;
         spliceSentence();
         createWordSymbols();
+        buildSentence();
+        headerGenerator();
+    }
+
+    public TirSu_Sentences(String sentence, String fileName, List<String> tirSu_alphabet, boolean githyanki)
+    {
+        this.fileName = fileName;
+        this.sentence = sentence;
+        this.githyanki = githyanki;
+        this.tirSu_alphabet = tirSu_alphabet;
+        spliceSentence();
+        createWordSymbolsUsingAlphabet();
         buildSentence();
         headerGenerator();
     }
@@ -64,6 +90,13 @@ public class TirSu_Sentences
     {
         for (int i = 0; i < wordCount; i++) {
             this.wordsCircles[i] = new TirSu_Circle(words[i], githyanki);
+        }
+    }
+
+    private void createWordSymbolsUsingAlphabet()
+    {
+        for (int i = 0; i < wordCount; i++) {
+            this.wordsCircles[i] = new TirSu_Circle(words[i], this.tirSu_alphabet, githyanki);
         }
     }
 
