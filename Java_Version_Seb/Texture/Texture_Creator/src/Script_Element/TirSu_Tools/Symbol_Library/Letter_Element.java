@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Letter_Element
  */
-public enum Letter_Element          // TODO: #25 Write the Elements of witch the Alphabet Symbols consist
+public enum Letter_Element
 {
     // --------------------- BASE ELEMENTS --------------------- \\
     CENTER_LINE_SHORT(new Line_Element().withStartPoint(0,0).withEndPoint(0, 10)),
