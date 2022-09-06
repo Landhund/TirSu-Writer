@@ -1,8 +1,7 @@
 package Script_Element;
 
-import Script_Element.TirSu_Tools.Symbol_Library.Letter_Element;
-import Script_Element.TirSu_Tools.Symbol_Library.TirSu_Alphabet;
-import Script_Element.TirSu_Tools.TirSu_Master;
+import Script_Element.TirSu.TirSu_Symbol_Library.TirSu_Alphabet;
+import Script_Element.TirSu.TirSu_Master;
 
 import java.util.List;
 

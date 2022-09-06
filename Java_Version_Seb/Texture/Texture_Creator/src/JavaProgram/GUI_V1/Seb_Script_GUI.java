@@ -1,7 +1,6 @@
-package JavaProgram;
+package JavaProgram.GUI_V1;
 
 import Script_Element.Script_Master;
-import Script_Element.TirSu_Tools.TirSu_Master;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -81,11 +80,11 @@ public class Seb_Script_GUI {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Seb_Script_GUI");
-        frame.setContentPane(new Seb_Script_GUI().mainPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+            JFrame frame = new JFrame("Seb_Script_GUI");
+            frame.setContentPane(new Seb_Script_GUI().mainPanel);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
     }
 
 }

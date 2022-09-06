@@ -1,4 +1,4 @@
-package Script_Element.TirSu_Tools;
+package Script_Element.TirSu;
 
 
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.AttributeValue;
@@ -8,7 +8,8 @@ import SVG_Tools.New_SVG_Workspace.Element_Workspace.Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Line_Element;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
-import Script_Element.TirSu_Tools.Symbol_Library.TirSu_Alphabet;
+import Script_Element.TirSu.TirSu_Symbol_Library.Letter_Element;
+import Script_Element.TirSu.TirSu_Symbol_Library.TirSu_Alphabet;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -35,9 +36,14 @@ public class TirSu_Circle
 
     private Element[] letters;
     private List<Element> letters_new;
+    private List<String> correctedStringList;
 
 
-
+    /**
+     * Konstruktor für einzelne wörter
+     * @param word
+     * @param githyanki
+     */
     public TirSu_Circle(String word, boolean githyanki)
     {
         this.filename = word;
@@ -66,6 +72,12 @@ public class TirSu_Circle
 
     }
 
+    /**
+     * Constructor using a word in a selected script variation using the alphabet variation of the code
+     * @param word
+     * @param tirSu_alphabet
+     * @param githyanki
+     */
     public TirSu_Circle(String word, List<String> tirSu_alphabet , boolean githyanki)
     {
         this.filename = word;
@@ -77,25 +89,32 @@ public class TirSu_Circle
         letters_new = new ArrayList<>();
 
         getLetterElementsNew();
+        calcDimensions();
+        getLettersFromCorrectedString();
         createHeader();
         createTirSuCircle(githyanki);
 
-
         if (githyanki)
         {
-            rotateLettersGITHYANKI();
+            newRotateLettersGITHYANKI();
             marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
             marker.appendAttribute(Global_Att.STROKE, "black");
         }
         else
         {
-            rotateLettersGITHZERAI();
+            newRotateLettersGITHZERAI();
             marker = new Line_Element().withStartPoint(0,(4*radius/5)).withEndPoint(0,radius);
             marker.appendAttribute(Global_Att.STROKE, "black");
         }
 
     }
 
+    /**
+     * Constructor for words with a selected filename and a selected script
+     * @param word
+     * @param filename
+     * @param githyanki
+     */
     public TirSu_Circle(String word, String filename, boolean githyanki)
     {
         this.filename = filename;
@@ -104,6 +123,7 @@ public class TirSu_Circle
 
         letters = new Element[word.length()]; getLetterElements();
 
+        calcDimensions();
         getLetterElements();
         createHeader();
         createTirSuCircle(githyanki);
@@ -124,6 +144,15 @@ public class TirSu_Circle
 
     }
 
+    /**
+     * Standard Constructor that is used
+     * Contains the word with a selected filename and a selected script
+     * Uses the alphabet vatiation of my code
+     * @param word
+     * @param filename
+     * @param tirSu_alphabet
+     * @param githyanki
+     */
     public TirSu_Circle(String word, String filename, List<String> tirSu_alphabet, boolean githyanki)
     {
         this.word = word;
@@ -131,20 +160,25 @@ public class TirSu_Circle
         this.tirSu_alphabet = tirSu_alphabet;
 
         letters = new Element[word.length()];
+        letters_new = new ArrayList<>();
 
         getLetterElementsNew();
+        calcDimensions();
+        getLettersFromCorrectedString();
         createHeader();
         createTirSuCircle(githyanki);
 
         if (githyanki)
         {
-            rotateLettersGITHYANKI();
+            newRotateLettersGITHZERAI();
+            // rotateLettersGITHYANKI();
             marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
             marker.appendAttribute(Global_Att.STROKE, "black");
         }
         else
         {
-            rotateLettersGITHZERAI();
+            newRotateLettersGITHZERAI();
+            // rotateLettersGITHZERAI();
             marker = new Line_Element().withStartPoint(0,(4*radius/5)).withEndPoint(0,radius);
             marker.appendAttribute(Global_Att.STROKE, "black");
         }
@@ -202,9 +236,12 @@ public class TirSu_Circle
 
     }
 
+    // -----
+
     private void getLetterElementsNew()
     {
         word_length = 0;
+        this.correctedStringList = new ArrayList<>();
 
         for (int i = 0; i < word.length(); i++)
         {
@@ -221,17 +258,21 @@ public class TirSu_Circle
 
             if (this.tirSu_alphabet.contains((combination).toLowerCase()))
             {
-                letters[i] = TirSu_Alphabet.valueOf((combination).toUpperCase()).getLetter();
-                letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
-                letters[i] = new Group_Element(1).withElements(letters[i]);
+                correctedStringList.add(combination.toUpperCase());
+
+                // letters[i] = TirSu_Alphabet.valueOf((combination).toUpperCase()).getLetter();
+                // letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
+                // letters[i] = new Group_Element(1).withElements(letters[i]);
 
                 i++;
             }
             else if (this.tirSu_alphabet.contains((first).toLowerCase()))
             {
-                letters[i] = TirSu_Alphabet.valueOf((first).toUpperCase()).getLetter();
-                letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
-                letters[i] = new Group_Element(1).withElements(letters[i]);
+                correctedStringList.add(first.toUpperCase());
+
+                // letters[i] = TirSu_Alphabet.valueOf((first).toUpperCase()).getLetter();
+                // letters[i].appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
+                // letters[i] = new Group_Element(1).withElements(letters[i]);
             }
             else
             {
@@ -241,8 +282,19 @@ public class TirSu_Circle
             word_length++;
         }
 
-        // this.word_length = letters_new.size();
 
+        // this.word_length = letters_new.size();
+    }
+
+    private void getLettersFromCorrectedString()
+    {
+        for (String letter : correctedStringList)
+        {
+            Group_Element letter_element = TirSu_Alphabet.valueOf(letter).getLetter();
+            letter_element.appendAttribute(Global_Att.TRANSFORM, "translate(0," + radius + ")");
+            letters_new.add(new Group_Element(1).withElements(letter_element));
+
+        }
     }
 
     // -------------------- Element Input -------------------- \\
@@ -251,14 +303,17 @@ public class TirSu_Circle
 
     // -------------------- TirSuCircle Header -------------------- \\
 
-    public void createHeader()
+    private void createHeader()
     {
-        radius = (word.length()*5) + 20;
-        boxSize = radius*2 + 45*3;
-
         header_generator = new Header_Generator();
         header_generator.createSVGHeader(1000, 1000);
         header_generator.createCenteredOnOriginViewbox(boxSize, boxSize);
+    }
+
+    private void calcDimensions()
+    {
+        this.radius = (word_length*5) + 20;
+        this.boxSize = radius*2 + 45*3;
     }
 
     //-------------------------------------------------------- \\
@@ -360,6 +415,23 @@ public class TirSu_Circle
         }
         wordGroup.appendAttribute(Global_Att.ID, word);
     }
+
+    private void newRotateLettersGITHYANKI()
+    {
+        double segmentAngle = 360/((double) word_length);
+        double tempAngle = (180);
+
+        for (Element letter : letters_new) {
+
+            if (letter instanceof Group_Element)
+            {
+                letter.appendAttribute(Global_Att.TRANSFORM, "rotate(" + tempAngle + ", 0, 0)");
+                tempAngle = (tempAngle + segmentAngle);
+                wordGroup.addElementsToGroup(letter);
+            }
+        }
+        wordGroup.appendAttribute(Global_Att.ID, word);
+    }
     //-------------------------------------------------------- \\
 
 
@@ -381,12 +453,37 @@ public class TirSu_Circle
         }
         wordGroup.appendAttribute(Global_Att.ID, word);
     }
+
+    private void newRotateLettersGITHZERAI()
+    {
+        double segmentAngle = 360/((double) word_length);
+        double tempAngle = (0);
+
+        for (Element letter : letters_new) {
+            if (letter instanceof Group_Element)
+            {
+                letter.appendAttribute(Global_Att.TRANSFORM, "rotate(" + -tempAngle + ", 0, 0)");
+                tempAngle = (tempAngle + segmentAngle);
+                wordGroup.addElementsToGroup(letter);
+            }
+        }
+        wordGroup.appendAttribute(Global_Att.ID, word);
+    }
     //-------------------------------------------------------- \\
 
 
     // -------------------- DEPRICATED -------------------- \\
     @Deprecated
     private String toSting()
+    {
+        String word  = "";
+        word += wordGroup.toString() + "\n";
+        word += "\t" + circleTirSu.toString() + "\n";
+        word += "\t" + marker.toString() + "\n";
+        return word;
+    }
+
+    private String newToSting()
     {
         String word  = "";
         word += wordGroup.toString() + "\n";

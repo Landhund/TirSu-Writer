@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: JavaProgram.Seb_Script_GUI
+Main-Class: JavaProgram.GUI_V1.Seb_Script_GUI
 

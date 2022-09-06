@@ -1,4 +1,4 @@
-package Script_Element.TirSu_Tools;
+package Script_Element.TirSu;
 
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
@@ -141,7 +141,10 @@ public class TirSu_Sentences
 
     private int headerCalculator()
     {
-        return x_distance/y_distance;
+        if (y_distance != 0) {
+            return x_distance / y_distance;
+        }
+        else return 0;
     }
 
 

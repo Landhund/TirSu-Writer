@@ -10,7 +10,7 @@ public class Group_Element implements Element
 {
     List<AttributeValue> attributeValues = new ArrayList<>();
     List<Element> groupedElements = new ArrayList<>();
-    String textIndent = "";
+    String textIndent = "";         //TODO: Environment.Newline in java?!
     int indentAmount;
 
     public Group_Element()

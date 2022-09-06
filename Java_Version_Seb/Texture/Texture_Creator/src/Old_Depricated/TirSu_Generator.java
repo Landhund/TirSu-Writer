@@ -1,6 +1,6 @@
 package Old_Depricated;
 
-import Script_Element.TirSu_Tools.TirSu_Master;
+import Script_Element.TirSu.TirSu_Master;
 
 @Deprecated
 public class TirSu_Generator
