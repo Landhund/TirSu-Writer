@@ -170,7 +170,7 @@ public class TirSu_Circle
 
         if (githyanki)
         {
-            newRotateLettersGITHZERAI();
+            newRotateLettersGITHYANKI();
             // rotateLettersGITHYANKI();
             marker = new Line_Element().withStartPoint(0,-(4*radius/5)).withEndPoint(0,-radius);
             marker.appendAttribute(Global_Att.STROKE, "black");

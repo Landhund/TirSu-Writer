@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Seb_Transcriber">
+    <output-path>$PROJECT_DIR$/out/artifacts/Seb_Transcriber_V2</output-path>
+    <root id="archive" name="Seb_Transcriber.jar">
+      <element id="module-output" name="Seb_Transcriber" />
+    </root>
+  </artifact>
+</component>

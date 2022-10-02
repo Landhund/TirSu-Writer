@@ -85,7 +85,7 @@ public class GUI_V2 {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Seb_Script_GUI");
+        JFrame frame = new JFrame("Sebscriber");
         frame.setContentPane(new GUI_V2().main_panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

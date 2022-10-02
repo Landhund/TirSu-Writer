@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Texture_Creator:jar" />
+      <artifact name="Seb_Transcriber" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73300e08-e106-425b-9c6a-43c070194bcd" name="Default Changelist" comment="Seb_Transcriber V2:&#10;+ Slight modifications and improvements">
-      <change afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SVG_Tools/New_SVG_Workspace/Element_Workspace/Path_Element.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Symbol_Library/Variants/German_Variation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="73300e08-e106-425b-9c6a-43c070194bcd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Seb_Transcriber.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V1/Seb_Script_GUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaProgram/Seb_Script_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V1/Seb_Script_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Old_Depricated/TirSu_Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Old_Depricated/TirSu_Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SVG_Tools/New_SVG_Workspace/Element_Workspace/Group_Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SVG_Tools/New_SVG_Workspace/Element_Workspace/Group_Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SVG_Tools/SVG_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SVG_Tools/SVG_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Script_Element/Script_Master.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/Script_Master.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/Symbol_Library/Letter_Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Symbol_Library/Letter_Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/Symbol_Library/TirSu_Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Symbol_Library/TirSu_Alphabet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/TirSu_Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/TirSu_Master.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Master.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Script_Element/TirSu_Tools/TirSu_Sentences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Sentences.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,27 +37,28 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="1rYrf60kaV2S8tsfqU3bGbi54Hy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/SVG_Tools/New_SVG_Workspace" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;13&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gritsch/Documents/Privates/Coding/Java/SVG_Interface_new/SVG_Interface&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/Landhund/TirSu-Writer.git" />
@@ -80,7 +68,7 @@
       <recent name="C:\Users\gritsch\Documents\GitHub\TirSu-Writer\Java_Version_Seb\Texture\Texture_Creator\src\GUI_Tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GUI_V2">
+  <component name="RunManager" selected="Application.TesterClass">
     <configuration name="GUI_V2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaProgram.GUI_V2.GUI_V2" />
       <module name="Seb_Transcriber" />
@@ -94,19 +82,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Seb_Transcriber" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SVG_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SVG_Tools.SVG_Main" />
+    <configuration name="JavaProgram.GUI_V1.Seb_Script_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JavaProgram.GUI_V1.Seb_Script_GUI" />
       <module name="Seb_Transcriber" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="SVG_Tools.*" />
+          <option name="PATTERN" value="JavaProgram.GUI_V1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,33 +95,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Seb_Script_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaProgram.Seb_Script_GUI" />
+    <configuration name="TesterClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TesterClass" />
       <module name="Seb_Transcriber" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JavaProgram.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TirSu_Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Old_Depricated.TirSu_Generator" />
-      <module name="Seb_Transcriber" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Seb_Transcriber.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Seb_Transcriber_V2/Seb_Transcriber.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Seb_Transcriber.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Seb_Transcriber/Seb_Transcriber.jar" />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TesterClass" />
         <item itemvalue="Application.GUI_V2" />
-        <item itemvalue="Application.SVG_Main" />
-        <item itemvalue="Application.Seb_Script_GUI" />
-        <item itemvalue="Application.TirSu_Generator" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.Seb_Transcriber.jar (1)" />
+        <item itemvalue="JAR Application.Seb_Transcriber.jar" />
+        <item itemvalue="Application.JavaProgram.GUI_V1.Seb_Script_GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +163,14 @@
       <workItem from="1660908831077" duration="7319000" />
       <workItem from="1661772565985" duration="1975000" />
       <workItem from="1662323700718" duration="8000" />
-      <workItem from="1662457404339" duration="673000" />
+      <workItem from="1662457404339" duration="1020000" />
+      <workItem from="1662459639508" duration="2056000" />
+      <workItem from="1662541741071" duration="615000" />
+      <workItem from="1662543246222" duration="1240000" />
+      <workItem from="1662733675898" duration="1499000" />
+      <workItem from="1663185249283" duration="819000" />
+      <workItem from="1664295452720" duration="3562000" />
+      <workItem from="1664742220476" duration="1081000" />
     </task>
     <task id="LOCAL-00001" summary="What did i do?">
       <created>1656715497082</created>
@@ -259,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657706210264</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Seb_Transcriber V2:&#10;+ Added Some GUI Modifications">
+      <created>1662458200923</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1662458200923</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +277,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="What did i do?" />
@@ -299,7 +288,8 @@
     <MESSAGE value="Seb_Transcriber V2:&#10;+ Experimental ScriptMaster" />
     <MESSAGE value="Seb_Transcriber V2:&#10;+ Slight adjustments and Depricating&#10;+ Modified Script_Master to work &#10;+ Adding Constructor for Implimentation of Script_Master" />
     <MESSAGE value="Seb_Transcriber V2:&#10;+ Slight modifications and improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seb_Transcriber V2:&#10;+ Slight modifications and improvements" />
+    <MESSAGE value="Seb_Transcriber V2:&#10;+ Added Some GUI Modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Seb_Transcriber V2:&#10;+ Added Some GUI Modifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
