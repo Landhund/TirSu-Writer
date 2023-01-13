@@ -3,8 +3,8 @@ package Script_Element.TirSu;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.Group_Element;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
+import Script_Element.FileHandler;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -163,23 +163,19 @@ public class TirSu_Sentences
         }
 
 
-        try {
-            File file1 = new File(fileName + ".svg");
-            if (file1.createNewFile()) {
-                System.out.println("File created: " + file1.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+        FileHandler.fileSetup(fileName);
+
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(header_generator.getHeader());
+        builder.append(sentenceGroup.toString() + "\n");
+        builder.append("</svg>");
 
         try {
             FileWriter fileWriter = new FileWriter(fileName + ".svg");
-            fileWriter.write(header_generator.getHeader());
-            fileWriter.write(sentenceGroup.toString() + "\n");
-            fileWriter.write("</svg>");
+            // fileWriter.write(header_generator.getHeader());
+            // fileWriter.write(sentenceGroup.toString() + "\n");
+            // fileWriter.write("</svg>");
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

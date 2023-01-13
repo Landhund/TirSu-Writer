@@ -7,11 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73300e08-e106-425b-9c6a-43c070194bcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Seb_Transcriber.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Script_Element/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JavaProgram/GUI_V2/GUI_V2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seb_Transcriber.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/circle_Original - Kopie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/circle_Original.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hightmapF1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hightmapO1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteration1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteration2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteration3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orginal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SVG_Tools/SVG_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SVG_Tools/SVG_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Sentences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Script_Element/TirSu/TirSu_Sentences.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,27 +57,30 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;13&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gritsch/Documents/Privates/Coding/Java/SVG_Interface_new/SVG_Interface&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "jdk.selected.JAVA_MODULE": "13",
+    "last_opened_file_path": "C:/Users/gritsch/Documents/Privates/Coding/Java/SVG_Interface_new/SVG_Interface",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/Landhund/TirSu-Writer.git" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gritsch\Documents\GitHub\TirSu-Writer\Java_Version_Seb\Texture\Texture_Creator\out\Images" />
       <recent name="C:\Users\gritsch\Documents\GitHub\TirSu-Writer\Java_Version_Seb\Texture\Texture_Creator\src\JavaProgram\GUI_V1" />
       <recent name="C:\Users\gritsch\Documents\GitHub\TirSu-Writer\Java_Version_Seb\Texture\Texture_Creator\src\GUI_Tools" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TesterClass">
+  <component name="RunManager" selected="Application.GUI_V2">
     <configuration name="GUI_V2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaProgram.GUI_V2.GUI_V2" />
       <module name="Seb_Transcriber" />
@@ -112,8 +124,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TesterClass" />
         <item itemvalue="Application.GUI_V2" />
+        <item itemvalue="Application.TesterClass" />
         <item itemvalue="JAR Application.Seb_Transcriber.jar (1)" />
         <item itemvalue="JAR Application.Seb_Transcriber.jar" />
         <item itemvalue="Application.JavaProgram.GUI_V1.Seb_Script_GUI" />
@@ -170,7 +182,9 @@
       <workItem from="1662733675898" duration="1499000" />
       <workItem from="1663185249283" duration="819000" />
       <workItem from="1664295452720" duration="3562000" />
-      <workItem from="1664742220476" duration="1081000" />
+      <workItem from="1664742220476" duration="2015000" />
+      <workItem from="1664826418721" duration="31000" />
+      <workItem from="1673348151841" duration="4627000" />
     </task>
     <task id="LOCAL-00001" summary="What did i do?">
       <created>1656715497082</created>
@@ -249,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662458200923</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Seb_Transcriber V2:&#10;+ Fixed Issue where Githyanki letter rotation was flipped">
+      <created>1664743603240</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664743603240</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +310,8 @@
     <MESSAGE value="Seb_Transcriber V2:&#10;+ Slight adjustments and Depricating&#10;+ Modified Script_Master to work &#10;+ Adding Constructor for Implimentation of Script_Master" />
     <MESSAGE value="Seb_Transcriber V2:&#10;+ Slight modifications and improvements" />
     <MESSAGE value="Seb_Transcriber V2:&#10;+ Added Some GUI Modifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seb_Transcriber V2:&#10;+ Added Some GUI Modifications" />
+    <MESSAGE value="Seb_Transcriber V2:&#10;+ Fixed Issue where Githyanki letter rotation was flipped" />
+    <option name="LAST_COMMIT_MESSAGE" value="Seb_Transcriber V2:&#10;+ Fixed Issue where Githyanki letter rotation was flipped" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

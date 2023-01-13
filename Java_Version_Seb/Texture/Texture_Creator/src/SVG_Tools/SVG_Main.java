@@ -4,6 +4,7 @@ package SVG_Tools;
 import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 import SVG_Tools.New_SVG_Workspace.Element_Workspace.*;
 import SVG_Tools.New_SVG_Workspace.Header_Generator;
+import Script_Element.FileHandler;
 import Script_Element.TirSu.TirSu_Symbol_Library.TirSu_Alphabet;
 import Script_Element.TirSu.TirSu_Circle;
 
@@ -230,17 +231,7 @@ public class SVG_Main
         }
 
 
-        try {
-            File file1 = new File(savename + ".svg");
-            if (file1.createNewFile()) {
-                System.out.println("File created: " + file1.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+        FileHandler.fileSetup(savename);
 
         try {
             FileWriter fileWriter = new FileWriter(savename + ".svg");
