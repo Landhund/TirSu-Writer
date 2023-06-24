@@ -316,11 +316,11 @@ public class TirSu_Circle {
 
         try {
             FileWriter fileWriter = new FileWriter(filename + ".svg");
-        //    fileWriter.write(header_generator.getHeader());
-        //    fileWriter.write(wordGroup.toString() + "\n");
-        //    fileWriter.write("\t" + circleTirSu.toString() + "\n");
-        //    fileWriter.write("\t" + marker.toString() + "\n");
-        //    fileWriter.write("</svg>");
+            //    fileWriter.write(header_generator.getHeader());
+            //    fileWriter.write(wordGroup.toString() + "\n");
+            //    fileWriter.write("\t" + circleTirSu.toString() + "\n");
+            //    fileWriter.write("\t" + marker.toString() + "\n");
+            //    fileWriter.write("</svg>");
             fileWriter.write(stringBuilder.toString());
             fileWriter.close();
         } catch (IOException e) {

@@ -7,13 +7,11 @@ import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Rectangle_Att;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rectangle_Element implements Element
-{
+public class Rectangle_Element implements Element {
 
     private List<AttributeValue> attributeValues = new ArrayList<>();
 
-    public Rectangle_Element()
-    {
+    public Rectangle_Element() {
         attributeValues.add(new AttributeValue(Rectangle_Att.X));
         attributeValues.add(new AttributeValue(Rectangle_Att.Y));
         attributeValues.add(new AttributeValue(Rectangle_Att.WIDTH));
@@ -22,15 +20,14 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param x
      * @param y
      */
-    public Rectangle_Element withXandY(int x, int y)
-    {
+    public Rectangle_Element withXandY(int x, int y) {
         AttributeValue testerX = new AttributeValue(Rectangle_Att.X);
         AttributeValue testerY = new AttributeValue(Rectangle_Att.Y);
-        if (attributeValues.contains(testerX) && attributeValues.contains(testerY))
-        {
+        if (attributeValues.contains(testerX) && attributeValues.contains(testerY)) {
             attributeValues.get(attributeValues.indexOf(testerX)).withValue(x);
             attributeValues.get(attributeValues.indexOf(testerY)).withValue(y);
         }
@@ -39,15 +36,14 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param width
      * @param height
      */
-    public Rectangle_Element withWidthAndHeight(int width, int height)
-    {
+    public Rectangle_Element withWidthAndHeight(int width, int height) {
         AttributeValue testerWidth = new AttributeValue(Rectangle_Att.WIDTH);
         AttributeValue testerHeight = new AttributeValue(Rectangle_Att.HEIGHT);
-        if (attributeValues.contains(testerWidth) && attributeValues.contains(testerHeight))
-        {
+        if (attributeValues.contains(testerWidth) && attributeValues.contains(testerHeight)) {
             attributeValues.get(attributeValues.indexOf(testerWidth)).withValue(width);
             attributeValues.get(attributeValues.indexOf(testerHeight)).withValue(height);
         }
@@ -56,15 +52,14 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param rx
      * @param ry
      */
-    public Rectangle_Element withRXandRY(int rx, int ry)
-    {
+    public Rectangle_Element withRXandRY(int rx, int ry) {
         AttributeValue testerRX = new AttributeValue(Rectangle_Att.RY);
         AttributeValue testerRY = new AttributeValue(Rectangle_Att.RY);
-        if (attributeValues.contains(testerRX) && attributeValues.contains(testerRY))
-        {
+        if (attributeValues.contains(testerRX) && attributeValues.contains(testerRY)) {
             attributeValues.get(attributeValues.indexOf(testerRX)).withValue(rx);
             attributeValues.get(attributeValues.indexOf(testerRY)).withValue(ry);
         }
@@ -72,18 +67,16 @@ public class Rectangle_Element implements Element
     }
 
 
-
     // --------------------------- Specific Values of Points --------------------------------- \\
 
     /**
      * Add a value to a relevant Element
+     *
      * @param x
      */
-    public Rectangle_Element withX(int x)
-    {
+    public Rectangle_Element withX(int x) {
         AttributeValue tester = new AttributeValue(Rectangle_Att.X);
-        if (attributeValues.contains(tester))
-        {
+        if (attributeValues.contains(tester)) {
             attributeValues.get(attributeValues.indexOf(tester)).withValue(x);
         }
         return this;
@@ -91,13 +84,12 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param y
      */
-    public Rectangle_Element withY(int y)
-    {
+    public Rectangle_Element withY(int y) {
         AttributeValue tester = new AttributeValue(Rectangle_Att.Y);
-        if (attributeValues.contains(tester))
-        {
+        if (attributeValues.contains(tester)) {
             attributeValues.get(attributeValues.indexOf(tester)).withValue(y);
         }
         return this;
@@ -105,13 +97,12 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param width
      */
-    public Rectangle_Element withWidth(int width)
-    {
+    public Rectangle_Element withWidth(int width) {
         AttributeValue tester = new AttributeValue(Rectangle_Att.WIDTH);
-        if (attributeValues.contains(tester))
-        {
+        if (attributeValues.contains(tester)) {
             attributeValues.get(attributeValues.indexOf(tester)).withValue(width);
         }
         return this;
@@ -119,13 +110,12 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param hight
      */
-    public Rectangle_Element withHight(int hight)
-    {
+    public Rectangle_Element withHight(int hight) {
         AttributeValue tester = new AttributeValue(Rectangle_Att.HEIGHT);
-        if (attributeValues.contains(tester))
-        {
+        if (attributeValues.contains(tester)) {
             attributeValues.get(attributeValues.indexOf(tester)).withValue(hight);
         }
         return this;
@@ -133,13 +123,12 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param rx
      */
-    public Rectangle_Element withRX(int rx)
-    {
+    public Rectangle_Element withRX(int rx) {
         AttributeValue tester = new AttributeValue(Rectangle_Att.RX);
-        if (attributeValues.contains(tester))
-        {
+        if (attributeValues.contains(tester)) {
             attributeValues.get(attributeValues.indexOf(tester)).withValue(rx);
         }
         return this;
@@ -147,29 +136,23 @@ public class Rectangle_Element implements Element
 
     /**
      * Add a value to a relevant Element
+     *
      * @param ry
      */
-    public Rectangle_Element withRY(int ry)
-    {
+    public Rectangle_Element withRY(int ry) {
         AttributeValue tester = new AttributeValue(Rectangle_Att.RY);
-        if (attributeValues.contains(tester))
-        {
+        if (attributeValues.contains(tester)) {
             attributeValues.get(attributeValues.indexOf(tester)).withValue(ry);
         }
         return this;
     }
 
 
-
-    public void appendAttribute(Global_Att global_att, String value)
-    {
+    public void appendAttribute(Global_Att global_att, String value) {
         AttributeValue tester = new AttributeValue(global_att).withValue(value);
-        if (attributeValues.contains(tester))
-        {
+        if (attributeValues.contains(tester)) {
             attributeValues.get(attributeValues.indexOf(tester)).withValue(value);
-        }
-        else
-        {
+        } else {
             attributeValues.add(tester);
         }
 
@@ -183,32 +166,28 @@ public class Rectangle_Element implements Element
 
     /**
      * Check if all 6 important Parameters are contained in the Rectangle Element
+     *
      * @return
      */
 
     @Override
     public boolean containsMinAttributes() {
         boolean x = false, y = false, width = false, hight = false;
-        for (AttributeValue rectangleAttribute : attributeValues)
-        {
-            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.X)))
-            {
+        for (AttributeValue rectangleAttribute : attributeValues) {
+            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.X))) {
                 x = true;
                 continue;
             }
-            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.Y)))
-            {
+            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.Y))) {
                 y = true;
                 continue;
             }
-            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.WIDTH)))
-            {
-                width= true;
+            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.WIDTH))) {
+                width = true;
                 continue;
             }
 
-            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.HEIGHT)))
-            {
+            if (rectangleAttribute.equals(new AttributeValue(Rectangle_Att.HEIGHT))) {
                 hight = true;
                 continue;
             }
@@ -218,12 +197,12 @@ public class Rectangle_Element implements Element
 
     /**
      * Strings all relevant Attributes together
+     *
      * @return Rectangle_Element as a String for the SVG File
      */
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String x = "";
         String y = "";
         String width = "";
@@ -231,47 +210,32 @@ public class Rectangle_Element implements Element
         String rx = "";
         String ry = "";
 
-        if (containsMinAttributes())
-        {
-            String rectangle_Element =  "<rect";
-            for (AttributeValue attributeValue : attributeValues)
-            {
-                if (attributeValue.equals(new AttributeValue(Rectangle_Att.X)))
-                {
+        if (containsMinAttributes()) {
+            String rectangle_Element = "<rect";
+            for (AttributeValue attributeValue : attributeValues) {
+                if (attributeValue.equals(new AttributeValue(Rectangle_Att.X))) {
                     x = attributeValue.getValue();
-                }
-                else if (attributeValue.equals(new AttributeValue(Rectangle_Att.Y)))
-                {
+                } else if (attributeValue.equals(new AttributeValue(Rectangle_Att.Y))) {
                     y = attributeValue.getValue();
-                }
-                else if (attributeValue.equals(new AttributeValue(Rectangle_Att.WIDTH)))
-                {
+                } else if (attributeValue.equals(new AttributeValue(Rectangle_Att.WIDTH))) {
                     width = attributeValue.getValue();
-                }
-                else if (attributeValue.equals(new AttributeValue(Rectangle_Att.HEIGHT)))
-                {
+                } else if (attributeValue.equals(new AttributeValue(Rectangle_Att.HEIGHT))) {
                     height = attributeValue.getValue();
-                }
-                else if (attributeValue.equals(new AttributeValue(Rectangle_Att.RX)))
-                {
+                } else if (attributeValue.equals(new AttributeValue(Rectangle_Att.RX))) {
                     rx = attributeValue.getValue();
-                }
-                else if (attributeValue.equals(new AttributeValue(Rectangle_Att.RY)))
-                {
+                } else if (attributeValue.equals(new AttributeValue(Rectangle_Att.RY))) {
                     ry = attributeValue.getValue();
                 }
                 rectangle_Element += " " + attributeValue.toString();
             }
             rectangle_Element += "/>";
             return rectangle_Element;
-        }
-        else return null;
+        } else return null;
     }
 
 
     @Override
-    public void removeGlobalAttribute(Global_Att att)
-    {
+    public void removeGlobalAttribute(Global_Att att) {
         this.attributeValues.remove(new AttributeValue(att));
     }
 }

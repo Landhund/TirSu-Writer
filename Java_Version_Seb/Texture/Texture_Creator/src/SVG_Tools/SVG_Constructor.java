@@ -13,26 +13,22 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SVG_Constructor
-{
+public class SVG_Constructor {
     private static int id;
     private String name;
     private Header_Generator header;
     private List<Element> elements = new ArrayList<>();
 
-    public  SVG_Constructor(String name)
-    {
-       this.name = name;
-       this.id++;
+    public SVG_Constructor(String name) {
+        this.name = name;
+        this.id++;
 
     }
 
 
-    public void saveSVG(boolean override)
-    {
+    public void saveSVG(boolean override) {
 
-        if (override == true)
-        {
+        if (override == true) {
             try {
                 Files.deleteIfExists(Path.of(name + id + ".svg"));
             } catch (IOException e) {
@@ -65,11 +61,9 @@ public class SVG_Constructor
     }
 
 
-    private FileWriter writeSVG(FileWriter fileWriter) throws IOException
-    {
+    private FileWriter writeSVG(FileWriter fileWriter) throws IOException {
         fileWriter.write(header.getHeader());
-        for (Element element : elements)
-        {
+        for (Element element : elements) {
             fileWriter.write(element.toString());
         }
         fileWriter.write("</svg>");

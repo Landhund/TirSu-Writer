@@ -12,31 +12,26 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public enum German_Variation
-{
+public enum German_Variation {
     Ä("ä", "a|e", TirSu_Alphabet.A, TirSu_Alphabet.E),
     Ö("ö", "o|e", TirSu_Alphabet.O, TirSu_Alphabet.E),
     Ü("ü", "u|e", TirSu_Alphabet.U, TirSu_Alphabet.E),
     IE("ie");
 
-    private German_Variation(String letter, String alternative, TirSu_Alphabet... letters)
-    {
+    private German_Variation(String letter, String alternative, TirSu_Alphabet... letters) {
         this.letter = letter;
 
-        for (Letter_Element letter_Element : elements)
-        {
+        for (Letter_Element letter_Element : elements) {
             this.elements.add(letter_Element);
         }
 
     }
 
-    private German_Variation(String letter, Letter_Element... elements)
-    {
+    private German_Variation(String letter, Letter_Element... elements) {
         this.letter = letter;
         this.alternative = letter;
 
-        for (Letter_Element letter_Element : elements)
-        {
+        for (Letter_Element letter_Element : elements) {
             this.elements.add(letter_Element);
         }
 
@@ -54,8 +49,7 @@ public enum German_Variation
 
 
     // -------------------------------- Alphabet-Setup-Script -------------------------------- \\
-    public static List<String> getGerman_TirSu()
-    {
+    public static List<String> getGerman_TirSu() {
         german_TirSu.addAll(TirSu_Alphabet.getScriptureAlphabet());
         return german_TirSu;
     }
@@ -63,19 +57,17 @@ public enum German_Variation
 
     /**
      * if (vari.alternative != vari.letter)
-     *             {
-     *                 String[] alternative = vari.alternative.split("|");
-     *                 for (String alt :
-     *                         ) {
-     *
-     *                 }
-     *             }
+     * {
+     * String[] alternative = vari.alternative.split("|");
+     * for (String alt :
+     * ) {
+     * <p>
+     * }
+     * }
      */
 
-    private static void createLetterList()
-    {
-        if (German_Variation.getGerman_TirSu().size() < 1)
-        {
+    private static void createLetterList() {
+        if (German_Variation.getGerman_TirSu().size() < 1) {
             List<String> enumNames = Stream.of(German_Variation.values())
                     .map(German_Variation::getLetterString)
                     .collect(Collectors.toList());
@@ -84,24 +76,20 @@ public enum German_Variation
         }
     }
 
-    private String getLetterString()
-    {
+    private String getLetterString() {
         return this.letter;
     }
 
 
-
     // -------------------------------- Element Methods -------------------------------- \\
-    public Group_Element getLetter()
-    {
+    public Group_Element getLetter() {
 
         Group_Element letter = new Group_Element()
-                .withAttributes(new AttributeValue(Global_Att.ID).withValue( "Letter_" + this.letter))
+                .withAttributes(new AttributeValue(Global_Att.ID).withValue("Letter_" + this.letter))
                 .withAttributes(new AttributeValue(Global_Att.FILL))
                 .withAttributes(new AttributeValue(Global_Att.STROKE));
 
-        for (Letter_Element l_ele : this.elements)
-        {
+        for (Letter_Element l_ele : this.elements) {
             letter.addElementsToGroup(l_ele.getElements().toArray(new Element[0]));
         }
         return letter;

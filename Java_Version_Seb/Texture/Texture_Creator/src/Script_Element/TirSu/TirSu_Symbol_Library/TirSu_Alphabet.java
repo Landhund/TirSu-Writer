@@ -13,9 +13,7 @@ import java.util.stream.Stream;
 /**
  * TirSu_Alphabet
  */
-public enum TirSu_Alphabet 
-{
-
+public enum TirSu_Alphabet {
     A("a", Letter_Element.HEAD_ROOF, Letter_Element.CENTER_LINE_LONG, Letter_Element.NECK_HIGH_LONG),
     B("b", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH, Letter_Element.NECK_HIGH_Short),
     C("c", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.CENTER_LINE_LONG, Letter_Element.T_ARM_HIGH, Letter_Element.NECK_HIGH_Short),
@@ -46,23 +44,20 @@ public enum TirSu_Alphabet
     CH("ch", Letter_Element.HEAD_ROOF, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.CENTER_LINE_MID, Letter_Element.T_ARM_LOW),
     EA("ea", Letter_Element.HEAD_T, Letter_Element.HEAD_ROOF, Letter_Element.NECK_HIGH_LONG, Letter_Element.CENTER_LINE_LONG),
     OA("oa", Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.ARM_RIGHT_HIGH, Letter_Element.ARM_LEFT_HIGH, Letter_Element.CENTER_LINE_LONG),
-    OI("oi", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.HEAD_ELLIPSE_MID , Letter_Element.CENTER_LINE_MID),
+    OI("oi", Letter_Element.HEAD_ROOF_INVERTED, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.CENTER_LINE_MID),
     OU("ou", Letter_Element.HEAD_U_Mid, Letter_Element.HEAD_ELLIPSE_HIGH, Letter_Element.CENTER_LINE_MID),
     SH("sh", Letter_Element.HEAD_ROOF, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.ARM_RIGHT_MID, Letter_Element.CENTER_LINE_MID),
     TH("th", Letter_Element.HEAD_ROOF, Letter_Element.HEAD_ELLIPSE_MID, Letter_Element.ARM_RIGHT_LOW, Letter_Element.ARM_RIGHT_MID, Letter_Element.CENTER_LINE_MID),
     ZH("zh", Letter_Element.HEAD_RIGHT_OPEN_SQUARE_HIGH, Letter_Element.NECK_HIGH_Short, Letter_Element.T_ARM_HIGH, Letter_Element.T_ARM_MID, Letter_Element.CENTER_LINE_LONG);
 
 
-
-    private TirSu_Alphabet(String letter, Letter_Element... elements)
-    {
+    private TirSu_Alphabet(String letter, Letter_Element... elements) {
         this.letter = letter;
 
-        for (Letter_Element letter_Element : elements)
-        {
-            this.elements.add(letter_Element);            
+        for (Letter_Element letter_Element : elements) {
+            this.elements.add(letter_Element);
         }
-         
+
     }
 
     // -------------------------------- Variables -------------------------------- \\
@@ -82,10 +77,8 @@ public enum TirSu_Alphabet
     // ------------------------------------------------------------------------------ \\
 
 
-    private static void createLetterList()
-    {
-        if (TirSu_Alphabet.scriptureAlphabet.size() < 1)
-        {
+    private static void createLetterList() {
+        if (TirSu_Alphabet.scriptureAlphabet.size() < 1) {
             List<String> enumNames = Stream.of(TirSu_Alphabet.values())
                     .map(TirSu_Alphabet::getLetterString)
                     .collect(Collectors.toList());
@@ -94,28 +87,24 @@ public enum TirSu_Alphabet
         }
     }
 
-    private String getLetterString()
-{
-    return this.letter;
-}
-
+    private String getLetterString() {
+        return this.letter;
+    }
 
 
     // -------------------------------- Element Methods -------------------------------- \\
-    public Group_Element getLetter()
-    {
+    public Group_Element getLetter() {
 
         Group_Element letter = new Group_Element()
-                .withAttributes(new AttributeValue(Global_Att.ID).withValue( "Letter_" + this.letter))
+                .withAttributes(new AttributeValue(Global_Att.ID).withValue("Letter_" + this.letter))
                 .withAttributes(new AttributeValue(Global_Att.FILL))
                 .withAttributes(new AttributeValue(Global_Att.STROKE));
 
-        for (Letter_Element l_ele : this.elements)
-        {
+        for (Letter_Element l_ele : this.elements) {
             letter.addElementsToGroup(l_ele.getElements().toArray(new Element[0]));
         }
         return letter;
     }
 
-    
+
 }

@@ -5,44 +5,40 @@ import Script_Element.TirSu.TirSu_Master;
 
 import java.util.List;
 
-public class Script_Master
-{
+public class Script_Master {
     private List<String> tirSu_Alphabet;
 
-    private void requestScriptSymbols()
-    {
+    private void requestScriptSymbols() {
         this.tirSu_Alphabet = TirSu_Alphabet.getScriptureAlphabet();
     }
 
-    public Script_Master(String text, String filename, String selectedScript)
-    {
+    public Script_Master(String text, String filename, String selectedScript) {
         requestScriptSymbols();
         textToScript(text, filename, selectedScript);
     }
 
     // -------------------- Text Handler -------------------- \\
-    private String textToScript(String text, String filename, String selectedScript)
-    {
+    private String textToScript(String text, String filename, String selectedScript) {
         List<String> selectedAlphabet;
 
 
-        switch (selectedScript)
-        {
+        switch (selectedScript) {
             case "Githyanki": {
                 selectedAlphabet = tirSu_Alphabet;
-                TirSu_Master master = new TirSu_Master(text, filename, selectedAlphabet,true);
+                TirSu_Master master = new TirSu_Master(text, filename, selectedAlphabet, true);
                 break;
             }
             case "Githzerai": {
                 selectedAlphabet = tirSu_Alphabet;
-                TirSu_Master master = new TirSu_Master(text, filename, selectedAlphabet,false);
+                TirSu_Master master = new TirSu_Master(text, filename, selectedAlphabet, false);
                 break;
             }
-            default: selectedAlphabet = null; throw new IllegalArgumentException("Bad Input: No Script selected!");
+            default:
+                selectedAlphabet = null;
+                throw new IllegalArgumentException("Bad Input: No Script selected!");
         }
 
-        if (selectedAlphabet != null)
-        {
+        if (selectedAlphabet != null) {
 
         }
         return null;

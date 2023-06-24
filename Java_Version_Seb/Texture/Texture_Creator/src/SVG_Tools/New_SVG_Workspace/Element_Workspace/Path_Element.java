@@ -5,8 +5,7 @@ import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 
 import java.util.List;
 
-public class Path_Element implements Element
-{
+public class Path_Element implements Element {
 
     /*
     *

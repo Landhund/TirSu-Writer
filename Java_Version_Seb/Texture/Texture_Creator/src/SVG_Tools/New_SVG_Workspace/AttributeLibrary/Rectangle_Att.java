@@ -10,13 +10,11 @@ public enum Rectangle_Att implements Attribute {
     PATHLENGTH("pathLength", "none");
 
     /**
-     *
-     * @param identifier parameter that is used in a SVG
+     * @param identifier   parameter that is used in a SVG
      * @param defaultValue parameter that should be set as default if no additional information are given
      */
 
-    Rectangle_Att(String identifier, String defaultValue)
-    {
+    Rectangle_Att(String identifier, String defaultValue) {
         this.identifier = identifier;
         this.defaultValue = defaultValue;
     }
@@ -25,7 +23,8 @@ public enum Rectangle_Att implements Attribute {
     String defaultValue;
 
 
-    /** Methode to return the Identifier from the Parameter
+    /**
+     * Methode to return the Identifier from the Parameter
      *
      * @return String of identifier
      */
@@ -35,7 +34,8 @@ public enum Rectangle_Att implements Attribute {
         return this.identifier;
     }
 
-    /** Methode to return the default Value from the given parameter
+    /**
+     * Methode to return the default Value from the given parameter
      *
      * @return String of defaultValue
      */
@@ -46,13 +46,10 @@ public enum Rectangle_Att implements Attribute {
     }
 
     @Override
-    public boolean isEquals(Attribute attribute)
-    {
-        if (attribute instanceof Rectangle_Att)
-        {
+    public boolean isEquals(Attribute attribute) {
+        if (attribute instanceof Rectangle_Att) {
             Rectangle_Att attributeIn = (Rectangle_Att) attribute;
             return attributeIn == this;
-        }
-        else return false;
+        } else return false;
     }
 }

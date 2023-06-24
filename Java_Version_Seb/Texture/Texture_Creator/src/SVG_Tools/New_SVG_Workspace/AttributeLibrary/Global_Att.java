@@ -4,8 +4,7 @@ import java.util.HashSet;
 
 import org.w3c.dom.Attr;
 
-public enum Global_Att implements Attribute
-{
+public enum Global_Att implements Attribute {
 
     ID("id", "0"),
     TABINDEX("tabindex", "0"),
@@ -20,22 +19,22 @@ public enum Global_Att implements Attribute
     PATHLENGTH("pathLength", "0");
 
     /**
-     *
-     * @param identifier parameter that is used in a SVG
+     * @param identifier   parameter that is used in a SVG
      * @param defaultValue parameter that should be set as default if no additional information are given
      */
 
-    Global_Att(String identifier, String defaultValue)
-            {
+    Global_Att(String identifier, String defaultValue) {
         this.identifier = identifier;
         this.defaultValue = defaultValue;
-            }
+    }
 
     String identifier;
     String defaultValue;
-    private static HashSet<Attribute> values = new HashSet<Attribute>();;
+    private static HashSet<Attribute> values = new HashSet<Attribute>();
+    ;
 
-    /** Methode to return the Identifier from the Parameter
+    /**
+     * Methode to return the Identifier from the Parameter
      *
      * @return String of identifier
      */
@@ -45,7 +44,8 @@ public enum Global_Att implements Attribute
         return this.identifier;
     }
 
-    /** Methode to return the default Value from the given parameter
+    /**
+     * Methode to return the default Value from the given parameter
      *
      * @return String of defaultValue
      */
@@ -56,28 +56,22 @@ public enum Global_Att implements Attribute
     }
 
     @Override
-    public boolean isEquals(Attribute attribute)
-    {
-        if (getEnums().contains(attribute))
-        {
+    public boolean isEquals(Attribute attribute) {
+        if (getEnums().contains(attribute)) {
             Global_Att attributeIn = (Global_Att) attribute;
             return attributeIn == this;
-        }
-        else return false;
+        } else return false;
     }
 
-    private static HashSet<Attribute> getEnums() 
-    {
-        for (Attribute c : Global_Att.values()) 
-        {
+    private static HashSet<Attribute> getEnums() {
+        for (Attribute c : Global_Att.values()) {
             values.add(c);
         }
-      
+
         return values;
     }
 
-    public static boolean isInEnum(Attribute att)
-    {
+    public static boolean isInEnum(Attribute att) {
         return (getEnums().contains(att)) ? true : false;
     }
 }

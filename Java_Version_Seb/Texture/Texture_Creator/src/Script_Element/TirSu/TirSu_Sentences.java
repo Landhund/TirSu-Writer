@@ -11,8 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class TirSu_Sentences
-{
+public class TirSu_Sentences {
     private final String fileName;
     private final String sentence;
     private int wordCount;
@@ -29,10 +28,8 @@ public class TirSu_Sentences
     private final boolean githyanki;
 
 
-
     // -------------------- Konstruktor -------------------- \\
-    public TirSu_Sentences(String sentence, boolean githyanki)
-    {
+    public TirSu_Sentences(String sentence, boolean githyanki) {
         this.fileName = sentence;
         this.sentence = sentence;
         this.githyanki = githyanki;
@@ -42,8 +39,7 @@ public class TirSu_Sentences
         headerGenerator();
     }
 
-    public TirSu_Sentences(String sentence, List<String> tirSu_alphabet, boolean githyanki)
-    {
+    public TirSu_Sentences(String sentence, List<String> tirSu_alphabet, boolean githyanki) {
         this.fileName = sentence;
         this.sentence = sentence;
         this.githyanki = githyanki;
@@ -54,8 +50,7 @@ public class TirSu_Sentences
         headerGenerator();
     }
 
-    public TirSu_Sentences(String sentence, String fileName, boolean githyanki)
-    {
+    public TirSu_Sentences(String sentence, String fileName, boolean githyanki) {
         this.fileName = fileName;
         this.sentence = sentence;
         this.githyanki = githyanki;
@@ -65,8 +60,7 @@ public class TirSu_Sentences
         headerGenerator();
     }
 
-    public TirSu_Sentences(String sentence, String fileName, List<String> tirSu_alphabet, boolean githyanki)
-    {
+    public TirSu_Sentences(String sentence, String fileName, List<String> tirSu_alphabet, boolean githyanki) {
         this.fileName = fileName;
         this.sentence = sentence;
         this.githyanki = githyanki;
@@ -79,45 +73,39 @@ public class TirSu_Sentences
 
 
     // -------------------- word-creator -------------------- \\
-    private void spliceSentence()
-    {
+    private void spliceSentence() {
         this.words = this.sentence.split(" ");
         wordCount = this.words.length;
         this.wordsCircles = new TirSu_Circle[wordCount];
     }
 
-    private void createWordSymbols()
-    {
+    private void createWordSymbols() {
         for (int i = 0; i < wordCount; i++) {
             this.wordsCircles[i] = new TirSu_Circle(words[i], githyanki);
         }
     }
 
-    private void createWordSymbolsUsingAlphabet()
-    {
+    private void createWordSymbolsUsingAlphabet() {
         for (int i = 0; i < wordCount; i++) {
             this.wordsCircles[i] = new TirSu_Circle(words[i], this.tirSu_alphabet, githyanki);
         }
     }
 
     // -------------------- sentence-builder -------------------- \\
-    private void buildSentence()
-    {
+    private void buildSentence() {
         this.sentenceGroup = new Group_Element(1);
         this.sentenceGroup.appendAttribute(Global_Att.ID, sentence);
         int offset = 0;
-        for (TirSu_Circle word : wordsCircles)
-        {
-            offset += word.getBoxSize()/2;
+        for (TirSu_Circle word : wordsCircles) {
+            offset += word.getBoxSize() / 2;
 
             Group_Element wordGroup = word.getWordGroup();
             wordGroup.appendAttribute(Global_Att.TRANSFORM, "translate(" + offset + " 0)");
             this.sentenceGroup.addElementsToGroup(wordGroup);
 
-            offset += word.getBoxSize()/2;
+            offset += word.getBoxSize() / 2;
 
-            if (y_distance < word.getBoxSize())
-            {
+            if (y_distance < word.getBoxSize()) {
                 this.y_distance = word.getBoxSize();
             }
         }
@@ -126,34 +114,28 @@ public class TirSu_Sentences
 
 
     // -------------------- Header-Generation -------------------- \\
-    private void headerGenerator()
-    {
+    private void headerGenerator() {
         int modifier = headerCalculator();
-        if (modifier == 0)
-        {
+        if (modifier == 0) {
             modifier = 1;
         }
 
         this.header_generator = new Header_Generator();
-        this.header_generator.createSVGHeader(1000, 1000/modifier);
-        this.header_generator.createViewBox(0, -y_distance/2, x_distance, y_distance);
+        this.header_generator.createSVGHeader(1000, 1000 / modifier);
+        this.header_generator.createViewBox(0, -y_distance / 2, x_distance, y_distance);
     }
 
-    private int headerCalculator()
-    {
+    private int headerCalculator() {
         if (y_distance != 0) {
             return x_distance / y_distance;
-        }
-        else return 0;
+        } else return 0;
     }
 
 
     // -------------------- save ----------------------- \\
-    public void saveTIRSU(boolean override)
-    {
+    public void saveTIRSU(boolean override) {
 
-        if (override == true)
-        {
+        if (override == true) {
             try {
                 Files.deleteIfExists(Path.of(fileName + ".svg"));
             } catch (IOException e) {

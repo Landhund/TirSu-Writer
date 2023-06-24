@@ -6,10 +6,11 @@ import SVG_Tools.New_SVG_Workspace.AttributeLibrary.Global_Att;
 
 import java.util.List;
 
-public interface Element
-{
+public interface Element {
 
-    /** Dieses Interface soll für die folgenden Implementierungen aller SVG Elemente verwendet werden. */
+    /**
+     * Dieses Interface soll für die folgenden Implementierungen aller SVG Elemente verwendet werden.
+     */
     @Override
     String toString();
 
